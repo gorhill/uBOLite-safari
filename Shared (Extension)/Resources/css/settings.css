@@ -1,0 +1,242 @@
+body.loading {
+    visibility: hidden;
+    }
+body .firstRun {
+    display: none;
+    }
+body.firstRun .firstRun {
+    background-color: rgb(var(--dashboard-highlight-surface-rgb));
+    display: block;
+    padding: 8px;
+    }
+body .firstRun > *:first-child {
+    margin-top: 0;
+    }
+body .firstRun > *:last-child {
+    margin-bottom: 0;
+    }
+h3 {
+    margin: 1em 0;
+    }
+
+label + legend {
+    color: color-mix(in srgb, currentColor 69%, transparent);
+    font-size: var(--font-size-smaller);
+    margin-inline-start: var(--default-gap-large);
+    }
+
+body[data-forbid~="dashboard"] #dashboard-nav [data-pane="settings"],
+body[data-forbid~="dashboard"] section[data-pane="settings"],
+body[data-forbid~="dashboard"] #dashboard-nav [data-pane="rulesets"],
+body[data-forbid~="dashboard"] section[data-pane="rulesets"] {
+    display: none;
+    }
+body[data-forbid~="filteringMode"] section[data-pane="settings"] > div:has(> h3[data-i18n="defaultFilteringModeSectionLabel"]),
+body[data-forbid~="filteringMode"] section[data-pane="settings"] > div:has(> h3[data-i18n="filteringMode0Name"]) {
+    display: none;
+    }
+
+label:has(input[type="checkbox"][disabled]),
+label:has(input[type="checkbox"][disabled]) + legend {
+    filter: var(--checkbox-disabled-filter);
+    }
+
+#defaultFilteringMode {
+    display: grid;
+    gap: 1em;
+    grid: auto-flow dense / 1fr 1fr 1fr;
+    }
+.filteringModeCard {
+    border: 1px solid var(--surface-3);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    }
+.filteringModeCard:hover {
+    background-color: color-mix(in hsl, var(--surface-1) 75%, var(--surface-0) 25%);
+    }
+.filteringModeCard:has(.radio > [type="radio"]:checked) {
+    background-color: var(--surface-0);
+    }
+.filteringModeCard .input.radio ~ [data-i18n] {
+    text-transform: capitalize;
+    }
+.filteringModeCard span:has(> .input) {
+    align-items: center;
+    display: inline-flex;
+    }
+.filteringModeCard > div {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    padding: 0.5em;
+    width: 100%;
+    }
+.filteringModeCard > div:nth-of-type(2) {
+    justify-content: center;
+    }
+.filteringModeCard > div:nth-of-type(3) {
+    border-top: 1px solid var(--surface-2);
+    font-size: var(--font-size-smaller);
+    white-space: pre-line;
+    }
+.filteringModeSlider {
+    height: calc(60px / 2);
+    pointer-events: none;
+    width: calc(240px / 2);
+    }
+
+h3[data-i18n="filteringMode0Name"]::first-letter {
+    text-transform: capitalize;
+    }
+#trustedSites  {
+    box-sizing: border-box;
+    height: 6rem;
+    resize: vertical;
+    width: 100%;
+    }
+
+section[data-pane="rulesets"] > div:first-of-type {
+    background-color: var(--surface-1);
+    flex-shrink: 0;
+    padding: 1em 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    }
+section[data-pane="rulesets"] > div:first-of-type > p:first-of-type {
+    margin-top: 0;
+    }
+section[data-pane="rulesets"] > div:first-of-type > p:last-of-type {
+    margin-bottom: 0;
+    }
+.listEntry {
+    display: flex;
+    flex-direction: column;
+    }
+.listEntry[data-nodeid] > .detailbar .listExpander {
+    cursor: pointer;
+    top: 2px;
+    }
+.listEntry[data-role="rootnode"] > .detailbar,
+.listEntry[data-nodeid] > .detailbar .count {
+    cursor: pointer;
+    }
+.listEntry[data-role="rootnode"] > .detailbar > *:not(.listExpander) {
+    pointer-events: none;
+    }
+.listEntry .detailbar .count {
+    align-self: flex-end;
+    color: var(--ink-3);
+    font-size: small;
+    pointer-events: none;
+    }
+.listEntries {
+    display: flex;
+    flex-direction: column;
+    }
+.listEntry:not([data-role="rootnode"]) > .listEntries {
+    margin-inline-start: var(--checkbox-size);
+    }
+.listEntry.hideUnused > .listEntries > .listEntry:not(.isDefault):has(> .detailbar input:not(:checked)) {
+    display: none;
+    }
+.listEntry.fromAdmin:has(> .detailbar input[disabled]:not(:checked)) {
+    display: none;
+    }
+.listEntry > * {
+    unicode-bidi: embed;
+    }
+.listEntry h3 {
+    display: inline-block;
+    margin: 0;
+    }
+.listEntry > .detailbar {
+    align-items: center;
+    display: inline-flex;
+    margin: calc(var(--default-gap-xsmall) / 2 + var(--default-gap-xxsmall) / 2) 0;
+    white-space: nowrap;
+    }
+.listEntry > .detailbar > *:not(:first-child) {
+    margin-inline-start: var(--default-gap-xxsmall);
+    }
+.listEntry[data-nodeid="default"] > .detailbar > .listExpander {
+    display: none;
+    }
+.listEntry > .detailbar > .listExpander svg {
+    transform: rotate(180deg);
+    transform-origin: 50%;
+    }
+.listEntry.hideUnused > .detailbar > .listExpander svg {
+    transform: rotate(90deg);
+    }
+.listEntry .checkbox:has(input[disabled]),
+.listEntry .checkbox:has(input[disabled]) ~ span {
+    filter: var(--checkbox-disabled-filter);
+    }
+.listEntry a,
+.listEntry .fa-icon {
+    color: var(--info0-ink);
+        fill: var(--info0-ink);
+    font-size: 120%;
+    }
+.listEntry .fa-icon:hover {
+    transform: scale(1.25);
+    }
+.listEntry .iconbar a.support[href="#"] {
+    display: none;
+    }
+
+body.noMoreRuleset .listEntry:has(> .detailbar input:not(:checked)) {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+#lists.searchMode > .listEntries .listEntries,
+#lists.searchMode > .listEntries .listEntry.searchMatch {
+    display: flex !important;
+    }
+#lists.searchMode > .listEntries .listEntry {
+    display: none;
+    }
+#lists.searchMode > .listEntries .listExpander {
+    visibility: hidden;
+    }
+
+/* touch-screen devices */
+:root.mobile .listEntry .fa-icon {
+    font-size: 120%;
+    margin: 0 0.5em 0 0;
+    }
+:root.mobile .listEntries {
+    margin-inline-start: 0;
+    -webkit-margin-start: 0;
+    }
+:root.mobile .li.listEntry {
+    overflow-x: auto;
+    }
+:root.mobile .li.listEntry label > span:not([class]) {
+    flex-grow: 1;
+    }
+:root.mobile .li.listEntry .listname,
+:root.mobile .li.listEntry .iconbar {
+    align-items: flex-start;
+    display: flex;
+    white-space: nowrap;
+    }
+:root.mobile .li.listEntry .iconbar {
+    margin-top: 0.2em;
+    }
+
+#templates {
+    display: none;
+    }
+
+@media (max-width: 480px) {
+    #defaultFilteringMode {
+        grid: 1fr 1fr 1fr / auto-flow dense;
+    }
+    .filteringModeCard > div:nth-of-type(2) {
+        justify-content: flex-start;
+    }
+}

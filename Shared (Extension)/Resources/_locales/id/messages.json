@@ -1,0 +1,282 @@
+{
+  "extName": {
+    "message": "uBlock Origin Lite",
+    "description": "extension name."
+  },
+  "extShortDesc": {
+    "message": "Pemblokir konten eksperimental yang cepat dan ringan -- memblokir iklan, pelacak, penambang kripto dan lainnya secara bawaan.",
+    "description": "this will be in the Chrome web store: must be 132 characters or less"
+  },
+  "perRulesetStats": {
+    "message": "{{ruleCount}} aturan, dikonversi dari {{filterCount}} filter jaringan",
+    "description": "Appears aside each filter list in the _3rd-party filters_ pane"
+  },
+  "dashboardName": {
+    "message": "uBO Lite — Dasbor",
+    "description": "English: uBO Lite — Dashboard"
+  },
+  "settingsPageName": {
+    "message": "Pengaturan",
+    "description": "appears as tab name in dashboard"
+  },
+  "aboutPageName": {
+    "message": "Tentang",
+    "description": "appears as tab name in dashboard"
+  },
+  "aboutPrivacyPolicy": {
+    "message": "Kebijakan privasi",
+    "description": "Link to privacy policy on GitHub (English)"
+  },
+  "popupFilteringModeLabel": {
+    "message": "mode filter",
+    "description": "Label in the popup panel for the current filtering mode"
+  },
+  "popupTipReport": {
+    "message": "Laporkan masalah pada situs ini",
+    "description": "Tooltip used for the 'chat' icon in the panel"
+  },
+  "popupTipDashboard": {
+    "message": "Buka dasbor",
+    "description": "English: Click to open the dashboard"
+  },
+  "popupMoreButton": {
+    "message": "Lainnya",
+    "description": "Label to be used to show popup panel sections"
+  },
+  "popupLessButton": {
+    "message": "Lebih sedikit",
+    "description": "Label to be used to hide popup panel sections"
+  },
+  "3pGroupDefault": {
+    "message": "Bawaan",
+    "description": "Header for a ruleset section in 'Filter lists pane'"
+  },
+  "3pGroupAds": {
+    "message": "Iklan",
+    "description": "Header for a ruleset section in 'Filter lists pane'"
+  },
+  "3pGroupPrivacy": {
+    "message": "Privasi",
+    "description": "Header for a ruleset section in 'Filter lists pane'"
+  },
+  "3pGroupMalware": {
+    "message": "Domain malware",
+    "description": "Header for a ruleset section in 'Filter lists pane'"
+  },
+  "3pGroupAnnoyances": {
+    "message": "Gangguan",
+    "description": "Header for a ruleset section in 'Filter lists pane'"
+  },
+  "3pGroupMisc": {
+    "message": "Lainnya",
+    "description": "Header for a ruleset section in 'Filter lists pane'"
+  },
+  "3pGroupRegions": {
+    "message": "Wilayah, bahasa",
+    "description": "Header for a ruleset section in 'Filter lists pane'"
+  },
+  "aboutChangelog": {
+    "message": "Catatan perubahan",
+    "description": ""
+  },
+  "aboutCode": {
+    "message": "Kode sumber (GPLv3)",
+    "description": "English: Source code (GPLv3)"
+  },
+  "aboutContributors": {
+    "message": "Kontributor",
+    "description": "English: Contributors"
+  },
+  "aboutSourceCode": {
+    "message": "Kode sumber",
+    "description": "Link text to source code repo"
+  },
+  "aboutTranslations": {
+    "message": "Terjemahan",
+    "description": "Link text to translations repo"
+  },
+  "aboutFilterLists": {
+    "message": "Daftar filter",
+    "description": "Link text to uBO's own filter lists repo"
+  },
+  "aboutDependencies": {
+    "message": "Dependensi eksternal (kompatibel GPLv3):",
+    "description": "Shown in the About pane"
+  },
+  "supportS6H": {
+    "message": "Laporkan masalah filter",
+    "description": "Header of 'Report a filter issue' section in Support pane"
+  },
+  "supportS3P1": {
+    "message": "Laporkan masalah filter situs web tertentu ke <span data-url=\"https://github.com/uBlockOrigin/uAssets/issues?q=is%3Aissue\">pelacak masalah <code>uBlockOrigin/uAssets</code></span>. <u>Membutuhkan akun GitHub.</u>",
+    "description": "First paragraph of 'Filter issues' section in Support pane"
+  },
+  "supportS6P1S1": {
+    "message": "Untuk menghindari membebani sukarelawan dengan laporan duplikat, harap verifikasi bahwa masalah tersebut belum dilaporkan.",
+    "description": "A paragraph in the filter issue reporter section"
+  },
+  "supportFindSpecificButton": {
+    "message": "Temukan laporan serupa",
+    "description": "A clickable link in the filter issue reporter section"
+  },
+  "supportS6URL": {
+    "message": "Alamat laman web:",
+    "description": "Label for the URL of the page"
+  },
+  "supportS6Select1": {
+    "message": "Laman web…",
+    "description": "Label for widget to select type of issue"
+  },
+  "supportS6Select1Option0": {
+    "message": "-- Pilih entri --",
+    "description": "An entry in the widget used to select the type of issue"
+  },
+  "supportS6Select1Option1": {
+    "message": "Menampilkan iklan atau sejenisnya",
+    "description": "An entry in the widget used to select the type of issue"
+  },
+  "supportS6Select1Option2": {
+    "message": "Memiliki overlay atau gangguan lainnya",
+    "description": "An entry in the widget used to select the type of issue"
+  },
+  "supportS6Select1Option3": {
+    "message": "Mendeteksi uBO Lite",
+    "description": "An entry in the widget used to select the type of issue"
+  },
+  "supportS6Select1Option4": {
+    "message": "Memiliki masalah terkait privasi",
+    "description": "An entry in the widget used to select the type of issue"
+  },
+  "supportS6Select1Option5": {
+    "message": "Malfungsi saat uBO Lite diaktifkan",
+    "description": "An entry in the widget used to select the type of issue"
+  },
+  "supportS6Select1Option6": {
+    "message": "Membuka tab atau jendela yang tidak diinginkan",
+    "description": "An entry in the widget used to select the type of issue"
+  },
+  "supportS6Select1Option7": {
+    "message": "Mengarah ke perangkat lunak jahat, phishing",
+    "description": "An entry in the widget used to select the type of issue"
+  },
+  "supportS6Checkbox1": {
+    "message": "Label laman web sebagai “NSFW” (<a href=\"https://wikipedia.org/wiki/Not_safe_for_work\">“Not Safe For Work”</a>)",
+    "description": "A checkbox to use for NSFW sites"
+  },
+  "supportReportSpecificButton": {
+    "message": "Buat laporan baru",
+    "description": "Text for button which open an external webpage in Support pane"
+  },
+  "firstRunSectionLabel": {
+    "message": "Selamat datang",
+    "description": "The header text for the welcome message section"
+  },
+  "firstRunDescription": {
+    "message": "Terima kasih telah memasang uBO Lite. Anda bisa memilih di sini mode filter bawaan untuk digunakan pada semua situs web.\n\nSecara bawaan, mode <em>Dasar</em> akan dipilih karena tidak membutuhkan izin untuk membaca dan mengubah data. Jika Anda mempercayai uBO Lite, Anda bisa memberikan izin tambahan untuk membaca dan mengubah data pada semua situs web untuk mengaktifkan kemampuan filter yang lebih luas untuk semua situs web secara bawaan.",
+    "description": "Descriptive text shown at first install time only "
+  },
+  "defaultFilteringModeSectionLabel": {
+    "message": "Mode filter bawaan",
+    "description": "The header text for the default filtering mode section"
+  },
+  "defaultFilteringModeDescription": {
+    "message": "Mode filter bawaan akan ditimpa oleh mode filter per-situs web. Anda bisa menyesuaikan mode filter pada setiap situs web dengan mode yang bekerja paling baik pada situs web tersebut. Masing-masing mode memiliki kelebihan dan kekurangan.",
+    "description": "This describes the default filtering mode setting"
+  },
+  "filteringMode0Name": {
+    "message": "tanpa filter",
+    "description": "Name of blocking mode 0"
+  },
+  "filteringMode1Name": {
+    "message": "dasar",
+    "description": "Name of blocking mode 1"
+  },
+  "filteringMode2Name": {
+    "message": "optimal",
+    "description": "Name of blocking mode 2"
+  },
+  "filteringMode3Name": {
+    "message": "lengkap",
+    "description": "Name of blocking mode 3"
+  },
+  "basicFilteringModeDescription": {
+    "message": "Filter jaringan dasar dari daftar filter yang dipilih.\n\nTidak membutuhkan izin untuk membaca dan mengubah data pada situs web.",
+    "description": "This describes the 'basic' filtering mode"
+  },
+  "optimalFilteringModeDescription": {
+    "message": "Filter jaringan lanjutan ditambah filter spesifik yang diperluas dari daftar filter yang dipilih.\n\nMembutuhkan banyak izin untuk membaca dan mengubah data pada semua situs web.",
+    "description": "This describes the 'optimal' filtering mode"
+  },
+  "completeFilteringModeDescription": {
+    "message": "Filter jaringan lanjutan ditambah filter spesifik dan umum yang diperluas dari daftar filter yang dipilih.\n\nMembutuhkan banyak izin untuk membaca dan mengubah data pada semua situs web.\n\nFilter umum yang diperluas dapat menyebabkan penggunan sumber daya situs web menjadi lebih tinggi.",
+    "description": "This describes the 'complete' filtering mode"
+  },
+  "noFilteringModeDescription": {
+    "message": "Daftar nama host yang tidak akan difilter.",
+    "description": "A short description for the editable field which lists trusted sites"
+  },
+  "noFilteringModePlaceholder": {
+    "message": "[hanya nama host]\ncontoh.com\npermainan.contoh\n...",
+    "description": "Default text for in edit field"
+  },
+  "behaviorSectionLabel": {
+    "message": "Perilaku",
+    "description": "The header text for the 'Behavior' section"
+  },
+  "autoReloadLabel": {
+    "message": "Otomatis memuat ulang halaman web saat mengubah mode filter",
+    "description": "Label for a checkbox in the options page"
+  },
+  "showBlockedCountLabel": {
+    "message": "Tampilkan jumlah permintaan yang diblokir pada ikon toolbar",
+    "description": "Label for a checkbox in the options page"
+  },
+  "enableStrictBlockLabel": {
+    "message": "Aktifkan pemblokiran ketat",
+    "description": "Label for a checkbox in the options page"
+  },
+  "enableStrictBlockLegend": {
+    "message": "Navigasi ke situs yang mungkin tidak diinginkan akan diblokir, dan Anda akan ditawari opsi untuk melanjutkan.",
+    "description": "Label for a checkbox in the options page"
+  },
+  "findListsPlaceholder": {
+    "message": "Temukan daftar",
+    "description": "Placeholder for the input field used to find lists"
+  },
+  "strictblockTitle": {
+    "message": "Halaman diblokir",
+    "description": "Webpage title for the strict-blocked page"
+  },
+  "strictblockSentence1": {
+    "message": "uBO Lite telah mencegah pemuatan halaman berikut:",
+    "description": "Sentence used in the strict-blocked page"
+  },
+  "strictblockReasonSentence1": {
+    "message": "Halaman diblokir karena cocok dengan filter yang ada di dalam {{listname}}.",
+    "description": "Text informing about what is causing the page to be blocked"
+  },
+  "strictblockRedirectSentence1": {
+    "message": "Halaman yang diblokir ingin beralih ke situs yang lain. Jika Anda memilih untuk melanjutkan, Anda akan langsung diarahkan ke: {{url}}",
+    "description": "Text warning about an incoming redirect"
+  },
+  "strictblockNoParamsPrompt": {
+    "message": "tanpa parameter",
+    "description": "Label to be used for the parameter-less URL"
+  },
+  "strictblockBack": {
+    "message": "Kembali",
+    "description": "A button to go back to the previous webpage"
+  },
+  "strictblockClose": {
+    "message": "Tutup jendela ini",
+    "description": "A button to close the current tab"
+  },
+  "strictblockDontWarn": {
+    "message": "Jangan peringatkan saya lagi tentang situs ini",
+    "description": "Label for checkbox in document-blocked page"
+  },
+  "strictblockProceed": {
+    "message": "Lanjutkan",
+    "description": "A button to navigate to the blocked page"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-03/schema#",
+  "type": "object",
+  "properties": {
+    "noFiltering": {
+      "title": "List of domains for which no filtering should occur",
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "disableFirstRunPage": {
+      "title": "Disable first run page",
+      "type": "boolean"
+    },
+    "rulesets": {
+      "title": "Rulesets to add/remove",
+      "description": "Prefix a ruleset id with '+' to add, or '-' to remove. Use '-*' to disable all non-default lists.",
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "disabledFeatures": {
+      "title": "User interface features to disable",
+      "description": "A list of tokens, each of which correspond to a user interface feature to disable.",
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+[
+{
+ "action": {
+  "redirect": {
+   "transform": {
+    "queryTransform": {
+     "removeParams": [
+      "cp"
+     ]
+    }
+   }
+  },
+  "type": "redirect"
+ },
+ "condition": {
+  "requestDomains": [
+   "newspic.kr"
+  ],
+  "resourceTypes": [
+   "main_frame",
+   "sub_frame",
+   "xmlhttprequest"
+  ]
+ },
+ "id": 1,
+ "priority": 2
+}
+]

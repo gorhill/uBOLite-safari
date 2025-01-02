@@ -1,0 +1,24 @@
+[
+{
+ "action": {
+  "type": "block"
+ },
+ "condition": {
+  "initiatorDomains": [
+   "alekuriren.se",
+   "automation.se",
+   "dackavisen.se",
+   "densistavilan.se",
+   "skanesport.se",
+   "tidningenproffs.se",
+   "universitetslararen.se"
+  ],
+  "regexFilter": "wp-content\\/uploads\\/[0-9]+",
+  "resourceTypes": [
+   "script"
+  ]
+ },
+ "id": 1,
+ "priority": 10
+}
+]

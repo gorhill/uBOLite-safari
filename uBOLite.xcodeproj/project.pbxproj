@@ -1,0 +1,1016 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		43FA36812D25C7C900E419EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA36802D25C7C900E419EB /* AppDelegate.swift */; };
+		43FA36832D25C7C900E419EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA36822D25C7C900E419EB /* SceneDelegate.swift */; };
+		43FA36862D25C7C900E419EB /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36852D25C7C900E419EB /* Base */; };
+		43FA36892D25C7C900E419EB /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36882D25C7C900E419EB /* Base */; };
+		43FA36922D25C7C900E419EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA36912D25C7C900E419EB /* AppDelegate.swift */; };
+		43FA36952D25C7C900E419EB /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36942D25C7C900E419EB /* Base */; };
+		43FA369D2D25C7C900E419EB /* uBOLite Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 43FA369C2D25C7C900E419EB /* uBOLite Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		43FA36A72D25C7C900E419EB /* uBOLite Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 43FA36A62D25C7C900E419EB /* uBOLite Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		43FA36AD2D25C7C900E419EB /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36712D25C7C500E419EB /* Base */; };
+		43FA36AE2D25C7C900E419EB /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36712D25C7C500E419EB /* Base */; };
+		43FA36AF2D25C7C900E419EB /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36722D25C7C500E419EB /* Icon.png */; };
+		43FA36B02D25C7C900E419EB /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36722D25C7C500E419EB /* Icon.png */; };
+		43FA36B12D25C7C900E419EB /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36732D25C7C500E419EB /* Style.css */; };
+		43FA36B22D25C7C900E419EB /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36732D25C7C500E419EB /* Style.css */; };
+		43FA36B32D25C7C900E419EB /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36742D25C7C500E419EB /* Script.js */; };
+		43FA36B42D25C7C900E419EB /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36742D25C7C500E419EB /* Script.js */; };
+		43FA36B52D25C7C900E419EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA36752D25C7C500E419EB /* ViewController.swift */; };
+		43FA36B62D25C7C900E419EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA36752D25C7C500E419EB /* ViewController.swift */; };
+		43FA36B72D25C7C900E419EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36762D25C7C900E419EB /* Assets.xcassets */; };
+		43FA36B82D25C7C900E419EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36762D25C7C900E419EB /* Assets.xcassets */; };
+		43FA36B92D25C7C900E419EB /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA36782D25C7C900E419EB /* SafariWebExtensionHandler.swift */; };
+		43FA36BA2D25C7C900E419EB /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA36782D25C7C900E419EB /* SafariWebExtensionHandler.swift */; };
+		43FA36DC2D25C7CB00E419EB /* web_accessible_resources in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36CC2D25C7CB00E419EB /* web_accessible_resources */; };
+		43FA36DD2D25C7CB00E419EB /* css in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36CD2D25C7CB00E419EB /* css */; };
+		43FA36DE2D25C7CB00E419EB /* js in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36CE2D25C7CB00E419EB /* js */; };
+		43FA36DF2D25C7CB00E419EB /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36CF2D25C7CB00E419EB /* popup.html */; };
+		43FA36E02D25C7CB00E419EB /* managed_storage.json in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36D02D25C7CB00E419EB /* managed_storage.json */; };
+		43FA36E12D25C7CB00E419EB /* dashboard.html in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36D12D25C7CB00E419EB /* dashboard.html */; };
+		43FA36E22D25C7CB00E419EB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36D22D25C7CB00E419EB /* README.md */; };
+		43FA36E32D25C7CB00E419EB /* img in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36D32D25C7CB00E419EB /* img */; };
+		43FA36E42D25C7CB00E419EB /* log.txt in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36D42D25C7CB00E419EB /* log.txt */; };
+		43FA36E52D25C7CB00E419EB /* strictblock.html in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36D52D25C7CB00E419EB /* strictblock.html */; };
+		43FA36E62D25C7CB00E419EB /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36D62D25C7CB00E419EB /* manifest.json */; };
+		43FA36E72D25C7CB00E419EB /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36D72D25C7CB00E419EB /* _locales */; };
+		43FA36E82D25C7CB00E419EB /* rulesets in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36D82D25C7CB00E419EB /* rulesets */; };
+		43FA36E92D25C7CB00E419EB /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36D92D25C7CB00E419EB /* LICENSE.txt */; };
+		43FA36EA2D25C7CB00E419EB /* report.html in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36DA2D25C7CB00E419EB /* report.html */; };
+		43FA36EB2D25C7CB00E419EB /* matched-rules.html in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36DB2D25C7CB00E419EB /* matched-rules.html */; };
+		43FA36EC2D25C7CB00E419EB /* web_accessible_resources in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36CC2D25C7CB00E419EB /* web_accessible_resources */; };
+		43FA36ED2D25C7CB00E419EB /* css in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36CD2D25C7CB00E419EB /* css */; };
+		43FA36EE2D25C7CB00E419EB /* js in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36CE2D25C7CB00E419EB /* js */; };
+		43FA36EF2D25C7CB00E419EB /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36CF2D25C7CB00E419EB /* popup.html */; };
+		43FA36F02D25C7CB00E419EB /* managed_storage.json in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36D02D25C7CB00E419EB /* managed_storage.json */; };
+		43FA36F12D25C7CB00E419EB /* dashboard.html in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36D12D25C7CB00E419EB /* dashboard.html */; };
+		43FA36F22D25C7CB00E419EB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36D22D25C7CB00E419EB /* README.md */; };
+		43FA36F32D25C7CB00E419EB /* img in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36D32D25C7CB00E419EB /* img */; };
+		43FA36F42D25C7CB00E419EB /* log.txt in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36D42D25C7CB00E419EB /* log.txt */; };
+		43FA36F52D25C7CB00E419EB /* strictblock.html in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36D52D25C7CB00E419EB /* strictblock.html */; };
+		43FA36F62D25C7CB00E419EB /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36D62D25C7CB00E419EB /* manifest.json */; };
+		43FA36F72D25C7CB00E419EB /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36D72D25C7CB00E419EB /* _locales */; };
+		43FA36F82D25C7CB00E419EB /* rulesets in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36D82D25C7CB00E419EB /* rulesets */; };
+		43FA36F92D25C7CB00E419EB /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36D92D25C7CB00E419EB /* LICENSE.txt */; };
+		43FA36FA2D25C7CB00E419EB /* report.html in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36DA2D25C7CB00E419EB /* report.html */; };
+		43FA36FB2D25C7CB00E419EB /* matched-rules.html in Resources */ = {isa = PBXBuildFile; fileRef = 43FA36DB2D25C7CB00E419EB /* matched-rules.html */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		43FA369E2D25C7C900E419EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 43FA366A2D25C7C400E419EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 43FA369B2D25C7C900E419EB;
+			remoteInfo = "uBOLite Extension (iOS)";
+		};
+		43FA36A82D25C7C900E419EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 43FA366A2D25C7C400E419EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 43FA36A52D25C7C900E419EB;
+			remoteInfo = "uBOLite Extension (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		43FA36C02D25C7C900E419EB /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				43FA369D2D25C7C900E419EB /* uBOLite Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43FA36C72D25C7C900E419EB /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				43FA36A72D25C7C900E419EB /* uBOLite Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		43FA36712D25C7C500E419EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = ../Base.lproj/Main.html; sourceTree = "<group>"; };
+		43FA36722D25C7C500E419EB /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		43FA36732D25C7C500E419EB /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
+		43FA36742D25C7C500E419EB /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
+		43FA36752D25C7C500E419EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		43FA36762D25C7C900E419EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		43FA36782D25C7C900E419EB /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		43FA367D2D25C7C900E419EB /* uBOLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uBOLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		43FA36802D25C7C900E419EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		43FA36822D25C7C900E419EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		43FA36852D25C7C900E419EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		43FA36882D25C7C900E419EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		43FA368A2D25C7C900E419EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43FA368F2D25C7C900E419EB /* uBOLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uBOLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		43FA36912D25C7C900E419EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		43FA36942D25C7C900E419EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		43FA36962D25C7C900E419EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43FA36972D25C7C900E419EB /* uBOLite.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = uBOLite.entitlements; sourceTree = "<group>"; };
+		43FA369C2D25C7C900E419EB /* uBOLite Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "uBOLite Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		43FA36A12D25C7C900E419EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43FA36A62D25C7C900E419EB /* uBOLite Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "uBOLite Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		43FA36AB2D25C7C900E419EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43FA36AC2D25C7C900E419EB /* uBOLite.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = uBOLite.entitlements; sourceTree = "<group>"; };
+		43FA36CC2D25C7CB00E419EB /* web_accessible_resources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = web_accessible_resources; path = Resources/web_accessible_resources; sourceTree = "<group>"; };
+		43FA36CD2D25C7CB00E419EB /* css */ = {isa = PBXFileReference; lastKnownFileType = folder; name = css; path = Resources/css; sourceTree = "<group>"; };
+		43FA36CE2D25C7CB00E419EB /* js */ = {isa = PBXFileReference; lastKnownFileType = folder; name = js; path = Resources/js; sourceTree = "<group>"; };
+		43FA36CF2D25C7CB00E419EB /* popup.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = popup.html; path = Resources/popup.html; sourceTree = "<group>"; };
+		43FA36D02D25C7CB00E419EB /* managed_storage.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = managed_storage.json; path = Resources/managed_storage.json; sourceTree = "<group>"; };
+		43FA36D12D25C7CB00E419EB /* dashboard.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = dashboard.html; path = Resources/dashboard.html; sourceTree = "<group>"; };
+		43FA36D22D25C7CB00E419EB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = Resources/README.md; sourceTree = "<group>"; };
+		43FA36D32D25C7CB00E419EB /* img */ = {isa = PBXFileReference; lastKnownFileType = folder; name = img; path = Resources/img; sourceTree = "<group>"; };
+		43FA36D42D25C7CB00E419EB /* log.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = log.txt; path = Resources/log.txt; sourceTree = "<group>"; };
+		43FA36D52D25C7CB00E419EB /* strictblock.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = strictblock.html; path = Resources/strictblock.html; sourceTree = "<group>"; };
+		43FA36D62D25C7CB00E419EB /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = Resources/manifest.json; sourceTree = "<group>"; };
+		43FA36D72D25C7CB00E419EB /* _locales */ = {isa = PBXFileReference; lastKnownFileType = folder; name = _locales; path = Resources/_locales; sourceTree = "<group>"; };
+		43FA36D82D25C7CB00E419EB /* rulesets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = rulesets; path = Resources/rulesets; sourceTree = "<group>"; };
+		43FA36D92D25C7CB00E419EB /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE.txt; path = Resources/LICENSE.txt; sourceTree = "<group>"; };
+		43FA36DA2D25C7CB00E419EB /* report.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = report.html; path = Resources/report.html; sourceTree = "<group>"; };
+		43FA36DB2D25C7CB00E419EB /* matched-rules.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = "matched-rules.html"; path = "Resources/matched-rules.html"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		43FA367A2D25C7C900E419EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43FA368C2D25C7C900E419EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43FA36992D25C7C900E419EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43FA36A32D25C7C900E419EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		43FA36692D25C7C400E419EB = {
+			isa = PBXGroup;
+			children = (
+				43FA366E2D25C7C500E419EB /* Shared (App) */,
+				43FA36772D25C7C900E419EB /* Shared (Extension) */,
+				43FA367F2D25C7C900E419EB /* iOS (App) */,
+				43FA36902D25C7C900E419EB /* macOS (App) */,
+				43FA36A02D25C7C900E419EB /* iOS (Extension) */,
+				43FA36AA2D25C7C900E419EB /* macOS (Extension) */,
+				43FA367E2D25C7C900E419EB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		43FA366E2D25C7C500E419EB /* Shared (App) */ = {
+			isa = PBXGroup;
+			children = (
+				43FA36752D25C7C500E419EB /* ViewController.swift */,
+				43FA36762D25C7C900E419EB /* Assets.xcassets */,
+				43FA366F2D25C7C500E419EB /* Resources */,
+			);
+			path = "Shared (App)";
+			sourceTree = "<group>";
+		};
+		43FA366F2D25C7C500E419EB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				43FA36702D25C7C500E419EB /* Main.html */,
+				43FA36722D25C7C500E419EB /* Icon.png */,
+				43FA36732D25C7C500E419EB /* Style.css */,
+				43FA36742D25C7C500E419EB /* Script.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		43FA36772D25C7C900E419EB /* Shared (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				43FA36CB2D25C7CA00E419EB /* Resources */,
+				43FA36782D25C7C900E419EB /* SafariWebExtensionHandler.swift */,
+			);
+			path = "Shared (Extension)";
+			sourceTree = "<group>";
+		};
+		43FA367E2D25C7C900E419EB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				43FA367D2D25C7C900E419EB /* uBOLite.app */,
+				43FA368F2D25C7C900E419EB /* uBOLite.app */,
+				43FA369C2D25C7C900E419EB /* uBOLite Extension.appex */,
+				43FA36A62D25C7C900E419EB /* uBOLite Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		43FA367F2D25C7C900E419EB /* iOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				43FA36802D25C7C900E419EB /* AppDelegate.swift */,
+				43FA36822D25C7C900E419EB /* SceneDelegate.swift */,
+				43FA36842D25C7C900E419EB /* LaunchScreen.storyboard */,
+				43FA36872D25C7C900E419EB /* Main.storyboard */,
+				43FA368A2D25C7C900E419EB /* Info.plist */,
+			);
+			path = "iOS (App)";
+			sourceTree = "<group>";
+		};
+		43FA36902D25C7C900E419EB /* macOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				43FA36912D25C7C900E419EB /* AppDelegate.swift */,
+				43FA36932D25C7C900E419EB /* Main.storyboard */,
+				43FA36962D25C7C900E419EB /* Info.plist */,
+				43FA36972D25C7C900E419EB /* uBOLite.entitlements */,
+			);
+			path = "macOS (App)";
+			sourceTree = "<group>";
+		};
+		43FA36A02D25C7C900E419EB /* iOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				43FA36A12D25C7C900E419EB /* Info.plist */,
+			);
+			path = "iOS (Extension)";
+			sourceTree = "<group>";
+		};
+		43FA36AA2D25C7C900E419EB /* macOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				43FA36AB2D25C7C900E419EB /* Info.plist */,
+				43FA36AC2D25C7C900E419EB /* uBOLite.entitlements */,
+			);
+			path = "macOS (Extension)";
+			sourceTree = "<group>";
+		};
+		43FA36CB2D25C7CA00E419EB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				43FA36CC2D25C7CB00E419EB /* web_accessible_resources */,
+				43FA36CD2D25C7CB00E419EB /* css */,
+				43FA36CE2D25C7CB00E419EB /* js */,
+				43FA36CF2D25C7CB00E419EB /* popup.html */,
+				43FA36D02D25C7CB00E419EB /* managed_storage.json */,
+				43FA36D12D25C7CB00E419EB /* dashboard.html */,
+				43FA36D22D25C7CB00E419EB /* README.md */,
+				43FA36D32D25C7CB00E419EB /* img */,
+				43FA36D42D25C7CB00E419EB /* log.txt */,
+				43FA36D52D25C7CB00E419EB /* strictblock.html */,
+				43FA36D62D25C7CB00E419EB /* manifest.json */,
+				43FA36D72D25C7CB00E419EB /* _locales */,
+				43FA36D82D25C7CB00E419EB /* rulesets */,
+				43FA36D92D25C7CB00E419EB /* LICENSE.txt */,
+				43FA36DA2D25C7CB00E419EB /* report.html */,
+				43FA36DB2D25C7CB00E419EB /* matched-rules.html */,
+			);
+			name = Resources;
+			path = "Shared (Extension)";
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		43FA367C2D25C7C900E419EB /* uBOLite (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43FA36C12D25C7C900E419EB /* Build configuration list for PBXNativeTarget "uBOLite (iOS)" */;
+			buildPhases = (
+				43FA36792D25C7C900E419EB /* Sources */,
+				43FA367A2D25C7C900E419EB /* Frameworks */,
+				43FA367B2D25C7C900E419EB /* Resources */,
+				43FA36C02D25C7C900E419EB /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				43FA369F2D25C7C900E419EB /* PBXTargetDependency */,
+			);
+			name = "uBOLite (iOS)";
+			productName = "uBOLite (iOS)";
+			productReference = 43FA367D2D25C7C900E419EB /* uBOLite.app */;
+			productType = "com.apple.product-type.application";
+		};
+		43FA368E2D25C7C900E419EB /* uBOLite (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43FA36C82D25C7C900E419EB /* Build configuration list for PBXNativeTarget "uBOLite (macOS)" */;
+			buildPhases = (
+				43FA368B2D25C7C900E419EB /* Sources */,
+				43FA368C2D25C7C900E419EB /* Frameworks */,
+				43FA368D2D25C7C900E419EB /* Resources */,
+				43FA36C72D25C7C900E419EB /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				43FA36A92D25C7C900E419EB /* PBXTargetDependency */,
+			);
+			name = "uBOLite (macOS)";
+			productName = "uBOLite (macOS)";
+			productReference = 43FA368F2D25C7C900E419EB /* uBOLite.app */;
+			productType = "com.apple.product-type.application";
+		};
+		43FA369B2D25C7C900E419EB /* uBOLite Extension (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43FA36BD2D25C7C900E419EB /* Build configuration list for PBXNativeTarget "uBOLite Extension (iOS)" */;
+			buildPhases = (
+				43FA36982D25C7C900E419EB /* Sources */,
+				43FA36992D25C7C900E419EB /* Frameworks */,
+				43FA369A2D25C7C900E419EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "uBOLite Extension (iOS)";
+			productName = "uBOLite Extension (iOS)";
+			productReference = 43FA369C2D25C7C900E419EB /* uBOLite Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		43FA36A52D25C7C900E419EB /* uBOLite Extension (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43FA36C42D25C7C900E419EB /* Build configuration list for PBXNativeTarget "uBOLite Extension (macOS)" */;
+			buildPhases = (
+				43FA36A22D25C7C900E419EB /* Sources */,
+				43FA36A32D25C7C900E419EB /* Frameworks */,
+				43FA36A42D25C7C900E419EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "uBOLite Extension (macOS)";
+			productName = "uBOLite Extension (macOS)";
+			productReference = 43FA36A62D25C7C900E419EB /* uBOLite Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		43FA366A2D25C7C400E419EB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					43FA367C2D25C7C900E419EB = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					43FA368E2D25C7C900E419EB = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					43FA369B2D25C7C900E419EB = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					43FA36A52D25C7C900E419EB = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = 43FA366D2D25C7C400E419EB /* Build configuration list for PBXProject "uBOLite" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 43FA36692D25C7C400E419EB;
+			productRefGroup = 43FA367E2D25C7C900E419EB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				43FA367C2D25C7C900E419EB /* uBOLite (iOS) */,
+				43FA368E2D25C7C900E419EB /* uBOLite (macOS) */,
+				43FA369B2D25C7C900E419EB /* uBOLite Extension (iOS) */,
+				43FA36A52D25C7C900E419EB /* uBOLite Extension (macOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		43FA367B2D25C7C900E419EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43FA36AF2D25C7C900E419EB /* Icon.png in Resources */,
+				43FA36862D25C7C900E419EB /* Base in Resources */,
+				43FA36AD2D25C7C900E419EB /* Base in Resources */,
+				43FA36B32D25C7C900E419EB /* Script.js in Resources */,
+				43FA36B72D25C7C900E419EB /* Assets.xcassets in Resources */,
+				43FA36892D25C7C900E419EB /* Base in Resources */,
+				43FA36B12D25C7C900E419EB /* Style.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43FA368D2D25C7C900E419EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43FA36B02D25C7C900E419EB /* Icon.png in Resources */,
+				43FA36B22D25C7C900E419EB /* Style.css in Resources */,
+				43FA36952D25C7C900E419EB /* Base in Resources */,
+				43FA36B42D25C7C900E419EB /* Script.js in Resources */,
+				43FA36B82D25C7C900E419EB /* Assets.xcassets in Resources */,
+				43FA36AE2D25C7C900E419EB /* Base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43FA369A2D25C7C900E419EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43FA36F82D25C7CB00E419EB /* rulesets in Resources */,
+				43FA36F32D25C7CB00E419EB /* img in Resources */,
+				43FA36ED2D25C7CB00E419EB /* css in Resources */,
+				43FA36FB2D25C7CB00E419EB /* matched-rules.html in Resources */,
+				43FA36EF2D25C7CB00E419EB /* popup.html in Resources */,
+				43FA36F52D25C7CB00E419EB /* strictblock.html in Resources */,
+				43FA36F42D25C7CB00E419EB /* log.txt in Resources */,
+				43FA36F92D25C7CB00E419EB /* LICENSE.txt in Resources */,
+				43FA36F62D25C7CB00E419EB /* manifest.json in Resources */,
+				43FA36F72D25C7CB00E419EB /* _locales in Resources */,
+				43FA36F02D25C7CB00E419EB /* managed_storage.json in Resources */,
+				43FA36F22D25C7CB00E419EB /* README.md in Resources */,
+				43FA36EE2D25C7CB00E419EB /* js in Resources */,
+				43FA36EC2D25C7CB00E419EB /* web_accessible_resources in Resources */,
+				43FA36FA2D25C7CB00E419EB /* report.html in Resources */,
+				43FA36F12D25C7CB00E419EB /* dashboard.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43FA36A42D25C7C900E419EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43FA36E82D25C7CB00E419EB /* rulesets in Resources */,
+				43FA36E32D25C7CB00E419EB /* img in Resources */,
+				43FA36DD2D25C7CB00E419EB /* css in Resources */,
+				43FA36EB2D25C7CB00E419EB /* matched-rules.html in Resources */,
+				43FA36DF2D25C7CB00E419EB /* popup.html in Resources */,
+				43FA36E52D25C7CB00E419EB /* strictblock.html in Resources */,
+				43FA36E42D25C7CB00E419EB /* log.txt in Resources */,
+				43FA36E92D25C7CB00E419EB /* LICENSE.txt in Resources */,
+				43FA36E62D25C7CB00E419EB /* manifest.json in Resources */,
+				43FA36E72D25C7CB00E419EB /* _locales in Resources */,
+				43FA36E02D25C7CB00E419EB /* managed_storage.json in Resources */,
+				43FA36E22D25C7CB00E419EB /* README.md in Resources */,
+				43FA36DE2D25C7CB00E419EB /* js in Resources */,
+				43FA36DC2D25C7CB00E419EB /* web_accessible_resources in Resources */,
+				43FA36EA2D25C7CB00E419EB /* report.html in Resources */,
+				43FA36E12D25C7CB00E419EB /* dashboard.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		43FA36792D25C7C900E419EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43FA36B52D25C7C900E419EB /* ViewController.swift in Sources */,
+				43FA36812D25C7C900E419EB /* AppDelegate.swift in Sources */,
+				43FA36832D25C7C900E419EB /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43FA368B2D25C7C900E419EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43FA36B62D25C7C900E419EB /* ViewController.swift in Sources */,
+				43FA36922D25C7C900E419EB /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43FA36982D25C7C900E419EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43FA36B92D25C7C900E419EB /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43FA36A22D25C7C900E419EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43FA36BA2D25C7C900E419EB /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		43FA369F2D25C7C900E419EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 43FA369B2D25C7C900E419EB /* uBOLite Extension (iOS) */;
+			targetProxy = 43FA369E2D25C7C900E419EB /* PBXContainerItemProxy */;
+		};
+		43FA36A92D25C7C900E419EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 43FA36A52D25C7C900E419EB /* uBOLite Extension (macOS) */;
+			targetProxy = 43FA36A82D25C7C900E419EB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		43FA36702D25C7C500E419EB /* Main.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43FA36712D25C7C500E419EB /* Base */,
+			);
+			name = Main.html;
+			sourceTree = "<group>";
+		};
+		43FA36842D25C7C900E419EB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43FA36852D25C7C900E419EB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		43FA36872D25C7C900E419EB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43FA36882D25C7C900E419EB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		43FA36932D25C7C900E419EB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43FA36942D25C7C900E419EB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		43FA36BB2D25C7C900E419EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		43FA36BC2D25C7C900E419EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		43FA36BE2D25C7C900E419EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "uBOLite Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.raymondhill.uBOLite.Extension;
+				PRODUCT_NAME = "uBOLite Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		43FA36BF2D25C7C900E419EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "uBOLite Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.raymondhill.uBOLite.Extension;
+				PRODUCT_NAME = "uBOLite Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		43FA36C22D25C7C900E419EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = uBOLite;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.raymondhill.uBOLite;
+				PRODUCT_NAME = uBOLite;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		43FA36C32D25C7C900E419EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = uBOLite;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.raymondhill.uBOLite;
+				PRODUCT_NAME = uBOLite;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		43FA36C52D25C7C900E419EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/uBOLite.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "uBOLite Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.raymondhill.uBOLite.Extension;
+				PRODUCT_NAME = "uBOLite Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		43FA36C62D25C7C900E419EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/uBOLite.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "uBOLite Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.raymondhill.uBOLite.Extension;
+				PRODUCT_NAME = "uBOLite Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		43FA36C92D25C7C900E419EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "macOS (App)/uBOLite.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = uBOLite;
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.raymondhill.uBOLite;
+				PRODUCT_NAME = uBOLite;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		43FA36CA2D25C7C900E419EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "macOS (App)/uBOLite.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = uBOLite;
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.raymondhill.uBOLite;
+				PRODUCT_NAME = uBOLite;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		43FA366D2D25C7C400E419EB /* Build configuration list for PBXProject "uBOLite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43FA36BB2D25C7C900E419EB /* Debug */,
+				43FA36BC2D25C7C900E419EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43FA36BD2D25C7C900E419EB /* Build configuration list for PBXNativeTarget "uBOLite Extension (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43FA36BE2D25C7C900E419EB /* Debug */,
+				43FA36BF2D25C7C900E419EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43FA36C12D25C7C900E419EB /* Build configuration list for PBXNativeTarget "uBOLite (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43FA36C22D25C7C900E419EB /* Debug */,
+				43FA36C32D25C7C900E419EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43FA36C42D25C7C900E419EB /* Build configuration list for PBXNativeTarget "uBOLite Extension (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43FA36C52D25C7C900E419EB /* Debug */,
+				43FA36C62D25C7C900E419EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43FA36C82D25C7C900E419EB /* Build configuration list for PBXNativeTarget "uBOLite (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43FA36C92D25C7C900E419EB /* Debug */,
+				43FA36CA2D25C7C900E419EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 43FA366A2D25C7C400E419EB /* Project object */;
+}

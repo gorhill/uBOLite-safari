@@ -1,0 +1,282 @@
+{
+  "extName": {
+    "message": "uBlock Origin Lite",
+    "description": "extension name."
+  },
+  "extShortDesc": {
+    "message": "Õigustevaba sisublokeerija. Blokeerib reklaamid, jälitajad, kaevandajad ja teised kohe pärast paigaldust.",
+    "description": "this will be in the Chrome web store: must be 132 characters or less"
+  },
+  "perRulesetStats": {
+    "message": "{{ruleCount}} reeglit, konverteeritud {{filterCount}} võrgufiltrist",
+    "description": "Appears aside each filter list in the _3rd-party filters_ pane"
+  },
+  "dashboardName": {
+    "message": "uBO Lite — Töölaud",
+    "description": "English: uBO Lite — Dashboard"
+  },
+  "settingsPageName": {
+    "message": "Sätted",
+    "description": "appears as tab name in dashboard"
+  },
+  "aboutPageName": {
+    "message": "Teave",
+    "description": "appears as tab name in dashboard"
+  },
+  "aboutPrivacyPolicy": {
+    "message": "Privaatsusteatis",
+    "description": "Link to privacy policy on GitHub (English)"
+  },
+  "popupFilteringModeLabel": {
+    "message": "filtreerimisrežiim",
+    "description": "Label in the popup panel for the current filtering mode"
+  },
+  "popupTipReport": {
+    "message": "Teavita veast selle veebilehega",
+    "description": "Tooltip used for the 'chat' icon in the panel"
+  },
+  "popupTipDashboard": {
+    "message": "Ava töölaud",
+    "description": "English: Click to open the dashboard"
+  },
+  "popupMoreButton": {
+    "message": "Rohkem",
+    "description": "Label to be used to show popup panel sections"
+  },
+  "popupLessButton": {
+    "message": "Vähem",
+    "description": "Label to be used to hide popup panel sections"
+  },
+  "3pGroupDefault": {
+    "message": "Vaikimisi",
+    "description": "Header for a ruleset section in 'Filter lists pane'"
+  },
+  "3pGroupAds": {
+    "message": "Reklaamid",
+    "description": "Header for a ruleset section in 'Filter lists pane'"
+  },
+  "3pGroupPrivacy": {
+    "message": "Privaatsus",
+    "description": "Header for a ruleset section in 'Filter lists pane'"
+  },
+  "3pGroupMalware": {
+    "message": "Pahavara domeenid",
+    "description": "Header for a ruleset section in 'Filter lists pane'"
+  },
+  "3pGroupAnnoyances": {
+    "message": "Tüütused",
+    "description": "Header for a ruleset section in 'Filter lists pane'"
+  },
+  "3pGroupMisc": {
+    "message": "Varia",
+    "description": "Header for a ruleset section in 'Filter lists pane'"
+  },
+  "3pGroupRegions": {
+    "message": "Regioonid, keeled",
+    "description": "Header for a ruleset section in 'Filter lists pane'"
+  },
+  "aboutChangelog": {
+    "message": "Muudatuste logi",
+    "description": ""
+  },
+  "aboutCode": {
+    "message": "Lähtekood (GPLv3)",
+    "description": "English: Source code (GPLv3)"
+  },
+  "aboutContributors": {
+    "message": "Toetajad",
+    "description": "English: Contributors"
+  },
+  "aboutSourceCode": {
+    "message": "Lähtekood",
+    "description": "Link text to source code repo"
+  },
+  "aboutTranslations": {
+    "message": "Tõlked",
+    "description": "Link text to translations repo"
+  },
+  "aboutFilterLists": {
+    "message": "Filtriloendid",
+    "description": "Link text to uBO's own filter lists repo"
+  },
+  "aboutDependencies": {
+    "message": "Välised sõltuvused (ühilduvad GPLv3-ga):",
+    "description": "Shown in the About pane"
+  },
+  "supportS6H": {
+    "message": "Teavita filtri veast",
+    "description": "Header of 'Report a filter issue' section in Support pane"
+  },
+  "supportS3P1": {
+    "message": "Teavita vigasest filtrist kindlate veebilehtedega <span data-url=\"https://github.com/uBlockOrigin/uAssets/issues?q=is%3Aissue\">uBlockOrigin/uAssets</code> vigade andmebaasi kaudu</span>. <u>Nõuab GitHubi kontot.</u>",
+    "description": "First paragraph of 'Filter issues' section in Support pane"
+  },
+  "supportS6P1S1": {
+    "message": "Vabatahtlike koormamise vältimiseks samade teadetega veenduge, et keegi pole selle murega juba varem pöördunud.",
+    "description": "A paragraph in the filter issue reporter section"
+  },
+  "supportFindSpecificButton": {
+    "message": "Leidke sarnased aruanded",
+    "description": "A clickable link in the filter issue reporter section"
+  },
+  "supportS6URL": {
+    "message": "Veebilehe aadress:",
+    "description": "Label for the URL of the page"
+  },
+  "supportS6Select1": {
+    "message": "Veebileht...",
+    "description": "Label for widget to select type of issue"
+  },
+  "supportS6Select1Option0": {
+    "message": "-- Valige --",
+    "description": "An entry in the widget used to select the type of issue"
+  },
+  "supportS6Select1Option1": {
+    "message": "Näitab reklaame või reklaami kohatäitjaid",
+    "description": "An entry in the widget used to select the type of issue"
+  },
+  "supportS6Select1Option2": {
+    "message": "Omab ülekatteid või teisi nuhtlusi",
+    "description": "An entry in the widget used to select the type of issue"
+  },
+  "supportS6Select1Option3": {
+    "message": "Tuvastab uBO Lite'i",
+    "description": "An entry in the widget used to select the type of issue"
+  },
+  "supportS6Select1Option4": {
+    "message": "Omab privaatsusega seonduvaid probleeme",
+    "description": "An entry in the widget used to select the type of issue"
+  },
+  "supportS6Select1Option5": {
+    "message": "Streigib, kui uBO Lite on kasutusel",
+    "description": "An entry in the widget used to select the type of issue"
+  },
+  "supportS6Select1Option6": {
+    "message": "Avab soovimatuid kaarte või aknaid",
+    "description": "An entry in the widget used to select the type of issue"
+  },
+  "supportS6Select1Option7": {
+    "message": "Põhjustab pahavara, õngitsuskirju",
+    "description": "An entry in the widget used to select the type of issue"
+  },
+  "supportS6Checkbox1": {
+    "message": "Märgi veebileht kui „NSFW” (<a href=\"https://wikipedia.org/wiki/Not_safe_for_work\">„Ohtlik”</a>)",
+    "description": "A checkbox to use for NSFW sites"
+  },
+  "supportReportSpecificButton": {
+    "message": "Loo uus aruanne",
+    "description": "Text for button which open an external webpage in Support pane"
+  },
+  "firstRunSectionLabel": {
+    "message": "Tere tulemast",
+    "description": "The header text for the welcome message section"
+  },
+  "firstRunDescription": {
+    "message": "Olete paigaldanud uBO Lite'i. Nüüd valige kõigil veebilehtedel kasutatav üldine filtreerimisrežiim.\n\nTavaliselt kehtib <em>Põhiline</em> režiim, kuna see ei vaja andmete lugemise ja muutmise luba. uBO Lite'i usaldamisel saate sel lubada andmeid lugeda ja muuta kõigil veebilehtedel, et neid saaks vaikimisi filtreerida põhjalikumalt.",
+    "description": "Descriptive text shown at first install time only "
+  },
+  "defaultFilteringModeSectionLabel": {
+    "message": "Tavaline filtreerimisrežiim",
+    "description": "The header text for the default filtering mode section"
+  },
+  "defaultFilteringModeDescription": {
+    "message": "Tavalise filtreerimisrežiimi asemel kasutatakse vajadusel veebilehepõhiseid filtreerimisrežiime. Saate veebilehte filtreerida kõige paremini toimiva režiimiga. Igal režiimil on omad eelised ja puudused.",
+    "description": "This describes the default filtering mode setting"
+  },
+  "filteringMode0Name": {
+    "message": "filtreerimine puudub",
+    "description": "Name of blocking mode 0"
+  },
+  "filteringMode1Name": {
+    "message": "põhiline",
+    "description": "Name of blocking mode 1"
+  },
+  "filteringMode2Name": {
+    "message": "optimaalne",
+    "description": "Name of blocking mode 2"
+  },
+  "filteringMode3Name": {
+    "message": "põhjalik",
+    "description": "Name of blocking mode 3"
+  },
+  "basicFilteringModeDescription": {
+    "message": "Interneti üldine filtreerimine valitud filtreerimisloenditega.\n\nPole vaja veebilehtede andmete lugemise ja muutmise luba.",
+    "description": "This describes the 'basic' filtering mode"
+  },
+  "optimalFilteringModeDescription": {
+    "message": "Interneti täpsem filtreerimine enda valitud filtreerimisloenditega.\n\nVajab veebilehtede andmete lugemise ja muutmise üldist luba.",
+    "description": "This describes the 'optimal' filtering mode"
+  },
+  "completeFilteringModeDescription": {
+    "message": "Interneti põhjalikum filtreerimine ja enda valitud filtreerimisloenditega täpsem ning üldisem filtreerimine.\n\nVajab kõikide veebilehtede andmete lugemise ja muutmise üldist luba.\n\nÜldine ja põhjalikum filtreerimine võib koormata veebilehe ressursse tavapärasest rohkem.",
+    "description": "This describes the 'complete' filtering mode"
+  },
+  "noFilteringModeDescription": {
+    "message": "Veebilehtede loend, kus filtreid ei kasutata.",
+    "description": "A short description for the editable field which lists trusted sites"
+  },
+  "noFilteringModePlaceholder": {
+    "message": "[ainult hostinimed]\nnäide.com\nmängud.näide\n...",
+    "description": "Default text for in edit field"
+  },
+  "behaviorSectionLabel": {
+    "message": "Käitumine",
+    "description": "The header text for the 'Behavior' section"
+  },
+  "autoReloadLabel": {
+    "message": "Leht laadib ise uuesti filtreerimisrežiimi muutmisel",
+    "description": "Label for a checkbox in the options page"
+  },
+  "showBlockedCountLabel": {
+    "message": "Kuva tööriistariba ikoonil blokeeritud elementide arv",
+    "description": "Label for a checkbox in the options page"
+  },
+  "enableStrictBlockLabel": {
+    "message": "Luba range tõkestamine",
+    "description": "Label for a checkbox in the options page"
+  },
+  "enableStrictBlockLegend": {
+    "message": "Kahtlastele veebilehtedele suunamist takistatakse ja pakutakse võimalust jätkamiseks.",
+    "description": "Label for a checkbox in the options page"
+  },
+  "findListsPlaceholder": {
+    "message": "Otsi nimekirju",
+    "description": "Placeholder for the input field used to find lists"
+  },
+  "strictblockTitle": {
+    "message": "Lehe sirvimine piiratud",
+    "description": "Webpage title for the strict-blocked page"
+  },
+  "strictblockSentence1": {
+    "message": "uBO Lite ennetas järgmise veebilehe laadimist:",
+    "description": "Sentence used in the strict-blocked page"
+  },
+  "strictblockReasonSentence1": {
+    "message": "Lehe avamine keelati {{listname}} tõttu.",
+    "description": "Text informing about what is causing the page to be blocked"
+  },
+  "strictblockRedirectSentence1": {
+    "message": "Keelatud leht üritab suunata teisele lehele. Jätkates nõustute avama {{url}}",
+    "description": "Text warning about an incoming redirect"
+  },
+  "strictblockNoParamsPrompt": {
+    "message": "ilma näitajateta",
+    "description": "Label to be used for the parameter-less URL"
+  },
+  "strictblockBack": {
+    "message": "Tagasi",
+    "description": "A button to go back to the previous webpage"
+  },
+  "strictblockClose": {
+    "message": "Sulge see aken",
+    "description": "A button to close the current tab"
+  },
+  "strictblockDontWarn": {
+    "message": "Edaspidi luba mul seda sirvida",
+    "description": "Label for checkbox in document-blocked page"
+  },
+  "strictblockProceed": {
+    "message": "Jätka",
+    "description": "A button to navigate to the blocked page"
+  }
+}
