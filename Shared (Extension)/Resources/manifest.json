@@ -299,6 +299,14 @@
     },
     {
       "resources": [
+        "/zapper-ui.html"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    },
+    {
+      "resources": [
         "/web_accessible_resources/noop.js",
         "/web_accessible_resources/google-ima.js",
         "/web_accessible_resources/noop.txt",

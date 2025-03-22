@@ -19,17 +19,20 @@
     Home: https://github.com/gorhill/uBlock
 */
 
-/* jshint esversion:11 */
-
-'use strict';
-
 import { dom } from './dom.js';
 
 /******************************************************************************/
 
-const mql = self.matchMedia('(prefers-color-scheme: dark)');
-const theme = mql instanceof Object && mql.matches === true
-    ? 'dark'
-    : 'light';
-dom.cl.toggle(dom.html, 'dark', theme === 'dark');
-dom.cl.toggle(dom.html, 'light', theme !== 'dark');
+{
+    const mql = self.matchMedia('(prefers-color-scheme: dark)');
+    const theme = mql instanceof Object && mql.matches === true
+        ? 'dark'
+        : 'light';
+    dom.cl.toggle(dom.html, 'dark', theme === 'dark');
+    dom.cl.toggle(dom.html, 'light', theme !== 'dark');
+}
+
+{
+    const mql = self.matchMedia('(hover: hover)');
+    dom.cl.toggle(dom.html, 'mobile', mql.matches !== true);
+}

@@ -121,7 +121,7 @@ export function urlSkip(url, blocked, steps, directive = {}) {
                 }
                 // URI component
                 if ( step === '-uricomponent' ) {
-                    urlout = self.decodeURIComponent(urlin);
+                    urlout = decodeURIComponent(urlin);
                     continue;
                 }
                 // Enable skip of blocked requests
@@ -157,10 +157,9 @@ export function urlSkip(url, blocked, steps, directive = {}) {
         const urlfinal = new URL(urlout);
         if ( urlfinal.protocol !== 'https:' ) {
             if ( urlfinal.protocol !== 'http:' ) { return; }
-            urlout = urlout.replace('http', 'https');
         }
         if ( blocked && redirectBlocked !== true ) { return; }
         return urlout;
-    } catch(x) {
+    } catch {
     }
 }

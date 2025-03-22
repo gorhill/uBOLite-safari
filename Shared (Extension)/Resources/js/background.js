@@ -46,6 +46,11 @@ import {
 } from './admin.js';
 
 import {
+    broadcastMessage,
+    hostnamesFromMatches,
+} from './utils.js';
+
+import {
     enableRulesets,
     excludeFromStrictBlock,
     getEnabledRulesetsDetails,
@@ -70,7 +75,6 @@ import {
     saveRulesetConfig,
 } from './config.js';
 
-import { broadcastMessage } from './utils.js';
 import { registerInjectables } from './scripting-manager.js';
 
 /******************************************************************************/
@@ -78,6 +82,8 @@ import { registerInjectables } from './scripting-manager.js';
 const UBOL_ORIGIN = runtime.getURL('').replace(/\/$/, '');
 
 const canShowBlockedCount = typeof dnr.setExtensionActionOptions === 'function';
+
+let pendingPermissionRequest;
 
 /******************************************************************************/
 
@@ -114,6 +120,30 @@ async function onPermissionsRemoved() {
     }
     registerInjectables();
     return true;
+}
+
+// https://github.com/uBlockOrigin/uBOL-home/issues/280
+async function onPermissionsAdded(permissions) {
+    const details = pendingPermissionRequest;
+    pendingPermissionRequest = undefined;
+    if ( details === undefined ) { return; }
+    const defaultMode = await getDefaultFilteringMode();
+    if ( defaultMode >= MODE_OPTIMAL ) { return; }
+    if ( Array.isArray(permissions.origins) === false ) { return; }
+    const hostnames = hostnamesFromMatches(permissions.origins);
+    if ( hostnames.includes(details.hostname) === false ) { return; }
+    const beforeLevel = await getFilteringMode(details.hostname);
+    if ( beforeLevel === details.afterLevel ) { return; }
+    const afterLevel = await setFilteringMode(details.hostname, details.afterLevel);
+    if ( afterLevel !== details.afterLevel ) { return; }
+    await registerInjectables();
+    if ( rulesetConfig.autoReload ) {
+        self.setTimeout(( ) => {
+            browser.tabs.update(details.tabId, {
+                url: details.url,
+            });
+        }, 437);
+    }
 }
 
 /******************************************************************************/
@@ -159,6 +189,20 @@ function onMessage(request, sender, callback) {
         const frameId = sender?.frameId ?? false;
         if ( tabId === false || frameId === false ) { return; }
         browser.scripting.insertCSS({
+            css: request.css,
+            origin: 'USER',
+            target: { tabId, frameIds: [ frameId ] },
+        }).catch(reason => {
+            console.log(reason);
+        });
+        return false;
+    }
+
+    case 'removeCSS': {
+        const tabId = sender?.tab?.id ?? false;
+        const frameId = sender?.frameId ?? false;
+        if ( tabId === false || frameId === false ) { return; }
+        browser.scripting.removeCSS({
             css: request.css,
             origin: 'USER',
             target: { tabId, frameIds: [ frameId ] },
@@ -312,6 +356,10 @@ function onMessage(request, sender, callback) {
         return true;
     }
 
+    case 'setPendingFilteringMode':
+        pendingPermissionRequest = request;
+        break;
+
     case 'getDefaultFilteringMode': {
         getDefaultFilteringMode().then(level => {
             callback(level);
@@ -380,6 +428,23 @@ function onMessage(request, sender, callback) {
 
 /******************************************************************************/
 
+function onCommand(command, tab) {
+    switch ( command ) {
+    case 'enter-zapper-mode': {
+        if ( browser.scripting === undefined ) { return; }
+        browser.scripting.executeScript({
+            files: [ '/js/scripting/zapper.js' ],
+            target: { tabId: tab.id },
+        });
+        break;
+    }
+    default:
+        break;
+    }
+}
+
+/******************************************************************************/
+
 async function start() {
     await loadRulesetConfig();
 
@@ -432,12 +497,6 @@ async function start() {
         });
     }
 
-    runtime.onMessage.addListener(onMessage);
-
-    browser.permissions.onRemoved.addListener(
-        ( ) => { onPermissionsRemoved(); }
-    );
-
     if ( process.firstRun ) {
         const enableOptimal = await hasOmnipotence();
         if ( enableOptimal ) {
@@ -465,22 +524,54 @@ async function start() {
     }
 }
 
-// https://github.com/uBlockOrigin/uBOL-home/issues/199
-// Force a restart of the extension once when an "internal error" occurs
-start().then(( ) => {
-    localRemove('goodStart');
-    return false;
-}).catch(reason => {
-    console.trace(reason);
-    if ( process.wakeupRun ) { return; }
-    return localRead('goodStart').then(goodStart => {
-        if ( goodStart === false ) {
-            localRemove('goodStart');
-            return false;
-        }
-        return localWrite('goodStart', false).then(( ) => true);
+/******************************************************************************/
+
+const isFullyInitialized = new Promise(resolve => {
+    // https://github.com/uBlockOrigin/uBOL-home/issues/199
+    // Force a restart of the extension once when an "internal error" occurs
+    start().then(( ) => {
+        localRemove('goodStart');
+        return false;
+    }).catch(reason => {
+        console.trace(reason);
+        if ( process.wakeupRun ) { return; }
+        return localRead('goodStart').then(goodStart => {
+            if ( goodStart === false ) {
+                localRemove('goodStart');
+                return false;
+            }
+            return localWrite('goodStart', false).then(( ) => true);
+        });
+    }).then(restart => {
+        if ( restart !== true ) { return; }
+        runtime.reload();
+    }).finally(( ) => {
+        resolve(true);
     });
-}).then(restart => {
-    if ( restart !== true ) { return; }
-    runtime.reload();
+});
+
+runtime.onMessage.addListener((request, sender, callback) => {
+    isFullyInitialized.then(( ) => {
+        const r = onMessage(request, sender, callback);
+        if ( r !== true ) { callback(); }
+    });
+    return true;
+});
+
+browser.permissions.onRemoved.addListener((...args) => {
+    isFullyInitialized.then(( ) => {
+        onPermissionsRemoved(...args);
+    });
+});
+
+browser.permissions.onAdded.addListener((...args) => {
+    isFullyInitialized.then(( ) => {
+        onPermissionsAdded(...args);
+    });
+});
+
+browser.commands.onCommand.addListener((...args) => {
+    isFullyInitialized.then(( ) => {
+        onCommand(...args);
+    });
 });

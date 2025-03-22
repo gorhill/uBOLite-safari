@@ -112,7 +112,7 @@
     "description": "First paragraph of 'Filter issues' section in Support pane"
   },
   "supportS6P1S1": {
-    "message": "Vabatahtlike koormamise vältimiseks samade teadetega veenduge, et keegi pole selle murega juba varem pöördunud.",
+    "message": "Vabatahtlike koormamise vältimiseks samade teadetega veenduge, et keegi pole selle murega juba varem pöördunud. <b>Märge!</b> Nupule klõpsamisega saadetakse GitHubile lehekülje aadress.",
     "description": "A paragraph in the filter issue reporter section"
   },
   "supportFindSpecificButton": {
@@ -278,5 +278,13 @@
   "strictblockProceed": {
     "message": "Jätka",
     "description": "A button to navigate to the blocked page"
+  },
+  "zapperTipEnter": {
+    "message": "Enter element zapper mode",
+    "description": "Tooltip for the button used to enter zapper mode"
+  },
+  "zapperTipQuit": {
+    "message": "Exit element zapper mode",
+    "description": "Tooltip for the button used to exit zapper mode"
   }
 }

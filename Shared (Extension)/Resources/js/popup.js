@@ -74,12 +74,22 @@ async function commitFilteringMode() {
     const afterLevel = parseInt(modeSlider.dataset.level, 10);
     const beforeLevel = parseInt(modeSlider.dataset.levelBefore, 10);
     if ( afterLevel > 1 ) {
+        if ( beforeLevel <= 1 ) {
+            sendMessage({
+                what: 'setPendingFilteringMode',
+                tabId: currentTab.id,
+                url: tabURL.href,
+                hostname: targetHostname,
+                beforeLevel,
+                afterLevel,
+            });
+        }
         let granted = false;
         try {
             granted = await browser.permissions.request({
                 origins: [ `*://*.${targetHostname}/*` ],
             });
-        } catch(ex) {
+        } catch {
         }
         if ( granted !== true ) {
             setFilteringMode(beforeLevel);
@@ -287,7 +297,7 @@ dom.on('[data-i18n-title="popupTipReport"]', 'click', ev => {
     let url;
     try {
         url = new URL(currentTab.url);
-    } catch(_) {
+    } catch {
     }
     if ( url === undefined ) { return; }
     const reportURL = new URL(runtime.getURL('/report.html'));
@@ -309,6 +319,17 @@ dom.on('[data-i18n-title="popupTipDashboard"]', 'click', ev => {
 
 /******************************************************************************/
 
+dom.on('#gotoZapper', 'click', ( ) => {
+    if ( browser.scripting === undefined ) { return; }
+    browser.scripting.executeScript({
+        files: [ '/js/scripting/zapper.js' ],
+        target: { tabId: currentTab.id },
+    });
+    self.close();
+});
+
+/******************************************************************************/
+
 async function init() {
     const [ tab ] = await browser.tabs.query({
         active: true,
@@ -325,7 +346,7 @@ async function init() {
             url = new URL(url.hash.slice(1));
         }
         tabURL.href = url.href || '';
-    } catch(ex) {
+    } catch {
     }
 
     if ( url !== undefined ) {
@@ -352,9 +373,10 @@ async function init() {
         isNaN(currentTab.id) === false
     );
 
-    dom.cl.toggle('#reportFilterIssue', 'enabled',
-        /^https?:\/\//.test(url?.href)
-    );
+    const isNetworkPage = url.protocol === 'http:' || url.protocol === 'https:';
+
+    dom.cl.toggle('#reportFilterIssue', 'enabled', isNetworkPage );
+    dom.cl.toggle('#gotoZapper', 'enabled', isNetworkPage);
 
     const parent = qs$('#rulesetStats');
     for ( const details of popupPanelData.rulesetDetails || [] ) {
@@ -393,7 +415,7 @@ async function init() {
 async function tryInit() {
     try {
         await init();
-    } catch(ex) {
+    } catch {
         setTimeout(tryInit, 100);
     }
 }

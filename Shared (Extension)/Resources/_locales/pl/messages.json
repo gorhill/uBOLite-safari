@@ -112,7 +112,7 @@
     "description": "First paragraph of 'Filter issues' section in Support pane"
   },
   "supportS6P1S1": {
-    "message": "Aby uniknąć obciążania wolontariuszy zduplikowanymi zgłoszeniami, sprawdź, czy problem nie został już zgłoszony.",
+    "message": "Sprawdź, czy problem nie został już zgłoszony, aby uniknąć obciążania wolontariuszy duplikatami raportów. <b>Uwaga:</b> kliknięcie przycisku spowoduje wysłanie źródła strony do serwisu GitHub.",
     "description": "A paragraph in the filter issue reporter section"
   },
   "supportFindSpecificButton": {
@@ -278,5 +278,13 @@
   "strictblockProceed": {
     "message": "Kontynuuj",
     "description": "A button to navigate to the blocked page"
+  },
+  "zapperTipEnter": {
+    "message": "Przejdź do trybu usuwania elementów",
+    "description": "Tooltip for the button used to enter zapper mode"
+  },
+  "zapperTipQuit": {
+    "message": "Wyjdź z trybu usuwania elementów",
+    "description": "Tooltip for the button used to exit zapper mode"
   }
 }

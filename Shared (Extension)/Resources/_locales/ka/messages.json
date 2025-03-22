@@ -112,7 +112,7 @@
     "description": "First paragraph of 'Filter issues' section in Support pane"
   },
   "supportS6P1S1": {
-    "message": "მოხალისეები რომ არ მოცდნენ ერთნაირი მოსხენებების ნახვით, გთოხვთ გადაამოწმოთ, უკვე ხომ არაა გაგზავნილი საჩივარი ამ ხარვეზზე.",
+    "message": "მოხალისეები რომ არ მოცდნენ ერთნაირი მოსხენებების გაცნობით, გთხოვთ გადაამოწმოთ, უკვე ხომ არაა გაგზავნილი საჩივარი ამ ხარვეზზე. <b>გაითვალისწინეთ:</b> ღილაკზე დაწკაპების შედეგად გვერდის მონაცემები გაიგზავნება GitHub-ზე.",
     "description": "A paragraph in the filter issue reporter section"
   },
   "supportFindSpecificButton": {
@@ -278,5 +278,13 @@
   "strictblockProceed": {
     "message": "გაგრძელება",
     "description": "A button to navigate to the blocked page"
+  },
+  "zapperTipEnter": {
+    "message": "Enter element zapper mode",
+    "description": "Tooltip for the button used to enter zapper mode"
+  },
+  "zapperTipQuit": {
+    "message": "Exit element zapper mode",
+    "description": "Tooltip for the button used to exit zapper mode"
   }
 }
