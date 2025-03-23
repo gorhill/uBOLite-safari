@@ -19,13 +19,7 @@
     Home: https://github.com/gorhill/uBlock
 */
 
-/* jshint esversion:11 */
-
-'use strict';
-
 // ruleset: mkd-0
-
-/******************************************************************************/
 
 // Important!
 // Isolate from global scope
@@ -33,16 +27,13 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\"#ablockercheck\",\"action\":[\"style\",\"display: block !important;\"]}"],["{\"selector\":\"body\",\"action\":[\"style\",\"background-image: none !important;\"]}"]];
-
-const hostnamesMap = new Map([["stream.mk",0],["sportski.mk",1]]);
-
-const entitiesMap = new Map(undefined);
-
-const exceptionsMap = new Map(undefined);
+const argsList = ["","{\"selector\":\"#ablockercheck\",\"action\":[\"style\",\"display: block !important;\"]}","{\"selector\":\"body\",\"action\":[\"style\",\"background-image: none !important;\"]}"];
+const argsSeqs = [0,1,2];
+const hostnamesMap = new Map([["stream.mk",1],["sportski.mk",2]]);
+const hasEntities = false;
 
 self.declarativeImports = self.declarativeImports || [];
-self.declarativeImports.push({ argsList, hostnamesMap, entitiesMap, exceptionsMap });
+self.declarativeImports.push({ argsList, argsSeqs, hostnamesMap, hasEntities });
 
 /******************************************************************************/
 

@@ -20,32 +20,13 @@
 
 */
 
-/* eslint-disable indent */
-
 // ruleset: default
-
-/******************************************************************************/
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(( ) => {
-
-/******************************************************************************/
-
-// Start of code to inject
-const uBOL_adjustSetTimeout = function() {
-
-const scriptletGlobals = {}; // eslint-disable-line
-
-const argsList = [["","10000"],["_0x","*"],["grecaptcha.ready","*"],["redirect","4000"],[],["dlw","40000"],["seconds"],["ez","*","0.02"],["/.?/","4000"],["run"],["disabled"],["","","0"],["tick"],["","","0.02"],["CountBack","990"],["notification_state","12000"],["/SplashScreen|BannerAd/"],["countdown","1000","0.02"],["/.?/","","0.02"],["contador","*","0.001"],["","10000","0"],["downloadBtn","*"],["getlink","*","0.001"],["gotoo","*"],["value","*"],["/\\$\\('|ai-close/","*","0.001"],["div_form"],["","*","0.1"],["shortenbl"],["enbll"],["","1000"],["getElementById","*","0.001"],["downloadbtn"],["counter"],["readyToVote","12000"],["","7000","0"],["download","1100"],["countDown"],["countdown","10000"],["animation"],[".fadeIn()","3000"],["load_ads"],["_0x","15000"],["location.href","8000"],["aTagChange","12000"],["window.location.href","*"],["isScrexed","5000"],["() => n(t)","*"],["/__ez|window.location.href/","*"],["adFreePopup","15000","0.02"],["countdown"],["remaining","1000","0.001"],["show","4000"],["download_loading","*"],["submit","5000"],["fa-unlock","3000"],["setinteracted","2000"],["waiting","5000"],["[native code]","5000"],["shortConfig","15000"],["redirectpage","13500","0.001"],["countdown","","0.02"],["decodeURL","*"],["(!1)","*"],["bFired","*"],["setC"],["-1","*","0.001"],["total","1000","0.001"],["countdown","*","0.001"],["tick","1000","0.001"],["startDownload","8000"],["0x","*"],["countdown","*"],["download","1000","0.001"],["count"],["","10000","0.001"],["/outboundLink/"],["t++","500"],["isPeriodic","*"],["native code","15000","0.001"],["(null)","5000","0.001"],["/EzoIvent|TDELAY/","5000"],["b()","3000"],["ads","*"],["readyPromise","5000","0.001"],["taboola timeout","*","0.001"],["clearInterval(run)","5000","0.001"],["/TDELAY|EzoIvent/","*","0.001"],["isPeriodic","2200","0.001"],["isPeriodic","2300","0.001"],["[native code]","3000","0.001"],["i||(e(),i=!0)","2500","0.001"],["adConfig","*","0.001"],["[native code]","17000","0.001"]];
-
-const hostnamesMap = new Map([["spiele.bild.de",0],["gamefront.com",0],["moviepilot.de",1],["imgadult.com",3],["imgdrive.net",3],["imgtaxi.com",3],["imgwallet.com",3],["techmyntra.net",4],["globalbesthosting.com",4],["srt.am",4],["themeslide.com",4],["hubfiles.ws",4],["ausfile.com",4],["siriusfiles.com",4],["juegoviejo.com",4],["4share.vn",4],["lnk2.cc",4],["modagamers.com",4],["sofwaremania.blogspot.com",4],["memoriadatv.com",4],["dosya.co",4],["clipartmax.com",4],["jptorrent.org",4],["quizlet.com",4],["sourceforge.net",4],["juegos.eleconomista.es",4],["katfile.com",4],["1fichier.com",5],["indi-share.com",6],["megaupto.com",6],["onuploads.com",6],["playretrogames.com",7],["gsm1x.xyz",9],["top1iq.com",9],["youku.com",11],["acessarlink.online",11],["subdowns.com",11],["files.im",12],["dokumen.tips",13],["file.magiclen.org",13],["so1.asia",13],["streamvid.net",13],["lewdzone.com",14],["direct-link.net",15],["link-to.net",15],["gamearter.com",16],["dvdgayonline.com",17],["tudogamesbr.com",18],["investnewsbrazil.com",19],["subsvip.com",20],["enit.in",21],["junkyponk.com",22],["healthfirstweb.com",22],["vocalley.com",22],["yogablogfit.com",22],["howifx.com",22],["en.financerites.com",22],["mythvista.com",22],["livenewsflix.com",22],["cureclues.com",22],["apekite.com",22],["hipsonyc.com",23],["theforyou.in",23],["gyanitheme.com",23],["hostadviser.net",23],["bloggingaro.com",23],["fansonlinehub.com",24],["hotmediahub.com",24],["terabox.fun",24],["teralink.me",24],["terashare.me",24],["teraearn.com",24],["rawlazy.si",25],["appsbull.com",26],["diudemy.com",26],["maqal360.com",26],["intercelestial.com",27],["takez.co",[28,29]],["webzeni.com",30],["mooonten.com",31],["msic.site",31],["fx-22.com",31],["gold-24.net",31],["forexrw7.com",31],["uploadking.net",32],["advertisertape.com",33],["gettapeads.com",33],["streamnoads.com",33],["tapeadsenjoyer.com",33],["tapeadvertisement.com",33],["tapeantiads.com",33],["tapeblocker.com",33],["tapelovesads.org",33],["tapenoads.com",33],["tapewithadblock.org",33],["watchadsontape.com",33],["top.gg",34],["emulatorgames.net",35],["actionviewphotography.com",36],["exporntoons.net",36],["noodlemagazine.com",36],["whatisareverseauction.com",36],["sibtok.com",36],["ukdevilz.com",36],["tyler-brown.com",36],["aapks.com",37],["mcrypto.club",38],["codingnepalweb.com",39],["maxstream.video",40],["maxlinks.online",40],["embed.nana2play.com",41],["mgnet.xyz",42],["1bitspace.com",43],["ytsubme.com",44],["thecustomrom.com",45],["quizack.com",46],["media.cms.nova.cz",47],["yhocdata.com",48],["surfline.com",49],["downloadr.in",50],["downloadudemy.com",50],["xubster.com",51],["uploadcloud.pro",52],["romsgames.net",54],["romsget.io",54],["sub1s.com",55],["mboost.me",56],["bloggertheme.xyz",57],["atresplayer.com",58],["dktechnicalmate.com",60],["indiakablog.com",60],["recipahi.com",60],["20sfvn.com",61],["hi888.today",61],["oto5s.com",61],["w88.limo",61],["tralhasvarias.blogspot.com",62],["thestar.com",64],["present.rssing.com",65],["infidrive.net",66],["sethphat.com",67],["theapkfolder.com",68],["dfast.app",68],["upapk.io",69],["updown.link",70],["thehouseofportable.com",71],["an1.com",72],["voltupload.com",73],["pimpandhost.com",74],["101soundboards.com",75],["cyclingnews.com",76],["abcya.com",77],["watcho.com",78],["dailypost.co.uk",[79,80]],["dailystar.co.uk",[79,80]],["mirror.co.uk",[79,80]],["neurotray.com",81],["theonion.com",[82,83]],["20min.ch",84],["13tv.co.il",[85,86]],["tierlists.com",87],["wunderground.com",[88,89]],["standard.co.uk",[90,91]],["gameplayneo.com",92],["www.youtube.com",93]]);
-
-const entitiesMap = new Map([["slreamplay",2],["pouvideo",2],["povvideo",2],["povw1deo",2],["povwideo",2],["powv1deo",2],["powvibeo",2],["powvideo",2],["powvldeo",2],["bdupload",4],["9xupload",4],["grantorrent",4],["grantorrents",4],["hdfull",4],["pelispedia",4],["uptomega",6],["imgrock",8],["mixdrop",10],["mixdrp",10],["zeefiles",12],["financerites",21],["adblockeronstape",33],["adblockplustape",33],["adblocktape",33],["antiadtape",33],["noblocktape",33],["shavetape",33],["stapadblockuser",33],["strcloud",33],["streamadblockplus",33],["streamta",33],["streamtape",33],["streamtapeadblockuser",33],["strtape",33],["strtapeadblock",33],["adblockeronstreamtape",33],["mat6tube",36],["apkmody",53],["writedroid",59],["empire-anime",63],["empire-stream",63],["empire-streaming",63],["empire-streamz",63]]);
-
-const exceptionsMap = new Map([]);
+(function uBOL_adjustSetTimeout() {
 
 /******************************************************************************/
 
@@ -96,10 +77,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -177,7 +160,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -255,7 +238,7 @@ function safeSelf() {
             }
         };
         bc.postMessage('areyouready?');
-    } catch(_) {
+    } catch {
         safe.sendToLogger = (type, ...args) => {
             const text = safe.toLogText(type, ...args);
             if ( text === undefined ) { return; }
@@ -267,95 +250,83 @@ function safeSelf() {
 
 /******************************************************************************/
 
-const hnParts = [];
-try {
-    let origin = document.location.origin;
-    if ( origin === 'null' ) {
-        const origins = document.location.ancestorOrigins;
-        for ( let i = 0; i < origins.length; i++ ) {
-            origin = origins[i];
-            if ( origin !== 'null' ) { break; }
-        }
-    }
-    const pos = origin.lastIndexOf('://');
-    if ( pos === -1 ) { return; }
-    hnParts.push(...origin.slice(pos+3).split('.'));
-}
-catch(ex) { }
-const hnpartslen = hnParts.length;
-if ( hnpartslen === 0 ) { return; }
+const scriptletGlobals = {}; // eslint-disable-line
+const argsList = [["","10000"],["_0x","*"],["grecaptcha.ready","*"],["redirect","4000"],[],["dlw","40000"],["seconds"],["ez","*","0.02"],["/.?/","4000"],["run"],["disabled"],["tick"],["","","0.02"],["/SplashScreen|BannerAd/"],["countdown","1000","0.02"],["contador","*","0.001"],["","10000","0"],["/.?/","*","0.002"],["getlink","*","0.001"],["value","*"],["/\\$\\('|ai-close/","*","0.001"],["div_form"],["","*","0.1"],["shortenbl"],["enbll"],["","1000"],["getElementById","*","0.001"],["","*","0.02"],["","6000"],["downloadbtn"],["counter"],["readyToVote","12000"],["","7000","0"],["download","1100"],["countDown"],["countdown","10000"],["animation"],[".fadeIn()","3000"],["load_ads"],["_0x","15000"],["location.href","8000"],["aTagChange","12000"],["window.location.href","*"],["isScrexed","5000"],["() => n(t)","*"],["/__ez|window.location.href/","*"],["adFreePopup","15000","0.02"],["countdown"],["remaining","1000","0.001"],["show","4000"],["download_loading","*"],["submit","5000"],["fa-unlock","3000"],["setinteracted","2000"],["[native code]","5000"],["shortConfig","15000"],["redirectpage","13500","0.001"],["countdown","","0.02"],["decodeURL","*"],["(!1)","*"],["bFired","*"],["setC"],["-1","*","0.001"],["total","1000","0.001"],["countdown","*","0.001"],["tick","1000","0.001"],["startDownload","8000"],["0x","*"],["countdown","*"],["download","1000","0.001"],["count"],["","10000","0.001"],["CountBack","990"],["","","0"],["remaining","","0.02"],["/outboundLink/"],["t++","500"],["isPeriodic","*"],["native code","15000","0.001"],["(null)","5000","0.001"],["/EzoIvent|TDELAY/","5000"],["b()","3000"],["ads","*"],["readyPromise","5000","0.001"],["taboola timeout","*","0.001"],["clearInterval(run)","5000","0.001"],["/TDELAY|EzoIvent/","*","0.001"],["isPeriodic","2200","0.001"],["isPeriodic","2300","0.001"],["[native code]","3000","0.001"],["i||(e(),i=!0)","2500","0.001"],["adConfig","*","0.001"],["[native code]","17000","0.001"]];
+const hostnamesMap = new Map([["spiele.bild.de",0],["gamefront.com",0],["moviepilot.de",1],["slreamplay.*",2],["pouvideo.*",2],["povvideo.*",2],["povw1deo.*",2],["povwideo.*",2],["powv1deo.*",2],["powvibeo.*",2],["powvideo.*",2],["powvldeo.*",2],["imgadult.com",3],["imgdrive.net",3],["imgtaxi.com",3],["imgwallet.com",3],["bdupload.*",4],["techmyntra.net",4],["srt.am",4],["themeslide.com",4],["9xupload.*",4],["grantorrent.*",4],["grantorrents.*",4],["hubfiles.ws",4],["ausfile.com",4],["siriusfiles.com",4],["hdfull.*",4],["juegoviejo.com",4],["4share.vn",4],["lnk2.cc",4],["pelispedia.*",4],["modagamers.com",4],["sofwaremania.blogspot.com",4],["memoriadatv.com",4],["dosya.co",4],["clipartmax.com",4],["jptorrent.org",4],["quizlet.com",4],["sourceforge.net",4],["juegos.eleconomista.es",4],["katfile.com",4],["1fichier.com",5],["indi-share.com",6],["uptomega.*",6],["megaupto.com",6],["onuploads.com",6],["playretrogames.com",7],["imgrock.*",8],["gsm1x.xyz",9],["top1iq.com",9],["mixdrop.*",10],["mixdrp.*",10],["zeefiles.*",11],["files.im",11],["dokumen.tips",12],["file.magiclen.org",12],["so1.asia",12],["streamvid.net",12],["gamearter.com",13],["dvdgayonline.com",14],["investnewsbrazil.com",15],["subsvip.com",16],["call-bomber.info",17],["kajernews.com",17],["vyaapaarguru.in",17],["junkyponk.com",18],["healthfirstweb.com",18],["vocalley.com",18],["yogablogfit.com",18],["howifx.com",18],["en.financerites.com",18],["mythvista.com",18],["livenewsflix.com",18],["cureclues.com",18],["apekite.com",18],["fansonlinehub.com",19],["hotmediahub.com",19],["terabox.fun",19],["teralink.me",19],["terashare.me",19],["teraearn.com",19],["rawlazy.si",20],["appsbull.com",21],["diudemy.com",21],["maqal360.com",21],["intercelestial.com",22],["takez.co",[23,24]],["webzeni.com",25],["whatgame.xyz",26],["mooonten.com",26],["msic.site",26],["fx-22.com",26],["gold-24.net",26],["forexrw7.com",26],["rfiql.com",27],["gujjukhabar.in",27],["smartfeecalculator.com",27],["djxmaza.in",27],["thecubexguide.com",27],["jytechs.in",27],["go.shortnest.com",28],["uploadking.net",29],["adblockeronstape.*",30],["adblockplustape.*",30],["adblocktape.*",30],["advertisertape.com",30],["antiadtape.*",30],["gettapeads.com",30],["noblocktape.*",30],["shavetape.*",30],["stapadblockuser.*",30],["strcloud.*",30],["streamadblockplus.*",30],["streamnoads.com",30],["streamta.*",30],["streamtape.*",30],["streamtapeadblockuser.*",30],["strtape.*",30],["strtapeadblock.*",30],["tapeadsenjoyer.com",30],["tapeadvertisement.com",30],["tapeantiads.com",30],["tapeblocker.com",30],["tapelovesads.org",30],["tapenoads.com",30],["tapewithadblock.org",30],["watchadsontape.com",30],["adblockeronstreamtape.*",30],["top.gg",31],["emulatorgames.net",32],["actionviewphotography.com",33],["exporntoons.net",33],["mat6tube.*",33],["noodlemagazine.com",33],["whatisareverseauction.com",33],["sibtok.com",33],["ukdevilz.com",33],["tyler-brown.com",33],["aapks.com",34],["mcrypto.club",35],["codingnepalweb.com",36],["maxstream.video",37],["embed.nana2play.com",38],["mgnet.xyz",39],["1bitspace.com",40],["ytsubme.com",41],["thecustomrom.com",42],["quizack.com",43],["media.cms.nova.cz",44],["yhocdata.com",45],["surfline.com",46],["downloadr.in",47],["downloadudemy.com",47],["xubster.com",48],["uploadcloud.pro",49],["apkmody.*",50],["romsgames.net",51],["romsget.io",51],["sub1s.com",52],["mboost.me",53],["atresplayer.com",54],["writedroid.*",55],["dktechnicalmate.com",56],["indiakablog.com",56],["recipahi.com",56],["20sfvn.com",57],["hi888.today",57],["oto5s.com",57],["w88.limo",57],["tralhasvarias.blogspot.com",58],["empire-anime.*",59],["empire-streaming.*",59],["empire-anime.com",59],["empire-streamz.fr",59],["empire-stream.*",59],["thestar.com",60],["present.rssing.com",61],["infidrive.net",62],["sethphat.com",63],["theapkfolder.com",64],["dfast.app",64],["upapk.io",65],["updown.link",66],["thehouseofportable.com",67],["an1.com",68],["voltupload.com",69],["pimpandhost.com",70],["101soundboards.com",71],["lewdzone.com",72],["youku.com",73],["transfaze.com",74],["cyclingnews.com",75],["abcya.com",76],["watcho.com",77],["dailypost.co.uk",[78,79]],["dailystar.co.uk",[78,79]],["mirror.co.uk",[78,79]],["neurotray.com",80],["theonion.com",[81,82]],["20min.ch",83],["13tv.co.il",[84,85]],["tierlists.com",86],["wunderground.com",[87,88]],["standard.co.uk",[89,90]],["gameplayneo.com",91],["www.youtube.com",92]]);
+const exceptionsMap = new Map([]);
+const hasEntities = true;
+const hasAncestors = false;
 
-const todoIndices = new Set();
-const tonotdoIndices = [];
-
-// Exceptions
-if ( exceptionsMap.size !== 0 ) {
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        const excepted = exceptionsMap.get(hn);
-        if ( excepted ) { tonotdoIndices.push(...excepted); }
-    }
-    exceptionsMap.clear();
-}
-
-// Hostname-based
-if ( hostnamesMap.size !== 0 ) {
-    const collectArgIndices = hn => {
-        let argsIndices = hostnamesMap.get(hn);
-        if ( argsIndices === undefined ) { return; }
-        if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
+const collectArgIndices = (hn, map, out) => {
+    let argsIndices = map.get(hn);
+    if ( argsIndices === undefined ) { return; }
+    if ( typeof argsIndices !== 'number' ) {
         for ( const argsIndex of argsIndices ) {
-            if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-            todoIndices.add(argsIndex);
+            out.add(argsIndex);
         }
-    };
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        collectArgIndices(hn);
+    } else {
+        out.add(argsIndices);
     }
-    collectArgIndices('*');
-    hostnamesMap.clear();
-}
+};
 
-// Entity-based
-if ( entitiesMap.size !== 0 ) {
-    const n = hnpartslen - 1;
-    for ( let i = 0; i < n; i++ ) {
-        for ( let j = n; j > i; j-- ) {
-            const en = hnParts.slice(i,j).join('.');
-            let argsIndices = entitiesMap.get(en);
-            if ( argsIndices === undefined ) { continue; }
-            if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
-            for ( const argsIndex of argsIndices ) {
-                if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-                todoIndices.add(argsIndex);
+const indicesFromHostname = (hostname, suffix = '') => {
+    const hnParts = hostname.split('.');
+    const hnpartslen = hnParts.length;
+    if ( hnpartslen === 0 ) { return; }
+    for ( let i = 0; i < hnpartslen; i++ ) {
+        const hn = `${hnParts.slice(i).join('.')}${suffix}`;
+        collectArgIndices(hn, hostnamesMap, todoIndices);
+        collectArgIndices(hn, exceptionsMap, tonotdoIndices);
+    }
+    if ( hasEntities ) {
+        const n = hnpartslen - 1;
+        for ( let i = 0; i < n; i++ ) {
+            for ( let j = n; j > i; j-- ) {
+                const en = `${hnParts.slice(i,j).join('.')}.*${suffix}`;
+                collectArgIndices(en, hostnamesMap, todoIndices);
+                collectArgIndices(en, exceptionsMap, tonotdoIndices);
             }
         }
     }
-    entitiesMap.clear();
+};
+
+const entries = (( ) => {
+    const docloc = document.location;
+    const origins = [ docloc.origin ];
+    if ( docloc.ancestorOrigins ) {
+        origins.push(...docloc.ancestorOrigins);
+    }
+    return origins.map((origin, i) => {
+        const beg = origin.lastIndexOf('://');
+        if ( beg === -1 ) { return; }
+        const hn = origin.slice(beg+3)
+        const end = hn.indexOf(':');
+        return { hn: end === -1 ? hn : hn.slice(0, end), i };
+    }).filter(a => a !== undefined);
+})();
+if ( entries.length === 0 ) { return; }
+
+const todoIndices = new Set();
+const tonotdoIndices = new Set();
+
+indicesFromHostname(entries[0].hn);
+if ( hasAncestors ) {
+    for ( const entry of entries ) {
+        if ( entry.i === 0 ) { continue; }
+        indicesFromHostname(entry.hn, '>>');
+    }
 }
 
 // Apply scriplets
 for ( const i of todoIndices ) {
+    if ( tonotdoIndices.has(i) ) { continue; }
     try { adjustSetTimeout(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
-argsList.length = 0;
-
-/******************************************************************************/
-
-};
-// End of code to inject
-
-/******************************************************************************/
-
-uBOL_adjustSetTimeout();
 
 /******************************************************************************/
 
 // End of local scope
 })();
-
-/******************************************************************************/
 
 void 0;

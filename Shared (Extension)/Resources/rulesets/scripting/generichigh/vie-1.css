@@ -24,6 +24,8 @@
 [class^="adHTML"],
 [href^="http://www.sbbanner.com/"],
 [href^="https://www.i9017.com/"],
-[id^="bn_bottom_fixed_"] {
+[id^="adm-slot"],
+[id^="bn_bottom_fixed_"],
+div[style="position: fixed; inset: 0px; z-index: 2147483647; pointer-events: auto;"] {
     display: none !important;
 }

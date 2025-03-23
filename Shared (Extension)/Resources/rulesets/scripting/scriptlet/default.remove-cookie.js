@@ -20,32 +20,13 @@
 
 */
 
-/* eslint-disable indent */
-
 // ruleset: default
-
-/******************************************************************************/
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(( ) => {
-
-/******************************************************************************/
-
-// Start of code to inject
-const uBOL_removeCookie = function() {
-
-const scriptletGlobals = {}; // eslint-disable-line
-
-const argsList = [["da325"],["ref_cookie"],["/^/"],["PageCount"],[],["__adblocker"],["/vs|to|vs_spon|tgpOut|current_click/"],["ab"],["video_view_count"],["realm.cookiesAndJavascript"],["kt_qparams"],["kt_referer"],["kt_ips"],["blaize_tracking_id"],["akaclientip"],["hive_geoloc"],["MicrosoftApplicationsTelemetryDeviceId"],["MicrosoftApplicationsTelemetryFirstLaunchTime"],["/optimizelyEndUserId|s_fid|sc_tcr|s_cc/"],["/articlesRead|previousPage/"],["ahoy_visitor"],["ahoy_visit"],["/_alooma/"],["didomi_token"]];
-
-const hostnamesMap = new Map([["zootube1.com",0],["subdivx.com",1],["adultasianporn.com",2],["jetpunk.com",3],["skmedix.pl",4],["xxxxsx.com",4],["blick.ch",5],["sexvideos.host",6],["nexusmods.com",7],["buktube.com",8],["fullxh.com",8],["galleryxh.site",8],["megaxh.com",8],["movingxh.world",8],["seexh.com",8],["unlockxh4.com",8],["valuexh.life",8],["xhaccess.com",8],["xhadult2.com",8],["xhadult3.com",8],["xhadult4.com",8],["xhadult5.com",8],["xhamster46.com",8],["xhamsterporno.mx",8],["xhbig.com",8],["xhbranch5.com",8],["xhchannel.com",8],["xhchannel2.com",8],["xhdate.world",8],["xhday.com",8],["xhday1.com",8],["xhlease.world",8],["xhmoon5.com",8],["xhofficial.com",8],["xhopen.com",8],["xhplanet1.com",8],["xhplanet2.com",8],["xhreal2.com",8],["xhreal3.com",8],["xhspot.com",8],["xhtab2.com",8],["xhtab4.com",8],["xhtotal.com",8],["xhtree.com",8],["xhvictory.com",8],["xhwebsite.com",8],["xhwebsite2.com",8],["xhwebsite5.com",8],["xhwide1.com",8],["xhwide2.com",8],["xhwide5.com",8],["xhxh3.xyz",8],["beaumontenterprise.com",9],["chron.com",9],["ctinsider.com",9],["ctpost.com",9],["expressnews.com",9],["houstonchronicle.com",9],["lmtonline.com",9],["middletownpress.com",9],["mrt.com",9],["newstimes.com",9],["nhregister.com",9],["registercitizen.com",9],["sfchronicle.com",9],["stamfordadvocate.com",9],["thehour.com",9],["timesunion.com",9],["heavyfetish.com",[10,11,12]],["severeporn.com",12],["watchporn.to",12],["columbian.com",13],["nypost.com",13],["pagesix.com",13],["factable.com",[14,15]],["bing.com",16],["msn.com",16],["web.skype.com",[16,17]],["1und1.de",18],["androidpolice.com",19],["makeuseof.com",19],["movieweb.com",19],["xda-developers.com",19],["dev.to",[20,21]],["vpnmentor.com",22],["tv5mondeplus.com",23]]);
-
-const entitiesMap = new Map([["hamsterix",8],["xhamster",8],["xhamster1",8],["xhamster10",8],["xhamster11",8],["xhamster12",8],["xhamster13",8],["xhamster14",8],["xhamster15",8],["xhamster16",8],["xhamster17",8],["xhamster18",8],["xhamster19",8],["xhamster20",8],["xhamster2",8],["xhamster3",8],["xhamster4",8],["xhamster42",8],["xhamster5",8],["xhamster7",8],["xhamster8",8]]);
-
-const exceptionsMap = new Map([]);
+(function uBOL_removeCookie() {
 
 /******************************************************************************/
 
@@ -130,10 +111,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -211,7 +194,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -289,7 +272,7 @@ function safeSelf() {
             }
         };
         bc.postMessage('areyouready?');
-    } catch(_) {
+    } catch {
         safe.sendToLogger = (type, ...args) => {
             const text = safe.toLogText(type, ...args);
             if ( text === undefined ) { return; }
@@ -301,95 +284,83 @@ function safeSelf() {
 
 /******************************************************************************/
 
-const hnParts = [];
-try {
-    let origin = document.location.origin;
-    if ( origin === 'null' ) {
-        const origins = document.location.ancestorOrigins;
-        for ( let i = 0; i < origins.length; i++ ) {
-            origin = origins[i];
-            if ( origin !== 'null' ) { break; }
-        }
-    }
-    const pos = origin.lastIndexOf('://');
-    if ( pos === -1 ) { return; }
-    hnParts.push(...origin.slice(pos+3).split('.'));
-}
-catch(ex) { }
-const hnpartslen = hnParts.length;
-if ( hnpartslen === 0 ) { return; }
+const scriptletGlobals = {}; // eslint-disable-line
+const argsList = [["da325"],["ref_cookie"],["/^/"],["PageCount"],["__adblocker"],[],["qusnyQusny"],["/vs|to|vs_spon|tgpOut|current_click/"],["ab"],["video_view_count"],["/__adblocker|ccuid/"],["realm.cookiesAndJavascript"],["kt_qparams"],["kt_referer"],["blaize_tracking_id"],["akaclientip"],["hive_geoloc"],["MicrosoftApplicationsTelemetryDeviceId"],["MicrosoftApplicationsTelemetryFirstLaunchTime"],["/optimizelyEndUserId|s_fid|sc_tcr|s_cc/"],["_boundless_tracking_id"],["/LithiumVisitor|ValueSurveyVisitorCount|VISITOR_BEACON/"],["kt_ips"],["/^(_pc|cX_)/","when","scroll keydown"],["/^AMCVS?_/"],["disqus_unique","when","scroll keydown"],["/_shopify_(y|sa_)/","when","scroll keydown"],["/ana_client_session_id|wshh_uid/"],["/articlesRead|previousPage/"],["ahoy_visitor"],["ahoy_visit"],["/_alooma/"],["/^DEVICEFP/"],["/^_pk_/"],["_pc_private"],["_vid_t"],["/^(_tccl_|_scc_session|fpfid)/"],["didomi_token"]];
+const hostnamesMap = new Map([["zootube1.com",0],["subdivx.com",1],["adultasianporn.com",2],["jetpunk.com",3],["blick.ch",4],["xxxxsx.com",5],["seznam.cz",6],["sexvideos.host",7],["nexusmods.com",8],["fullxh.com",9],["galleryxh.site",9],["megaxh.com",9],["movingxh.world",9],["seexh.com",9],["unlockxh4.com",9],["valuexh.life",9],["xhaccess.com",9],["xhadult2.com",9],["xhadult3.com",9],["xhadult4.com",9],["xhadult5.com",9],["xhamster.*",9],["xhamster1.*",9],["xhamster10.*",9],["xhamster11.*",9],["xhamster12.*",9],["xhamster13.*",9],["xhamster14.*",9],["xhamster15.*",9],["xhamster16.*",9],["xhamster17.*",9],["xhamster18.*",9],["xhamster19.*",9],["xhamster20.*",9],["xhamster2.*",9],["xhamster3.*",9],["xhamster4.*",9],["xhamster42.*",9],["xhamster46.com",9],["xhamster5.*",9],["xhamster7.*",9],["xhamster8.*",9],["xhamsterporno.mx",9],["xhbig.com",9],["xhbranch5.com",9],["xhchannel.com",9],["xhdate.world",9],["xhday.com",9],["xhday1.com",9],["xhlease.world",9],["xhmoon5.com",9],["xhofficial.com",9],["xhopen.com",9],["xhplanet1.com",9],["xhplanet2.com",9],["xhreal2.com",9],["xhreal3.com",9],["xhspot.com",9],["xhtotal.com",9],["xhtree.com",9],["xhvictory.com",9],["xhwebsite.com",9],["xhwebsite2.com",9],["xhwebsite5.com",9],["xhwide1.com",9],["xhwide2.com",9],["xhwide5.com",9],["laurelberninteriors.com",10],["beaumontenterprise.com",11],["chron.com",11],["ctinsider.com",11],["ctpost.com",11],["expressnews.com",11],["houstonchronicle.com",11],["lmtonline.com",11],["middletownpress.com",11],["mrt.com",11],["newstimes.com",11],["nhregister.com",11],["registercitizen.com",11],["sfchronicle.com",11],["stamfordadvocate.com",11],["thehour.com",11],["timesunion.com",11],["heavyfetish.com",[12,13,22]],["columbian.com",14],["nypost.com",14],["pagesix.com",14],["factable.com",[15,16]],["bing.com",17],["msn.com",17],["web.skype.com",[17,18]],["1und1.de",19],["boundless.com",20],["community.fortinet.com",21],["camhub.cc",22],["kissjav.*",22],["severeporn.com",22],["shemale6.com",22],["watchporn.to",22],["bizjournals.com",[23,24]],["businessinsider.de",23],["computerbild.de",23],["disqus.com",25],["ozlosleep.com",26],["worldstar.com",27],["androidpolice.com",28],["makeuseof.com",28],["movieweb.com",28],["xda-developers.com",28],["dev.to",[29,30]],["vpnmentor.com",31],["www.hoyolab.com",32],["www.hoyoverse.com",32],["liquipedia.net",33],["thehindu.com",34],["farmersjournal.ie",35],["souq-design.com",36],["tv5mondeplus.com",37]]);
+const exceptionsMap = new Map([]);
+const hasEntities = true;
+const hasAncestors = false;
 
-const todoIndices = new Set();
-const tonotdoIndices = [];
-
-// Exceptions
-if ( exceptionsMap.size !== 0 ) {
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        const excepted = exceptionsMap.get(hn);
-        if ( excepted ) { tonotdoIndices.push(...excepted); }
-    }
-    exceptionsMap.clear();
-}
-
-// Hostname-based
-if ( hostnamesMap.size !== 0 ) {
-    const collectArgIndices = hn => {
-        let argsIndices = hostnamesMap.get(hn);
-        if ( argsIndices === undefined ) { return; }
-        if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
+const collectArgIndices = (hn, map, out) => {
+    let argsIndices = map.get(hn);
+    if ( argsIndices === undefined ) { return; }
+    if ( typeof argsIndices !== 'number' ) {
         for ( const argsIndex of argsIndices ) {
-            if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-            todoIndices.add(argsIndex);
+            out.add(argsIndex);
         }
-    };
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        collectArgIndices(hn);
+    } else {
+        out.add(argsIndices);
     }
-    collectArgIndices('*');
-    hostnamesMap.clear();
-}
+};
 
-// Entity-based
-if ( entitiesMap.size !== 0 ) {
-    const n = hnpartslen - 1;
-    for ( let i = 0; i < n; i++ ) {
-        for ( let j = n; j > i; j-- ) {
-            const en = hnParts.slice(i,j).join('.');
-            let argsIndices = entitiesMap.get(en);
-            if ( argsIndices === undefined ) { continue; }
-            if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
-            for ( const argsIndex of argsIndices ) {
-                if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-                todoIndices.add(argsIndex);
+const indicesFromHostname = (hostname, suffix = '') => {
+    const hnParts = hostname.split('.');
+    const hnpartslen = hnParts.length;
+    if ( hnpartslen === 0 ) { return; }
+    for ( let i = 0; i < hnpartslen; i++ ) {
+        const hn = `${hnParts.slice(i).join('.')}${suffix}`;
+        collectArgIndices(hn, hostnamesMap, todoIndices);
+        collectArgIndices(hn, exceptionsMap, tonotdoIndices);
+    }
+    if ( hasEntities ) {
+        const n = hnpartslen - 1;
+        for ( let i = 0; i < n; i++ ) {
+            for ( let j = n; j > i; j-- ) {
+                const en = `${hnParts.slice(i,j).join('.')}.*${suffix}`;
+                collectArgIndices(en, hostnamesMap, todoIndices);
+                collectArgIndices(en, exceptionsMap, tonotdoIndices);
             }
         }
     }
-    entitiesMap.clear();
+};
+
+const entries = (( ) => {
+    const docloc = document.location;
+    const origins = [ docloc.origin ];
+    if ( docloc.ancestorOrigins ) {
+        origins.push(...docloc.ancestorOrigins);
+    }
+    return origins.map((origin, i) => {
+        const beg = origin.lastIndexOf('://');
+        if ( beg === -1 ) { return; }
+        const hn = origin.slice(beg+3)
+        const end = hn.indexOf(':');
+        return { hn: end === -1 ? hn : hn.slice(0, end), i };
+    }).filter(a => a !== undefined);
+})();
+if ( entries.length === 0 ) { return; }
+
+const todoIndices = new Set();
+const tonotdoIndices = new Set();
+
+indicesFromHostname(entries[0].hn);
+if ( hasAncestors ) {
+    for ( const entry of entries ) {
+        if ( entry.i === 0 ) { continue; }
+        indicesFromHostname(entry.hn, '>>');
+    }
 }
 
 // Apply scriplets
 for ( const i of todoIndices ) {
+    if ( tonotdoIndices.has(i) ) { continue; }
     try { removeCookie(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
-argsList.length = 0;
-
-/******************************************************************************/
-
-};
-// End of code to inject
-
-/******************************************************************************/
-
-uBOL_removeCookie();
 
 /******************************************************************************/
 
 // End of local scope
 })();
-
-/******************************************************************************/
 
 void 0;

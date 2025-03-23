@@ -19,13 +19,7 @@
     Home: https://github.com/gorhill/uBlock
 */
 
-/* jshint esversion:11 */
-
-'use strict';
-
 // ruleset: est-0
-
-/******************************************************************************/
 
 // Important!
 // Isolate from global scope
@@ -33,16 +27,13 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\"article.article\",\"action\":[\"remove-class\",\"cookie-paywall-visible\"]}","{\"selector\":\"aside\",\"tasks\":[[\"has-text\",\"Sisuturundus\"]]}"]];
-
-const hostnamesMap = new Map([["postimees.ee",0]]);
-
-const entitiesMap = new Map(undefined);
-
-const exceptionsMap = new Map(undefined);
+const argsList = ["",["{\"selector\":\"article.article\",\"action\":[\"remove-class\",\"cookie-paywall-visible\"]}","{\"selector\":\"aside\",\"tasks\":[[\"has-text\",\"Sisuturundus\"]]}"]];
+const argsSeqs = [0,1];
+const hostnamesMap = new Map([["postimees.ee",1]]);
+const hasEntities = false;
 
 self.proceduralImports = self.proceduralImports || [];
-self.proceduralImports.push({ argsList, hostnamesMap, entitiesMap, exceptionsMap });
+self.proceduralImports.push({ argsList, argsSeqs, hostnamesMap, hasEntities });
 
 /******************************************************************************/
 

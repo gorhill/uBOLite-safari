@@ -20,32 +20,13 @@
 
 */
 
-/* eslint-disable indent */
-
 // ruleset: jpn-1
-
-/******************************************************************************/
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(( ) => {
-
-/******************************************************************************/
-
-// Start of code to inject
-const uBOL_setConstant = function() {
-
-const scriptletGlobals = {}; // eslint-disable-line
-
-const argsList = [["adBlockerDetected","false"],["all520dddaaa2022ccc","true"],["canRunAds","true"],["flgDisplay","false"],["adsbygoogle.loaded","true"],["gptScriptLoaded","true"],["adBlockDetected","noopFunc"],["pum_vars","undefined"],["ads_data","{}"],["document.write","noopFunc"],["adPopupStatus","false"],["endInterstitialShow","true"],["geparams.custom.enableYdn",""],["PREMIUM","true"],["geoAvailable","true"],["FIRST_DELAY","0"],["NEXT_DELAY","0"],["sec","0"],["univresalP","noopFunc"],["TagProvider.cleanup","noopFunc"]];
-
-const hostnamesMap = new Map([["egotter.com",0],["520call.me",1],["520cc.cc",1],["dropbooks.net",2],["coolpan.net",3],["g-pc.info",4],["intaa.net",5],["h-ken.net",6],["pictab.art",7],["onagazou.info",7],["fashionpost.jp",8],["jav380.com",9],["sukima.me",[10,11,12,13]],["sonae.sankei.co.jp",14],["ponta.abstractpainting.work",[15,16]],["dotti2.jp",17],["pochitto2.jp",17],["gotouchi.jp",17],["cmnw.jp",17],["ddd-smart.net",18],["famitsu.com",19]]);
-
-const entitiesMap = new Map([]);
-
-const exceptionsMap = new Map([]);
+(function uBOL_setConstant() {
 
 /******************************************************************************/
 
@@ -253,10 +234,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -334,7 +317,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -412,7 +395,7 @@ function safeSelf() {
             }
         };
         bc.postMessage('areyouready?');
-    } catch(_) {
+    } catch {
         safe.sendToLogger = (type, ...args) => {
             const text = safe.toLogText(type, ...args);
             if ( text === undefined ) { return; }
@@ -453,9 +436,9 @@ function validateConstantFn(trusted, raw, extraArgs = {}) {
         if ( Math.abs(raw) > 0x7FFF ) { return; }
     } else if ( trusted ) {
         if ( raw.startsWith('json:') ) {
-            try { value = safe.JSON_parse(raw.slice(5)); } catch(ex) { return; }
+            try { value = safe.JSON_parse(raw.slice(5)); } catch { return; }
         } else if ( raw.startsWith('{') && raw.endsWith('}') ) {
-            try { value = safe.JSON_parse(raw).value; } catch(ex) { return; }
+            try { value = safe.JSON_parse(raw).value; } catch { return; }
         }
     } else {
         return;
@@ -476,95 +459,83 @@ function validateConstantFn(trusted, raw, extraArgs = {}) {
 
 /******************************************************************************/
 
-const hnParts = [];
-try {
-    let origin = document.location.origin;
-    if ( origin === 'null' ) {
-        const origins = document.location.ancestorOrigins;
-        for ( let i = 0; i < origins.length; i++ ) {
-            origin = origins[i];
-            if ( origin !== 'null' ) { break; }
-        }
-    }
-    const pos = origin.lastIndexOf('://');
-    if ( pos === -1 ) { return; }
-    hnParts.push(...origin.slice(pos+3).split('.'));
-}
-catch(ex) { }
-const hnpartslen = hnParts.length;
-if ( hnpartslen === 0 ) { return; }
+const scriptletGlobals = {}; // eslint-disable-line
+const argsList = [["adBlockerDetected","false"],["all520dddaaa2022ccc","true"],["canRunAds","true"],["flgDisplay","false"],["adsbygoogle.loaded","true"],["gptScriptLoaded","true"],["adBlockDetected","noopFunc"],["pum_vars","undefined"],["ads_data","{}"],["document.write","noopFunc"],["adPopupStatus","false"],["endInterstitialShow","true"],["geparams.custom.enableYdn",""],["PREMIUM","true"],["geoAvailable","true"],["FIRST_DELAY","0"],["NEXT_DELAY","0"],["sec","0"],["univresalP","noopFunc"],["isGGSurvey","true"],["enable_dl_after_countdown","true"],["SU_Api.AdsTimer","-1"],["TagProvider.cleanup","noopFunc"]];
+const hostnamesMap = new Map([["egotter.com",0],["520call.me",1],["520cc.cc",1],["dropbooks.net",2],["coolpan.net",3],["g-pc.info",4],["intaa.net",5],["h-ken.net",6],["pictab.art",7],["onagazou.info",7],["fashionpost.jp",8],["jav380.com",9],["sukima.me",[10,11,12,13]],["sonae.sankei.co.jp",14],["ponta.abstractpainting.work",[15,16]],["dotti2.jp",17],["pochitto2.jp",17],["gotouchi.jp",17],["cmnw.jp",17],["ddd-smart.net",18],["ac-illust.com",[19,20]],["photo-ac.com",[19,20]],["silhouette-ac.com",[19,20]],["azby.fmworld.net",21],["famitsu.com",22]]);
+const exceptionsMap = new Map([]);
+const hasEntities = false;
+const hasAncestors = false;
 
-const todoIndices = new Set();
-const tonotdoIndices = [];
-
-// Exceptions
-if ( exceptionsMap.size !== 0 ) {
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        const excepted = exceptionsMap.get(hn);
-        if ( excepted ) { tonotdoIndices.push(...excepted); }
-    }
-    exceptionsMap.clear();
-}
-
-// Hostname-based
-if ( hostnamesMap.size !== 0 ) {
-    const collectArgIndices = hn => {
-        let argsIndices = hostnamesMap.get(hn);
-        if ( argsIndices === undefined ) { return; }
-        if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
+const collectArgIndices = (hn, map, out) => {
+    let argsIndices = map.get(hn);
+    if ( argsIndices === undefined ) { return; }
+    if ( typeof argsIndices !== 'number' ) {
         for ( const argsIndex of argsIndices ) {
-            if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-            todoIndices.add(argsIndex);
+            out.add(argsIndex);
         }
-    };
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        collectArgIndices(hn);
+    } else {
+        out.add(argsIndices);
     }
-    collectArgIndices('*');
-    hostnamesMap.clear();
-}
+};
 
-// Entity-based
-if ( entitiesMap.size !== 0 ) {
-    const n = hnpartslen - 1;
-    for ( let i = 0; i < n; i++ ) {
-        for ( let j = n; j > i; j-- ) {
-            const en = hnParts.slice(i,j).join('.');
-            let argsIndices = entitiesMap.get(en);
-            if ( argsIndices === undefined ) { continue; }
-            if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
-            for ( const argsIndex of argsIndices ) {
-                if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-                todoIndices.add(argsIndex);
+const indicesFromHostname = (hostname, suffix = '') => {
+    const hnParts = hostname.split('.');
+    const hnpartslen = hnParts.length;
+    if ( hnpartslen === 0 ) { return; }
+    for ( let i = 0; i < hnpartslen; i++ ) {
+        const hn = `${hnParts.slice(i).join('.')}${suffix}`;
+        collectArgIndices(hn, hostnamesMap, todoIndices);
+        collectArgIndices(hn, exceptionsMap, tonotdoIndices);
+    }
+    if ( hasEntities ) {
+        const n = hnpartslen - 1;
+        for ( let i = 0; i < n; i++ ) {
+            for ( let j = n; j > i; j-- ) {
+                const en = `${hnParts.slice(i,j).join('.')}.*${suffix}`;
+                collectArgIndices(en, hostnamesMap, todoIndices);
+                collectArgIndices(en, exceptionsMap, tonotdoIndices);
             }
         }
     }
-    entitiesMap.clear();
+};
+
+const entries = (( ) => {
+    const docloc = document.location;
+    const origins = [ docloc.origin ];
+    if ( docloc.ancestorOrigins ) {
+        origins.push(...docloc.ancestorOrigins);
+    }
+    return origins.map((origin, i) => {
+        const beg = origin.lastIndexOf('://');
+        if ( beg === -1 ) { return; }
+        const hn = origin.slice(beg+3)
+        const end = hn.indexOf(':');
+        return { hn: end === -1 ? hn : hn.slice(0, end), i };
+    }).filter(a => a !== undefined);
+})();
+if ( entries.length === 0 ) { return; }
+
+const todoIndices = new Set();
+const tonotdoIndices = new Set();
+
+indicesFromHostname(entries[0].hn);
+if ( hasAncestors ) {
+    for ( const entry of entries ) {
+        if ( entry.i === 0 ) { continue; }
+        indicesFromHostname(entry.hn, '>>');
+    }
 }
 
 // Apply scriplets
 for ( const i of todoIndices ) {
+    if ( tonotdoIndices.has(i) ) { continue; }
     try { setConstant(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
-argsList.length = 0;
-
-/******************************************************************************/
-
-};
-// End of code to inject
-
-/******************************************************************************/
-
-uBOL_setConstant();
 
 /******************************************************************************/
 
 // End of local scope
 })();
-
-/******************************************************************************/
 
 void 0;

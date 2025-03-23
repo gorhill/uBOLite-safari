@@ -19,13 +19,7 @@
     Home: https://github.com/gorhill/uBlock
 */
 
-/* jshint esversion:11 */
-
-'use strict';
-
 // ruleset: vie-1
-
-/******************************************************************************/
 
 // Important!
 // Isolate from global scope
@@ -33,16 +27,13 @@
 
 /******************************************************************************/
 
-const argsList = [["{\"selector\":\".text-center\",\"tasks\":[[\"has\",{\"selector\":\"small\",\"tasks\":[[\"has-text\",\"QUẢNG CÁO\"]]}]]}"],["{\"selector\":\"body\",\"action\":[\"remove-attr\",\"data-pop1\"]}","{\"selector\":\"body\",\"action\":[\"remove-attr\",\"data-pop2\"]}"]];
-
-const hostnamesMap = new Map([["metruyencv.info",0],["metruyencv.net",0],["metruyencv.com",0],["chillphimmoi.pro",1]]);
-
-const entitiesMap = new Map(undefined);
-
-const exceptionsMap = new Map(undefined);
+const argsList = ["",["{\"selector\":\".text-center\",\"tasks\":[[\"has\",{\"selector\":\"small\",\"tasks\":[[\"has-text\",\"QUẢNG CÁO\"]]}]]}"]];
+const argsSeqs = [0,1];
+const hostnamesMap = new Map([["metruyencv.info",1],["metruyencv.net",1],["metruyencv.com",1]]);
+const hasEntities = false;
 
 self.proceduralImports = self.proceduralImports || [];
-self.proceduralImports.push({ argsList, hostnamesMap, entitiesMap, exceptionsMap });
+self.proceduralImports.push({ argsList, argsSeqs, hostnamesMap, hasEntities });
 
 /******************************************************************************/
 

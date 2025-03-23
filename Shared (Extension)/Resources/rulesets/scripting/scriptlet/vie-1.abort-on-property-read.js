@@ -20,32 +20,13 @@
 
 */
 
-/* eslint-disable indent */
-
 // ruleset: vie-1
-
-/******************************************************************************/
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(( ) => {
-
-/******************************************************************************/
-
-// Start of code to inject
-const uBOL_abortOnPropertyRead = function() {
-
-const scriptletGlobals = {}; // eslint-disable-line
-
-const argsList = [["_0x3f9b"],["parseInt"],["adpiaListUrl"],["Math.round"],["pushOnPage"],["Cookies"],["localStorage"],["ads"],["adsPlayer"],["adsPopupPlayer"],["adsTvc"],["keyPlayer"],["affUrls"],["sessionStorage"],["document.cookie"],["nFNcksmwU"],["open"],["oneClick"],["sp"],["adsRedirectPopups"],["window.aclib"],["adtimaConfig"]];
-
-const hostnamesMap = new Map([["animevietsubs.net",0],["aoe.vn",1],["audiotruyenfull.com",2],["javnong.cc",3],["linkneverdie.net",4],["linkneverdie.top",4],["linkneverdie2.com",4],["nungdam.pro",5],["phimdinhcao.net",6],["phimlongtieng.org",6],["www.phimdinhcaoz.com",6],["plcdn.xyz",[7,8,9,10,11]],["thichxemphim1.net",12],["tinsoikeo.live",13],["motchill.pe",13],["ohaytv.ad",13],["truyensieuhay.com",14],["hayhaytv.org",14],["quangcaoyenbai.com",14],["sieudamsex.com",14],["ephimchill.com",14],["thuvienhd.xyz",14],["xemtivi.tvhayhd.tv",14],["www.khophim88s.com",14],["nhentaivn.online",14],["mv.dailyphimz.com",14],["mv.phimbathu.one",14],["sexhihiz.top",14],["veryfiles.com",15],["viettoons.tv",16],["mv.phimmoiaz.cc",16],["dood.pm",16],["ytstv.me",16],["animet4.site",16],["anh.moe",16],["maclife.io",16],["xemphimjav.com",16],["hoctot.hocmai.vn",16],["bluphim.fun",16],["cdn2.blueskychilling.online",16],["ohaha79xxx.site",16],["fastscans6.net",16],["herotruyen.com",16],["truyenfull.io",16],["vinaurl.net",17],["www.nettruyenupp.com",18],["xoilacxj.cc",19],["yts.do",20],["yts.mx",20],["yts.rs",20],["znews.vn",21]]);
-
-const entitiesMap = new Map([]);
-
-const exceptionsMap = new Map([]);
+(function uBOL_abortOnPropertyRead() {
 
 /******************************************************************************/
 
@@ -56,7 +37,7 @@ function abortOnPropertyRead(
     if ( chain === '' ) { return; }
     const safe = safeSelf();
     const logPrefix = safe.makeLogPrefix('abort-on-property-read', chain);
-    const exceptionToken = getExceptionToken();
+    const exceptionToken = getExceptionTokenFn();
     const abort = function() {
         safe.uboLog(logPrefix, 'Aborted');
         throw new ReferenceError(exceptionToken);
@@ -96,8 +77,8 @@ function abortOnPropertyRead(
     makeProxy(owner, chain);
 }
 
-function getExceptionToken() {
-    const token = getRandomToken();
+function getExceptionTokenFn() {
+    const token = getRandomTokenFn();
     const oe = self.onerror;
     self.onerror = function(msg, ...args) {
         if ( typeof msg === 'string' && msg.includes(token) ) { return true; }
@@ -127,10 +108,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -208,7 +191,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -286,7 +269,7 @@ function safeSelf() {
             }
         };
         bc.postMessage('areyouready?');
-    } catch(_) {
+    } catch {
         safe.sendToLogger = (type, ...args) => {
             const text = safe.toLogText(type, ...args);
             if ( text === undefined ) { return; }
@@ -296,7 +279,7 @@ function safeSelf() {
     return safe;
 }
 
-function getRandomToken() {
+function getRandomTokenFn() {
     const safe = safeSelf();
     return safe.String_fromCharCode(Date.now() % 26 + 97) +
         safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
@@ -304,95 +287,83 @@ function getRandomToken() {
 
 /******************************************************************************/
 
-const hnParts = [];
-try {
-    let origin = document.location.origin;
-    if ( origin === 'null' ) {
-        const origins = document.location.ancestorOrigins;
-        for ( let i = 0; i < origins.length; i++ ) {
-            origin = origins[i];
-            if ( origin !== 'null' ) { break; }
-        }
-    }
-    const pos = origin.lastIndexOf('://');
-    if ( pos === -1 ) { return; }
-    hnParts.push(...origin.slice(pos+3).split('.'));
-}
-catch(ex) { }
-const hnpartslen = hnParts.length;
-if ( hnpartslen === 0 ) { return; }
+const scriptletGlobals = {}; // eslint-disable-line
+const argsList = [["_0x3f9b"],["parseInt"],["adpiaListUrl"],["Math.round"],["pushOnPage"],["Cookies"],["ads"],["adsPlayer"],["adsPopupPlayer"],["adsTvc"],["keyPlayer"],["affUrls"],["sessionStorage"],["document.cookie"],["nFNcksmwU"],["open"],["oneClick"],["sp"],["localStorage"],["adsRedirectPopups"],["window.aclib"],["adtimaConfig"]];
+const hostnamesMap = new Map([["animevietsubs.net",0],["aoe.vn",1],["audiotruyenfull.com",2],["javnong.cc",3],["linkneverdie.net",4],["linkneverdie.top",4],["linkneverdie2.com",4],["phim.gaisexvl.pro",5],["plcdn.xyz",[6,7,8,9,10]],["thichxemphim1.net",11],["tinsoikeo.live",12],["motchiill.la",12],["ohaytv.id",12],["truyensieuhay.com",13],["hayhaytv.site",13],["quangcaoyenbai.com",13],["phimchill.life",13],["thuvienhd.biz",13],["tv.tvhayhd.org",13],["thefaplive.com",13],["mv.dailyphimz.com",13],["mv.phimbathu.one",13],["sexhihiz.org",13],["anime47.one",13],["teamlanhlung3.shop",[13,18]],["veryfiles.com",14],["viettoons.tv",15],["mv.phimmoiaz.cc",15],["ytstv.me",15],["anime4.site",15],["anh.moe",15],["maclife.io",15],["xemphimjav.com",15],["hoctot.hocmai.vn",15],["bluphim3.com",15],["cdn2.blueskychilling.online",15],["ohaha79xxx.site",15],["herotruyen.com",15],["truyenfull.vision",15],["player.phimapi.com",15],["noitu.pro",15],["vinaurl.net",16],["www.nettruyenupp.com",17],["www.phimdinhcao.online",18],["motchill66.com",18],["xnhau.fm",18],["xoilacxj.cc",19],["yts.do",20],["yts.mx",20],["yts.rs",20],["znews.vn",21]]);
+const exceptionsMap = new Map([]);
+const hasEntities = false;
+const hasAncestors = false;
 
-const todoIndices = new Set();
-const tonotdoIndices = [];
-
-// Exceptions
-if ( exceptionsMap.size !== 0 ) {
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        const excepted = exceptionsMap.get(hn);
-        if ( excepted ) { tonotdoIndices.push(...excepted); }
-    }
-    exceptionsMap.clear();
-}
-
-// Hostname-based
-if ( hostnamesMap.size !== 0 ) {
-    const collectArgIndices = hn => {
-        let argsIndices = hostnamesMap.get(hn);
-        if ( argsIndices === undefined ) { return; }
-        if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
+const collectArgIndices = (hn, map, out) => {
+    let argsIndices = map.get(hn);
+    if ( argsIndices === undefined ) { return; }
+    if ( typeof argsIndices !== 'number' ) {
         for ( const argsIndex of argsIndices ) {
-            if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-            todoIndices.add(argsIndex);
+            out.add(argsIndex);
         }
-    };
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        collectArgIndices(hn);
+    } else {
+        out.add(argsIndices);
     }
-    collectArgIndices('*');
-    hostnamesMap.clear();
-}
+};
 
-// Entity-based
-if ( entitiesMap.size !== 0 ) {
-    const n = hnpartslen - 1;
-    for ( let i = 0; i < n; i++ ) {
-        for ( let j = n; j > i; j-- ) {
-            const en = hnParts.slice(i,j).join('.');
-            let argsIndices = entitiesMap.get(en);
-            if ( argsIndices === undefined ) { continue; }
-            if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
-            for ( const argsIndex of argsIndices ) {
-                if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-                todoIndices.add(argsIndex);
+const indicesFromHostname = (hostname, suffix = '') => {
+    const hnParts = hostname.split('.');
+    const hnpartslen = hnParts.length;
+    if ( hnpartslen === 0 ) { return; }
+    for ( let i = 0; i < hnpartslen; i++ ) {
+        const hn = `${hnParts.slice(i).join('.')}${suffix}`;
+        collectArgIndices(hn, hostnamesMap, todoIndices);
+        collectArgIndices(hn, exceptionsMap, tonotdoIndices);
+    }
+    if ( hasEntities ) {
+        const n = hnpartslen - 1;
+        for ( let i = 0; i < n; i++ ) {
+            for ( let j = n; j > i; j-- ) {
+                const en = `${hnParts.slice(i,j).join('.')}.*${suffix}`;
+                collectArgIndices(en, hostnamesMap, todoIndices);
+                collectArgIndices(en, exceptionsMap, tonotdoIndices);
             }
         }
     }
-    entitiesMap.clear();
+};
+
+const entries = (( ) => {
+    const docloc = document.location;
+    const origins = [ docloc.origin ];
+    if ( docloc.ancestorOrigins ) {
+        origins.push(...docloc.ancestorOrigins);
+    }
+    return origins.map((origin, i) => {
+        const beg = origin.lastIndexOf('://');
+        if ( beg === -1 ) { return; }
+        const hn = origin.slice(beg+3)
+        const end = hn.indexOf(':');
+        return { hn: end === -1 ? hn : hn.slice(0, end), i };
+    }).filter(a => a !== undefined);
+})();
+if ( entries.length === 0 ) { return; }
+
+const todoIndices = new Set();
+const tonotdoIndices = new Set();
+
+indicesFromHostname(entries[0].hn);
+if ( hasAncestors ) {
+    for ( const entry of entries ) {
+        if ( entry.i === 0 ) { continue; }
+        indicesFromHostname(entry.hn, '>>');
+    }
 }
 
 // Apply scriplets
 for ( const i of todoIndices ) {
+    if ( tonotdoIndices.has(i) ) { continue; }
     try { abortOnPropertyRead(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
-argsList.length = 0;
-
-/******************************************************************************/
-
-};
-// End of code to inject
-
-/******************************************************************************/
-
-uBOL_abortOnPropertyRead();
 
 /******************************************************************************/
 
 // End of local scope
 })();
-
-/******************************************************************************/
 
 void 0;

@@ -20,32 +20,13 @@
 
 */
 
-/* eslint-disable indent */
-
 // ruleset: default
-
-/******************************************************************************/
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(( ) => {
-
-/******************************************************************************/
-
-// Start of code to inject
-const uBOL_trustedSetCookie = function() {
-
-const scriptletGlobals = {}; // eslint-disable-line
-
-const argsList = [["_ga","GA1.1.000000000.1900000000","","","domain","globo.com"],["wallpaper","click"],["WPdp","aa4GkNzNjEWWxoWAgoWW1MYQwJHBwhQQ1sWOjwWTUNXEhFdBUMOQzoFPEMYQwdEQ1sFTUNZE0MOUE0WDBUWW1IYQxVHQ1sFVlMDWVYEVlUGVFQBHE0WNTEWWxoWAgoWW1AYQwJHBwhQQ1sWOjwWTUNXEhFdBUMOQzppQ00WBxEWW1AYQwxGQ1sFTUNZFUMOUk0WFRIWW1ADU1YMVlEDVVMBVFRJTUNjMSwWWxoWAgoWW1MYQwJHBwhQQ1sWOjwWTUNXEhFdBUMOQzoFPEMYQwdEQ1sFTUNZE0MOUE0WDBUWW1IYQxVHQ1sFVlMDWVYEVlUGVFQBTUNBAEMOUBxJ"],["WPtcs2","CQF3YIAQF3YIABIACDPLBJFgAAAAAAAAAB5YAAAU8gAAAAAA.YAAAAAAAAAAA"],["WPcbadcp","$now$"],["adTakeOver","seen"],["ajs_anonymous_id","OK","","","domain","barstoolsports.com"]];
-
-const hostnamesMap = new Map([["globo.com",0],["theporndude.com",1],["wp.pl",[2,3,4]],["money.pl",[2,3,4]],["pysznosci.pl",[2,3,4]],["pudelek.pl",[2,3,4]],["gadzetomania.pl",[2,3,4]],["fotoblogia.pl",[2,3,4]],["komorkomania.pl",[2,3,4]],["dobreprogramy.pl",[2,3,4]],["autokult.pl",[2,3,4]],["genialne.pl",[2,3,4]],["abczdrowie.pl",[2,3,4]],["o2.pl",4],["parenting.pl",4],["polygamia.pl",4],["open.fm",4],["benchmark.pl",4],["kafeteria.pl",4],["autocentrum.pl",4],["jastrzabpost.pl",4],["govtech.com",5],["governing.com",5],["barstoolsports.com",6]]);
-
-const entitiesMap = new Map([]);
-
-const exceptionsMap = new Map([]);
+(function uBOL_trustedSetCookie() {
 
 /******************************************************************************/
 
@@ -117,10 +98,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -198,7 +181,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -276,7 +259,7 @@ function safeSelf() {
             }
         };
         bc.postMessage('areyouready?');
-    } catch(_) {
+    } catch {
         safe.sendToLogger = (type, ...args) => {
             const text = safe.toLogText(type, ...args);
             if ( text === undefined ) { return; }
@@ -333,7 +316,7 @@ function setCookieFn(
 
     try {
         document.cookie = cookieParts.join('');
-    } catch(_) {
+    } catch {
     }
 
     const done = getCookieFn(name) === value;
@@ -358,95 +341,83 @@ function getCookieFn(
 
 /******************************************************************************/
 
-const hnParts = [];
-try {
-    let origin = document.location.origin;
-    if ( origin === 'null' ) {
-        const origins = document.location.ancestorOrigins;
-        for ( let i = 0; i < origins.length; i++ ) {
-            origin = origins[i];
-            if ( origin !== 'null' ) { break; }
-        }
-    }
-    const pos = origin.lastIndexOf('://');
-    if ( pos === -1 ) { return; }
-    hnParts.push(...origin.slice(pos+3).split('.'));
-}
-catch(ex) { }
-const hnpartslen = hnParts.length;
-if ( hnpartslen === 0 ) { return; }
+const scriptletGlobals = {}; // eslint-disable-line
+const argsList = [["ad_expire=true;","$now$"],["_ga","GA1.1.000000000.1900000000","","","domain","globo.com"],["wallpaper","click"],["WPdp","z7cARUkLWdBQExBGVxBQAVPWFQQHF4HWA1BIWpBVhUACUcKHhVZWGxSJxVPWFETWA1SVhUOCBVZSxtBF0NBQARPWEMQWA1STQNTTg9TSw9UQwZaBxtBLmdBQExBGVxBQAZPWFQQHF4HWA1BIWpBVhUACUcKHhVZWGw+WBtBHEdBQAZPWFoRWA1SVhUODhVZSRtBDkRBQAZUTgdXQgdSQgBaSw4eVhU0KnpBQExBGVxBQAVPWFQQHF4HWA1BIWpBVhUACUcKHhVZWGxSJxVPWFETWA1SVhUOCBVZSxtBF0NBQARPWEMQWA1STQNTTg9TSw9UQwZaVhUWGxVZS0oe"],["WPtcs2","CQNYlAAQNYlAABIACDPLBeFgAAAAAAAAAB5YAAAAAAAA.YAAAAAAAAAAA"],["WPdp","z7cARUkLWdBQExBGVxBQAVPWFQQHF4HWA1BIWpBVhUACUcKHhVZWGxSJxVPWFETWA1SVhUOCBVZSxtBF0NBQARPWEMQWA1STQNTTg9TSw9UQwZaBxtBLmdBQExBGVxBQAZPWFQQHF4HWA1BIWpBVhUACUcKHhVZWGw+WBtBHEdBQAZPWFoRWA1SVhUODhVZSRtBDkRBQAZUTgdXQgdSQgBaSw4eVhU0KnpBQExBGVxBQAVPWFQQHF4HWA1BIWpBVhUACUcKHhVZWGxSJxVPWFETWA1SVhUOCBVZSxtBF0NBQARPWEMQWA1STQNTTg9TSw9UQwZaVhUWGxVZS0oe","","","domain","wp.pl"],["WPtcs2","CQNYlAAQNYlAABIACDPLBeFgAAAAAAAAAB5YAAAAAAAA.YAAAAAAAAAAA","","","domain","wp.pl"],["WPcbadcp","$now$"],["adTakeOver","seen"],["FCCDCF","%5Bnull%2Cnull%2Cnull%2C%5B%22CQNfK4AQNfK4AEsACCENBeFgAAAAAAJAACpoAAANVSD2F2K2kKFkPCmwXYAYBCujYAAhQgAAAkCBMACgAUgQAgFJIAgCIFAAAAAAAAAQEiCQAAQABAAAIACgAAAAAAIAAAAAAAQQAABAAIAAAAAAAAEAQAAIAAQAAAAIAABEhAAAQQAEAAAAAAAQAA%22%2C%222~~dv.70.89.93.108.122.149.184.196.236.259.311.313.323.358.415.442.486.494.495.540.574.609.864.981.1029.1048.1051.1095.1097.1126.1205.1276.1301.1365.1415.1449.1514.1570.1577.1598.1651.1716.1735.1753.1765.1870.1878.1889.1958.1960.2072.2253.2299.2373.2415.2506.2526.2531.2568.2571.2575.2624.2677.2778%22%2C%2229712C98-EA28-430A-9071-AF8FD742342E%22%5D%5D"],["_ym_uid","$now$"],["lastClicked","9999999999999"],["disqus_unique","0","","","domain","disqus.com"],["_sharedid","","0","","domain",".naszemiasto.pl"],["DEVICEFP","00000000000","","","domain",".hoyoverse.com"],["DEVICEFP_SEED_ID","","0","","domain",".hoyoverse.com"],["DEVICEFP_SEED_TIME","","0","","domain",".hoyoverse.com"],["DEVICEFP","00000000000","","","domain",".hoyolab.com"],["DEVICEFP_SEED_ID","","0","","domain",".hoyolab.com"],["DEVICEFP_SEED_TIME","","0","","domain",".hoyolab.com"],["ak_bmsc","","0","","domain",".nvidia.com"]];
+const hostnamesMap = new Map([["labgame.io",0],["globo.com",1],["theporndude.com",2],["money.pl",[3,4,7]],["pysznosci.pl",[3,4,7]],["pudelek.pl",[3,4,7]],["gadzetomania.pl",[3,4,7]],["fotoblogia.pl",[3,4,7]],["komorkomania.pl",[3,4,7]],["dobreprogramy.pl",[3,4,7]],["autokult.pl",[3,4,7]],["genialne.pl",[3,4,7]],["abczdrowie.pl",[3,4,7]],["wp.pl",[5,6,7]],["o2.pl",7],["parenting.pl",7],["polygamia.pl",7],["open.fm",7],["benchmark.pl",7],["kafeteria.pl",7],["autocentrum.pl",7],["jastrzabpost.pl",7],["govtech.com",8],["governing.com",8],["decrypt.day",9],["gecmisi.com.tr",10],["sumax43.autos",11],["disqus.com",12],["naszemiasto.pl",13],["hoyoverse.com",[14,15,16]],["hoyolab.com",[17,18,19]],["nvidia.com",20]]);
+const exceptionsMap = new Map([["www.hoyoverse.com",[14,15,16]],["www.hoyolab.com",[17,18,19]]]);
+const hasEntities = false;
+const hasAncestors = false;
 
-const todoIndices = new Set();
-const tonotdoIndices = [];
-
-// Exceptions
-if ( exceptionsMap.size !== 0 ) {
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        const excepted = exceptionsMap.get(hn);
-        if ( excepted ) { tonotdoIndices.push(...excepted); }
-    }
-    exceptionsMap.clear();
-}
-
-// Hostname-based
-if ( hostnamesMap.size !== 0 ) {
-    const collectArgIndices = hn => {
-        let argsIndices = hostnamesMap.get(hn);
-        if ( argsIndices === undefined ) { return; }
-        if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
+const collectArgIndices = (hn, map, out) => {
+    let argsIndices = map.get(hn);
+    if ( argsIndices === undefined ) { return; }
+    if ( typeof argsIndices !== 'number' ) {
         for ( const argsIndex of argsIndices ) {
-            if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-            todoIndices.add(argsIndex);
+            out.add(argsIndex);
         }
-    };
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        collectArgIndices(hn);
+    } else {
+        out.add(argsIndices);
     }
-    collectArgIndices('*');
-    hostnamesMap.clear();
-}
+};
 
-// Entity-based
-if ( entitiesMap.size !== 0 ) {
-    const n = hnpartslen - 1;
-    for ( let i = 0; i < n; i++ ) {
-        for ( let j = n; j > i; j-- ) {
-            const en = hnParts.slice(i,j).join('.');
-            let argsIndices = entitiesMap.get(en);
-            if ( argsIndices === undefined ) { continue; }
-            if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
-            for ( const argsIndex of argsIndices ) {
-                if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-                todoIndices.add(argsIndex);
+const indicesFromHostname = (hostname, suffix = '') => {
+    const hnParts = hostname.split('.');
+    const hnpartslen = hnParts.length;
+    if ( hnpartslen === 0 ) { return; }
+    for ( let i = 0; i < hnpartslen; i++ ) {
+        const hn = `${hnParts.slice(i).join('.')}${suffix}`;
+        collectArgIndices(hn, hostnamesMap, todoIndices);
+        collectArgIndices(hn, exceptionsMap, tonotdoIndices);
+    }
+    if ( hasEntities ) {
+        const n = hnpartslen - 1;
+        for ( let i = 0; i < n; i++ ) {
+            for ( let j = n; j > i; j-- ) {
+                const en = `${hnParts.slice(i,j).join('.')}.*${suffix}`;
+                collectArgIndices(en, hostnamesMap, todoIndices);
+                collectArgIndices(en, exceptionsMap, tonotdoIndices);
             }
         }
     }
-    entitiesMap.clear();
+};
+
+const entries = (( ) => {
+    const docloc = document.location;
+    const origins = [ docloc.origin ];
+    if ( docloc.ancestorOrigins ) {
+        origins.push(...docloc.ancestorOrigins);
+    }
+    return origins.map((origin, i) => {
+        const beg = origin.lastIndexOf('://');
+        if ( beg === -1 ) { return; }
+        const hn = origin.slice(beg+3)
+        const end = hn.indexOf(':');
+        return { hn: end === -1 ? hn : hn.slice(0, end), i };
+    }).filter(a => a !== undefined);
+})();
+if ( entries.length === 0 ) { return; }
+
+const todoIndices = new Set();
+const tonotdoIndices = new Set();
+
+indicesFromHostname(entries[0].hn);
+if ( hasAncestors ) {
+    for ( const entry of entries ) {
+        if ( entry.i === 0 ) { continue; }
+        indicesFromHostname(entry.hn, '>>');
+    }
 }
 
 // Apply scriplets
 for ( const i of todoIndices ) {
+    if ( tonotdoIndices.has(i) ) { continue; }
     try { trustedSetCookie(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
-argsList.length = 0;
-
-/******************************************************************************/
-
-};
-// End of code to inject
-
-/******************************************************************************/
-
-uBOL_trustedSetCookie();
 
 /******************************************************************************/
 
 // End of local scope
 })();
-
-/******************************************************************************/
 
 void 0;

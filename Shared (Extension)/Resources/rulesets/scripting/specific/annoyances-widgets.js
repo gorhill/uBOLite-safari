@@ -19,13 +19,7 @@
     Home: https://github.com/gorhill/uBlock
 */
 
-/* jshint esversion:11 */
-
-'use strict';
-
 // ruleset: annoyances-widgets
-
-/******************************************************************************/
 
 // Important!
 // Isolate from global scope
@@ -33,16 +27,13 @@
 
 /******************************************************************************/
 
-const argsList = ["#chatbotToronto","#floating-experience-feature-tour-popover,\n#view-__module-context__-_amzn_conversational-experience-module__tandalone-0",".chatWindow,\n.chatbotSection,\n.chatbotSlider,\n.chatbotentrybtn,\n.healthshotsChannels,\n.secBannerWidget",".rufus-panel-container",".woot-widget-bubble"];
-
-const hostnamesMap = new Map([["hp.com",0],["docs.aws.amazon.com",1],["healthshots.com",2],["amazon.com",3],["therealdeal.com",4]]);
-
-const entitiesMap = new Map(undefined);
-
-const exceptionsMap = new Map(undefined);
+const argsList = ["","#chatbotToronto","#floating-experience-feature-tour-popover","#view-__module-context__-_amzn_conversational-experience-module__tandalone-0",".chat-button",".chat-container",".chatWindow",".chatbotSection",".chatbotSlider",".chatbotentrybtn",".healthshotsChannels",".rufus-panel-container",".secBannerWidget",".woot-widget-bubble"];
+const argsSeqs = [0,1,-2,3,-4,5,-6,-7,-8,-9,-10,12,11,13];
+const hostnamesMap = new Map([["hp.com",1],["docs.aws.amazon.com",2],["casbin.org",4],["healthshots.com",6],["amazon.com",12],["therealdeal.com",13]]);
+const hasEntities = false;
 
 self.specificImports = self.specificImports || [];
-self.specificImports.push({ argsList, hostnamesMap, entitiesMap, exceptionsMap });
+self.specificImports.push({ argsList, argsSeqs, hostnamesMap, hasEntities });
 
 /******************************************************************************/
 

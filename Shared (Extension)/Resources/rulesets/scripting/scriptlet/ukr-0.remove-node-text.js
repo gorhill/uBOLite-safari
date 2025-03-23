@@ -20,32 +20,13 @@
 
 */
 
-/* eslint-disable indent */
-
 // ruleset: ukr-0
-
-/******************************************************************************/
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(( ) => {
-
-/******************************************************************************/
-
-// Start of code to inject
-const uBOL_removeNodeText = function() {
-
-const scriptletGlobals = {}; // eslint-disable-line
-
-const argsList = [["script","0x0"],["script","\"Shadow","stay","1"],["script","googletag"],["script","globalAmlAds"],["script","mixadvert"],["script","membrana.media"],["script","/libs/e.js"],["script","moveTopBanner"],["script","manageMembranaAdvWrappers"],["script","/images/banners/"],["script","ads_state"],["script","r23243"],["script","adpartner_init"],["script","AdsLoader"],["script","go.rcvlink.com/static/main.js"],["script","getSectionAdv"],["script","mobileBrandingMainInited"],["script","banners_types"],["script","googletagmanager.com/gtm.js?id="],["script","googletagmanager.com/gtag/js?id="],["script","googletagmanager.com/gtm.js?id=","stay","10000"],["script","loadBlock"]];
-
-const hostnamesMap = new Map([["bigmir.net",0],["businessua.com",[0,3]],["censor.net",[0,19]],["dengi.ua",0],["epravda.com.ua",[0,18]],["f1analytic.com",0],["football24.ua",[0,2,5,6,8]],["footballgazeta.com",0],["football-ukraine.com",0],["gazeta.ua",0],["gorod.dp.ua",0],["i.ua",0],["inforesist.org",0],["isport.ua",0],["ivona.ua",[0,2,6]],["liga.net",[0,18]],["meteofor.com.ua",0],["pravda.com.ua",[0,18]],["real-vin.com",0],["sportanalytic.com",0],["tochka.net",0],["tv.ua",0],["ukr.net",[0,4,15]],["viva.ua",[0,2,18]],["beauty.ua",1],["internetua.com",[1,3]],["sinoptik.ua",[1,12,13]],["5.ua",2],["apostrophe.ua",[2,3]],["fakty.com.ua",2],["focus.ua",[2,5]],["football.ua",[2,6]],["galinfo.com.ua",2],["glavred.net",2],["highload.today",2],["ictv.ua",2],["interfax.com.ua",2],["itc.ua",[2,9]],["kinoafisha.ua",2],["mind.ua",[2,3]],["minfin.com.ua",2],["novy.tv",2],["slovnyk.ua",2],["smachno.ua",2],["vikna.tv",2],["zaxid.net",[2,16]],["ain.ua",[3,18]],["chas.news",3],["dev.ua",[3,18]],["kinofilms.ua",3],["mmr.ua",[3,18]],["osvita.ua",3],["vogue.ua",3],["weukraine.tv",3],["eurointegration.com.ua",7],["itsider.com.ua",10],["rivnepost.rv.ua",11],["zn.ua",[11,17]],["trueua.info",14],["1plus1.video",18],["4mama.ua",18],["24tv.ua",18],["add.ua",18],["adidas.ua",18],["agrotimes.ua",18],["agro-business.com.ua",18],["alcomag.ua",18],["arber.ua",18],["ascania.energy",18],["ascania.ua",18],["ascania-auto.com",18],["ascania-ff.com.ua",18],["ascania-flora.ua",18],["ascania-pack.com",18],["ascania-shina.com",18],["atbmarket.com",18],["auchan.ua",18],["avrora.ua",18],["bagatolososia.kiev.ua",18],["bayadera.ua",18],["bihus.info",18],["buhgalter.com.ua",18],["buhgalter911.com",18],["champion.com.ua",18],["chytomo.com",18],["city24.ua",18],["click.ua",18],["codeua.com",18],["colins.ua",18],["ctrs.com.ua",18],["dou.ua",18],["dsnews.ua",18],["dtek.com",18],["dw.com",18],["easypay.ua",18],["espreso.tv",18],["eurolamp.ua",18],["f.ua",18],["fckarpaty.org.ua",18],["fckryvbas.com",18],["finance.ua",18],["forbes.ua",18],["foxtrot.com.ua",18],["fozzyshop.ua",18],["galka.if.ua",18],["gordonua.com",18],["greendayvodka.com",18],["hostiq.ua",18],["hromadske.ua",18],["ideabank.ua",18],["iforum.ua",18],["incrypted.com",18],["informator.ua",18],["inter.ua",18],["intertop.ua",18],["istpravda.com.ua",18],["kasta.ua",18],["klo.ua",18],["kniga.biz.ua",18],["kontramarka.ua",18],["ktc.ua",18],["kvas-bev.com.ua",18],["kyivindependent.com",18],["kyivpost.com",18],["leboutique.com",18],["ligazakon.net",18],["maudau.com.ua",18],["maximum.fm",18],["megogo.net",18],["meteo.ua",18],["metinvestholding.com",18],["metinvest-smc.com",18],["mezha.media",18],["mezha.net",18],["mirohost.net",18],["motto.ua",18],["moyo.ua",18],["myfishka.com",18],["newbalance.ua",18],["novosti.dn.ua",18],["novus.ua",18],["npshopping.com",18],["nv.ua",[18,21]],["okko.ua",18],["online.ua",18],["onlyrose.ua",18],["ottry.com",18],["pcweek.ua",18],["platfor.ma",18],["playua.net",18],["polissyafc.com",18],["psm7.com",18],["radiosvoboda.org",18],["rubryka.com",18],["samsungshop.com.ua",18],["shafa.ua",18],["shakhtar.com",18],["shopping.ua",18],["sim23.ua",18],["speka.media",18],["sport.ua",18],["sport24.ua",18],["sushiya.ua",18],["suspilne.media",18],["tefal.ua",18],["telegraf.com.ua",18],["thepage.ua",18],["theukrainians.org",18],["ti.ua",18],["ua.news",18],["uklon.com.ua",18],["ukraine.com.ua",18],["ukrnafta.com",18],["ukrposhta.ua",18],["ukrzoloto.ua",18],["unian.ua",18],["upg.ua",18],["varus.ua",18],["vctr.media",18],["vezha.ua",18],["village.com.ua",18],["vodafone.ua",18],["volia.com",18],["wog.ua",18],["work.ua",18],["xsport.ua",18],["yakaboo.ua",18],["yesport.com.ua",18],["zaborona.com",18],["zakaz.ua",18],["zara.com",18],["znoclub.com",18],["connecting-women.com.ua",19],["buki.com.ua",20],["fora.ua",20],["kyivstar.ua",20],["lifecell.ua",20],["socar.ua",20],["thrash.ua",20],["tribuna.com",20]]);
-
-const entitiesMap = new Map([]);
-
-const exceptionsMap = new Map([]);
+(function uBOL_removeNodeText() {
 
 /******************************************************************************/
 
@@ -88,7 +69,7 @@ function replaceNodeTextFn(
         if ( tt instanceof Object ) {
             if ( typeof tt.getPropertyType === 'function' ) {
                 if ( tt.getPropertyType('script', 'textContent') === 'TrustedScript' ) {
-                    return tt.createPolicy(getRandomToken(), out);
+                    return tt.createPolicy(getRandomTokenFn(), out);
                 }
             }
         }
@@ -159,7 +140,7 @@ function replaceNodeTextFn(
     }, 'interactive');
 }
 
-function getRandomToken() {
+function getRandomTokenFn() {
     const safe = safeSelf();
     return safe.String_fromCharCode(Date.now() % 26 + 97) +
         safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
@@ -213,10 +194,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -294,7 +277,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -372,7 +355,7 @@ function safeSelf() {
             }
         };
         bc.postMessage('areyouready?');
-    } catch(_) {
+    } catch {
         safe.sendToLogger = (type, ...args) => {
             const text = safe.toLogText(type, ...args);
             if ( text === undefined ) { return; }
@@ -384,95 +367,83 @@ function safeSelf() {
 
 /******************************************************************************/
 
-const hnParts = [];
-try {
-    let origin = document.location.origin;
-    if ( origin === 'null' ) {
-        const origins = document.location.ancestorOrigins;
-        for ( let i = 0; i < origins.length; i++ ) {
-            origin = origins[i];
-            if ( origin !== 'null' ) { break; }
-        }
-    }
-    const pos = origin.lastIndexOf('://');
-    if ( pos === -1 ) { return; }
-    hnParts.push(...origin.slice(pos+3).split('.'));
-}
-catch(ex) { }
-const hnpartslen = hnParts.length;
-if ( hnpartslen === 0 ) { return; }
+const scriptletGlobals = {}; // eslint-disable-line
+const argsList = [["script","0x0"],["script","\"Shadow","stay","1"],["script","adId"],["script","moveTopBanner"],["script","location.reload"],["script","bdca"],["script","mobileBrandingMainInited"]];
+const hostnamesMap = new Map([["bigmir.net",0],["businessua.com",0],["censor.net",0],["dengi.ua",0],["epravda.com.ua",0],["f1analytic.com",0],["football24.ua",0],["footballgazeta.com",0],["football-ukraine.com",0],["gazeta.ua",0],["glianec.com",[0,4]],["gorod.dp.ua",0],["i.ua",0],["inforesist.org",0],["isport.ua",0],["ivona.ua",0],["liga.net",0],["meteofor.com.ua",0],["pravda.com.ua",0],["real-vin.com",0],["sportanalytic.com",0],["tochka.net",0],["tv.ua",0],["ukr.net",0],["viva.ua",0],["beauty.ua",1],["internetua.com",1],["sinoptik.ua",1],["agronews.ua",2],["agroreview.com",2],["eurointegration.com.ua",3],["rup.com.ua",5],["zaxid.net",6]]);
+const exceptionsMap = new Map([]);
+const hasEntities = false;
+const hasAncestors = false;
 
-const todoIndices = new Set();
-const tonotdoIndices = [];
-
-// Exceptions
-if ( exceptionsMap.size !== 0 ) {
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        const excepted = exceptionsMap.get(hn);
-        if ( excepted ) { tonotdoIndices.push(...excepted); }
-    }
-    exceptionsMap.clear();
-}
-
-// Hostname-based
-if ( hostnamesMap.size !== 0 ) {
-    const collectArgIndices = hn => {
-        let argsIndices = hostnamesMap.get(hn);
-        if ( argsIndices === undefined ) { return; }
-        if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
+const collectArgIndices = (hn, map, out) => {
+    let argsIndices = map.get(hn);
+    if ( argsIndices === undefined ) { return; }
+    if ( typeof argsIndices !== 'number' ) {
         for ( const argsIndex of argsIndices ) {
-            if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-            todoIndices.add(argsIndex);
+            out.add(argsIndex);
         }
-    };
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        collectArgIndices(hn);
+    } else {
+        out.add(argsIndices);
     }
-    collectArgIndices('*');
-    hostnamesMap.clear();
-}
+};
 
-// Entity-based
-if ( entitiesMap.size !== 0 ) {
-    const n = hnpartslen - 1;
-    for ( let i = 0; i < n; i++ ) {
-        for ( let j = n; j > i; j-- ) {
-            const en = hnParts.slice(i,j).join('.');
-            let argsIndices = entitiesMap.get(en);
-            if ( argsIndices === undefined ) { continue; }
-            if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
-            for ( const argsIndex of argsIndices ) {
-                if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-                todoIndices.add(argsIndex);
+const indicesFromHostname = (hostname, suffix = '') => {
+    const hnParts = hostname.split('.');
+    const hnpartslen = hnParts.length;
+    if ( hnpartslen === 0 ) { return; }
+    for ( let i = 0; i < hnpartslen; i++ ) {
+        const hn = `${hnParts.slice(i).join('.')}${suffix}`;
+        collectArgIndices(hn, hostnamesMap, todoIndices);
+        collectArgIndices(hn, exceptionsMap, tonotdoIndices);
+    }
+    if ( hasEntities ) {
+        const n = hnpartslen - 1;
+        for ( let i = 0; i < n; i++ ) {
+            for ( let j = n; j > i; j-- ) {
+                const en = `${hnParts.slice(i,j).join('.')}.*${suffix}`;
+                collectArgIndices(en, hostnamesMap, todoIndices);
+                collectArgIndices(en, exceptionsMap, tonotdoIndices);
             }
         }
     }
-    entitiesMap.clear();
+};
+
+const entries = (( ) => {
+    const docloc = document.location;
+    const origins = [ docloc.origin ];
+    if ( docloc.ancestorOrigins ) {
+        origins.push(...docloc.ancestorOrigins);
+    }
+    return origins.map((origin, i) => {
+        const beg = origin.lastIndexOf('://');
+        if ( beg === -1 ) { return; }
+        const hn = origin.slice(beg+3)
+        const end = hn.indexOf(':');
+        return { hn: end === -1 ? hn : hn.slice(0, end), i };
+    }).filter(a => a !== undefined);
+})();
+if ( entries.length === 0 ) { return; }
+
+const todoIndices = new Set();
+const tonotdoIndices = new Set();
+
+indicesFromHostname(entries[0].hn);
+if ( hasAncestors ) {
+    for ( const entry of entries ) {
+        if ( entry.i === 0 ) { continue; }
+        indicesFromHostname(entry.hn, '>>');
+    }
 }
 
 // Apply scriplets
 for ( const i of todoIndices ) {
+    if ( tonotdoIndices.has(i) ) { continue; }
     try { removeNodeText(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
-argsList.length = 0;
-
-/******************************************************************************/
-
-};
-// End of code to inject
-
-/******************************************************************************/
-
-uBOL_removeNodeText();
 
 /******************************************************************************/
 
 // End of local scope
 })();
-
-/******************************************************************************/
 
 void 0;

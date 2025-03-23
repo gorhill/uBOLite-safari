@@ -20,32 +20,13 @@
 
 */
 
-/* eslint-disable indent */
-
 // ruleset: rus-0
-
-/******************************************************************************/
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(( ) => {
-
-/******************************************************************************/
-
-// Start of code to inject
-const uBOL_addEventListenerDefuser = function() {
-
-const scriptletGlobals = {}; // eslint-disable-line
-
-const argsList = [["/^(?:contextmenu|keydown)$/"],["/click|load/","popMagic"],["/click|mousedown/","popunder"],["/contextmenu|copy|keydown|selectstart/"],["/mouse/","cursorVisible"],["DOMContentLoaded",".j-mini-player__video"],["DOMContentLoaded","/pon-/"],["DOMContentLoaded","0x"],["DOMContentLoaded","banners"],["DOMContentLoaded","feedback"],["click","","elements","a[href*=\"utm_campaign\"]"],["click","[native code]"],["click","matches"],["copy","extra"],["copy","getSelection"],["copy","pagelink"],["getexoloader"],["load","AdBlock"],["load","exoJsPop101"],["load","mamydirect"],["loadstart","isImmediatePropagationStopped"],["mousedown","pop.doEvent"],["scroll","getBoundingClientRect"],["scroll","players"],["scroll","window.history.pushState"],["load","checkAdblockExistence"],["/click|destroy|mousedown/","","elements",".html-fishing"],["visibilitychange","captureContext"]];
-
-const hostnamesMap = new Map([["7days.ru",[0,27]],["fastpic.org",[1,16]],["biqle.org",2],["biqle.ru",2],["autonews.co.ua",3],["in-poland.com",3],["liveball.cc",3],["liveball.uno",3],["ukrainianwall.com",3],["fm-app.ru",4],["tvapp.su",4],["yootv.ru",4],["rambler.ru",[5,13]],["sibnet.ru",6],["sports.ru",7],["cq.ru",8],["litnet.com",9],["regnum.news",10],["regnum.ru",10],["tproger.ru",10],["softonic.ru",11],["smotrim.ru",12],["rbc.ru",14],["sportrbc.ru",14],["carservic.ru",15],["iptv.org.ua",15],["tva.org.ua",15],["ufchgu.ru",15],["romakatya.ru",17],["xv-ru.com",18],["overclockers.ru",19],["bonus-tv.ru",20],["kinoblin.ru",21],["serialai.ru",21],["m.lenta.ru",22],["www.vesti.ru",23],["lenta.ru",24],["otvet.mail.ru",25],["e.mail.ru",26],["octavius.mail.ru",26],["cdn.viqeo.tv",27],["kinonews.ru",27],["kp.kg",27],["kp.kz",27],["kp.md",27],["kp.ru",27],["mk.ru",27],["ohotniki.ru",27],["portalvirtualreality.ru",27],["radiokp.ru",27],["sportkp.ru",27],["wday.ru",27],["woman.ru",27],["www.fontanka.ru",27]]);
-
-const entitiesMap = new Map([]);
-
-const exceptionsMap = new Map([["new.fastpic.org",[1,16]],["id.rambler.ru",[5,13]],["vp.rambler.ru",[5,13]],["player.smotrim.ru",[12]],["mail.rambler.ru",[13]]]);
+(function uBOL_addEventListenerDefuser() {
 
 /******************************************************************************/
 
@@ -99,30 +80,32 @@ function addEventListenerDefuser(
         }
         return matchesBoth;
     };
-    runAt(( ) => {
-        proxyApplyFn('EventTarget.prototype.addEventListener', function(context) {
-            const { callArgs, thisArg } = context;
-            let t, h;
-            try {
-                t = String(callArgs[0]);
-                if ( typeof callArgs[1] === 'function' ) {
-                    h = String(safe.Function_toString(callArgs[1]));
-                } else if ( typeof callArgs[1] === 'object' && callArgs[1] !== null ) {
-                    if ( typeof callArgs[1].handleEvent === 'function' ) {
-                        h = String(safe.Function_toString(callArgs[1].handleEvent));
-                    }
-                } else {
-                    h = String(callArgs[1]);
+    const proxyFn = function(context) {
+        const { callArgs, thisArg } = context;
+        let t, h;
+        try {
+            t = String(callArgs[0]);
+            if ( typeof callArgs[1] === 'function' ) {
+                h = String(safe.Function_toString(callArgs[1]));
+            } else if ( typeof callArgs[1] === 'object' && callArgs[1] !== null ) {
+                if ( typeof callArgs[1].handleEvent === 'function' ) {
+                    h = String(safe.Function_toString(callArgs[1].handleEvent));
                 }
-            } catch(ex) {
+            } else {
+                h = String(callArgs[1]);
             }
-            if ( type === '' && pattern === '' ) {
-                safe.uboLog(logPrefix, `Called: ${t}\n${h}\n${elementDetails(thisArg)}`);
-            } else if ( shouldPrevent(thisArg, t, h) ) {
-                return safe.uboLog(logPrefix, `Prevented: ${t}\n${h}\n${elementDetails(thisArg)}`);
-            }
-            return context.reflect();
-        });
+        } catch {
+        }
+        if ( type === '' && pattern === '' ) {
+            safe.uboLog(logPrefix, `Called: ${t}\n${h}\n${elementDetails(thisArg)}`);
+        } else if ( shouldPrevent(thisArg, t, h) ) {
+            return safe.uboLog(logPrefix, `Prevented: ${t}\n${h}\n${elementDetails(thisArg)}`);
+        }
+        return context.reflect();
+    };
+    runAt(( ) => {
+        proxyApplyFn('EventTarget.prototype.addEventListener', proxyFn);
+        proxyApplyFn('document.addEventListener', proxyFn);
     }, extraArgs.runAt);
 }
 
@@ -255,10 +238,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -336,7 +321,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -414,7 +399,7 @@ function safeSelf() {
             }
         };
         bc.postMessage('areyouready?');
-    } catch(_) {
+    } catch {
         safe.sendToLogger = (type, ...args) => {
             const text = safe.toLogText(type, ...args);
             if ( text === undefined ) { return; }
@@ -431,95 +416,83 @@ function shouldDebug(details) {
 
 /******************************************************************************/
 
-const hnParts = [];
-try {
-    let origin = document.location.origin;
-    if ( origin === 'null' ) {
-        const origins = document.location.ancestorOrigins;
-        for ( let i = 0; i < origins.length; i++ ) {
-            origin = origins[i];
-            if ( origin !== 'null' ) { break; }
-        }
-    }
-    const pos = origin.lastIndexOf('://');
-    if ( pos === -1 ) { return; }
-    hnParts.push(...origin.slice(pos+3).split('.'));
-}
-catch(ex) { }
-const hnpartslen = hnParts.length;
-if ( hnpartslen === 0 ) { return; }
+const scriptletGlobals = {}; // eslint-disable-line
+const argsList = [["/^(?:contextmenu|keydown)$/"],["/beforeunload|pagehide/","0x"],["/click|load/","popMagic"],["/click|mousedown/","popunder"],["/contextmenu|copy|keydown|selectstart/"],["/mouse/","cursorVisible"],["DOMContentLoaded",".j-mini-player__video"],["DOMContentLoaded","/pon-/"],["DOMContentLoaded","0x"],["DOMContentLoaded","StrategyHandler"],["DOMContentLoaded","banners"],["DOMContentLoaded","encodedUrl"],["DOMContentLoaded","exo_tracker"],["DOMContentLoaded","feedback"],["click","","elements","a[href*=\"utm_campaign\"]"],["click","[native code]"],["click","matches"],["copy","extra"],["copy","getSelection"],["copy","pagelink"],["error","","elements","[data-status=\"loading\"]"],["getexoloader"],["load","AdBlock"],["load","detect-modal"],["load","mamydirect"],["loadstart","isImmediatePropagationStopped"],["mousedown","pop.doEvent"],["new","window.location"],["scroll","getBoundingClientRect"],["scroll","players"],["scroll","window.history.pushState"],["userpause","Math.random"],["load","checkAdblockExistence"],["/click|destroy|mousedown/","","elements",".html-fishing"],["visibilitychange","captureContext"]];
+const hostnamesMap = new Map([["7days.ru",[0,34]],["shedevrum.ai",1],["fastpic.org",[2,21]],["biqle.org",3],["biqle.ru",3],["autonews.co.ua",4],["in-poland.com",4],["liveball.cc",4],["liveball.uno",4],["ukrainianwall.com",4],["fm-app.ru",5],["tvapp.su",5],["yootv.ru",5],["rambler.ru",[6,17]],["sibnet.ru",7],["sports.ru",8],["buhplatforma.com.ua",9],["dzplatforma.com.ua",9],["medplatforma.com.ua",9],["oblikbudget.com.ua",9],["oplatforma.com.ua",9],["pro-op.com.ua",9],["prokadry.com.ua",9],["cq.ru",10],["1progs.me",11],["xv-ru.com",12],["litnet.com",13],["regnum.news",14],["regnum.ru",14],["tproger.ru",14],["softonic.ru",15],["smotrim.ru",16],["kp.kg",[18,34]],["kp.kz",[18,34]],["kp.md",[18,34]],["kp.ru",[18,34]],["rbc.ru",18],["sportrbc.ru",18],["carservic.ru",19],["iptv.org.ua",19],["tva.org.ua",19],["ufchgu.ru",19],["trychatgpt.ru",20],["romakatya.ru",22],["blackwot.ru",23],["overclockers.ru",24],["bonus-tv.ru",25],["kinoblin.ru",26],["serialai.ru",26],["braz-rus.pro",[27,31]],["m.lenta.ru",28],["www.vesti.ru",29],["lenta.ru",30],["otvet.mail.ru",32],["e.mail.ru",33],["octavius.mail.ru",33],["cdn.viqeo.tv",34],["kinonews.ru",34],["mk.ru",34],["ohotniki.ru",34],["portalvirtualreality.ru",34],["radiokp.ru",34],["sportkp.ru",34],["wday.ru",34],["woman.ru",34],["www.fontanka.ru",34]]);
+const exceptionsMap = new Map([["new.fastpic.org",[2,21]],["id.rambler.ru",[6,17]],["vp.rambler.ru",[6,17]],["player.smotrim.ru",[16]],["mail.rambler.ru",[17]]]);
+const hasEntities = false;
+const hasAncestors = false;
 
-const todoIndices = new Set();
-const tonotdoIndices = [];
-
-// Exceptions
-if ( exceptionsMap.size !== 0 ) {
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        const excepted = exceptionsMap.get(hn);
-        if ( excepted ) { tonotdoIndices.push(...excepted); }
-    }
-    exceptionsMap.clear();
-}
-
-// Hostname-based
-if ( hostnamesMap.size !== 0 ) {
-    const collectArgIndices = hn => {
-        let argsIndices = hostnamesMap.get(hn);
-        if ( argsIndices === undefined ) { return; }
-        if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
+const collectArgIndices = (hn, map, out) => {
+    let argsIndices = map.get(hn);
+    if ( argsIndices === undefined ) { return; }
+    if ( typeof argsIndices !== 'number' ) {
         for ( const argsIndex of argsIndices ) {
-            if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-            todoIndices.add(argsIndex);
+            out.add(argsIndex);
         }
-    };
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        collectArgIndices(hn);
+    } else {
+        out.add(argsIndices);
     }
-    collectArgIndices('*');
-    hostnamesMap.clear();
-}
+};
 
-// Entity-based
-if ( entitiesMap.size !== 0 ) {
-    const n = hnpartslen - 1;
-    for ( let i = 0; i < n; i++ ) {
-        for ( let j = n; j > i; j-- ) {
-            const en = hnParts.slice(i,j).join('.');
-            let argsIndices = entitiesMap.get(en);
-            if ( argsIndices === undefined ) { continue; }
-            if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
-            for ( const argsIndex of argsIndices ) {
-                if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-                todoIndices.add(argsIndex);
+const indicesFromHostname = (hostname, suffix = '') => {
+    const hnParts = hostname.split('.');
+    const hnpartslen = hnParts.length;
+    if ( hnpartslen === 0 ) { return; }
+    for ( let i = 0; i < hnpartslen; i++ ) {
+        const hn = `${hnParts.slice(i).join('.')}${suffix}`;
+        collectArgIndices(hn, hostnamesMap, todoIndices);
+        collectArgIndices(hn, exceptionsMap, tonotdoIndices);
+    }
+    if ( hasEntities ) {
+        const n = hnpartslen - 1;
+        for ( let i = 0; i < n; i++ ) {
+            for ( let j = n; j > i; j-- ) {
+                const en = `${hnParts.slice(i,j).join('.')}.*${suffix}`;
+                collectArgIndices(en, hostnamesMap, todoIndices);
+                collectArgIndices(en, exceptionsMap, tonotdoIndices);
             }
         }
     }
-    entitiesMap.clear();
+};
+
+const entries = (( ) => {
+    const docloc = document.location;
+    const origins = [ docloc.origin ];
+    if ( docloc.ancestorOrigins ) {
+        origins.push(...docloc.ancestorOrigins);
+    }
+    return origins.map((origin, i) => {
+        const beg = origin.lastIndexOf('://');
+        if ( beg === -1 ) { return; }
+        const hn = origin.slice(beg+3)
+        const end = hn.indexOf(':');
+        return { hn: end === -1 ? hn : hn.slice(0, end), i };
+    }).filter(a => a !== undefined);
+})();
+if ( entries.length === 0 ) { return; }
+
+const todoIndices = new Set();
+const tonotdoIndices = new Set();
+
+indicesFromHostname(entries[0].hn);
+if ( hasAncestors ) {
+    for ( const entry of entries ) {
+        if ( entry.i === 0 ) { continue; }
+        indicesFromHostname(entry.hn, '>>');
+    }
 }
 
 // Apply scriplets
 for ( const i of todoIndices ) {
+    if ( tonotdoIndices.has(i) ) { continue; }
     try { addEventListenerDefuser(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
-argsList.length = 0;
-
-/******************************************************************************/
-
-};
-// End of code to inject
-
-/******************************************************************************/
-
-uBOL_addEventListenerDefuser();
 
 /******************************************************************************/
 
 // End of local scope
 })();
-
-/******************************************************************************/
 
 void 0;

@@ -20,32 +20,13 @@
 
 */
 
-/* eslint-disable indent */
-
 // ruleset: default
-
-/******************************************************************************/
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(( ) => {
-
-/******************************************************************************/
-
-// Start of code to inject
-const uBOL_adjustSetInterval = function() {
-
-const scriptletGlobals = {}; // eslint-disable-line
-
-const argsList = [["","1200","0"],[],["stop()"],["clearInterval"],["myTimer","1500"],["countdown","2000"],["counter","2000"],["","1800"],["","","0"],["yuidea-","*"],["timeLeft"],["","","0.001"],["time"],["time","2500"],["clearInterval","*"],["seconds"],["","","0.02"],["time.html","1000"],["circle_animation"],["countdown"],["web_counter"],["video_counter"],["/SplashScreen|BannerAd/"],["i--"],["","*","0"],["js-btn-skip","1000"],["countdown","*","0.001"],["timer"],["gotolink"],["counter","*","0.02"],["/.?/","*","0.02"],["/wpsafe|wait/","*","0.001"],["timer","*","0.02"],["timer","1300"],["countDown","*"],["timer","*"],["/.?/","*","0.001"],["timeLeft","*","0.001"],["timer","*","0.001"],["counter","*","0.001"],["timer","1000","0.001"],["timer","1600","0.001"],["count","*","0.001"],["counter"],["/counter|wait/","*","0.001"],["interval","*"],["sec--","*","0.001"],["show_download_links"],["counter","*"],["countDown"],["downloadTimer"],["","","0.3"],["time","","0"],["sec--"],["secs"],["_0x"],["timer.remove"],["downloadButton"],["timePassed"],["timeleft"],["counter--"],["(i-1)"],["skipOptions"],["countDown","1150","0.5"],["timercounter"],["count","*"],["#timer"],["temp"],["sec"],["counter","","0.02"],["timer","1800"],["distance"],["count"],["contador"],["display"],["countdownTime","1500"],["second"],["timer","1500"],["updatePercentage","100","0.02"],["current()"],["l","","0"],["countdown","*","0.02"],["time","","0.02"],["wait"],["downloadToken"],["updateProgress","*"],["current-=1","*","0.001"],["_0x","*","0.001"],["counter","1000","0.001"],["scrollIncrement","*"],["","*","0.001"],["saniye"],["","1000","0.001"],["generalTimeLeft","*","0.001"],["invoke","1000"],["download","*","0.02"],["countdown","*"],["disabled"],["/count|verify|isCompleted/","","0.001"],["skipAdSeconds","","0.02"],["adv","*"]];
-
-const hostnamesMap = new Map([["deportealdia.live",0],["noticiasesports.live",0],["al.ly",1],["bbf.lt",1],["cpmlink.net",1],["cut-urls.com",1],["iiv.pl",1],["shink.me",1],["ur.ly",1],["url.gem-flash.com",1],["zeiz.me",1],["1ink.cc",1],["azlink.xyz",1],["soft112.com",1],["short-url.link",1],["4download.net",1],["s.sseluxx.com",1],["onifile.com",1],["coolmathgames.com",1],["link-to.net",[1,19,20,21]],["telepisodes.org",1],["onle.co",1],["freeupload.info",1],["fstore.biz",1],["uploadfree.info",1],["deltabit.co",1],["puzzles.msn.com",1],["shon.xyz",1],["sfile.mobi",1],["upfile.us",1],["game-kentang.blogspot.com",1],["shortgoo.blogspot.com",1],["indavideo.hu",1],["sfirmware.com",1],["mobilelegends.shop",1],["ockles.com",1],["urlpay.net",1],["underhentai.net",1],["customercareal.com",1],["faupto.com",1],["suanoticia.online",1],["linkconfig.com",1],["lg-firmwares.com",1],["aylink.co",1],["gitizle.vip",1],["shtms.co",1],["cryptokinews.com",1],["cpmlink.pro",1],["speedynews.xyz",[1,78]],["infokeeda.xyz",1],["webzeni.com",1],["tutwuri.id",1],["khaddavi.net",1],["lokerwfh.net",1],["mysflink.blogspot.com",1],["runmods.com",1],["anomize.xyz",1],["bondibeachau.com",1],["konstantinova.net",1],["kangkimin.com",1],["iklandb.com",1],["thingiverse.com",1],["ufreegames.com",1],["bdlink.pw",1],["fairyanime.com",1],["7misr4day.com",1],["sama-pro.com",1],["otomi-games.com",1],["curseforge.com",1],["mobitaak.com",1],["arhplyrics.in",1],["telenord.it",1],["raky.in",1],["desiflixindia.com",1],["diglink.blogspot.com",1],["vkprime.com",1],["i-polls.com",1],["freecoursesonline.me",1],["yesdownloader.com",1],["games.metv.com",1],["arkadium.com",1],["tonanmedia.my.id",1],["skiplink.me",1],["yurasu.xyz",1],["isekaipalace.com",1],["mitedrive.com",1],["miteblog.com",1],["games.dailymail.co.uk",1],["fullhd4k.com",1],["juegos.eleconomista.es",1],["filmizlehdfilm.com",1],["fullfilmizle.cc",1],["gofilmizle.net",1],["easybib.com",1],["modcombo.com",1],["wallpaperaccess.com",1],["indi-share.com",3],["premid.app",3],["cheatcloud.cc",3],["cheater.ninja",3],["cheatermad.com",3],["cheatsquad.gg",3],["freepdf-books.com",4],["themeslide.com",5],["thememypc.net",6],["rezence.com",[6,48]],["mikl4forex.com",6],["gawbne.com",6],["forex-trnd.com",6],["link.tl",7],["lnk.news",8],["lnk.parts",8],["fssquad.com",8],["easylinkref.com",8],["megadescarga.net",8],["megadescargas.net",8],["gamelopte.com",9],["goto.com.np",10],["vrcmods.com",10],["dramaworldhd.co",10],["consoleroms.com",10],["romspedia.com",10],["forexlap.com",11],["forexmab.com",11],["forexwaw.club",11],["forex-articles.com",11],["fx4vip.com",11],["forexrw7.com",[11,46]],["3rabsports.com",11],["fx-22.com",[11,46]],["gold-24.net",[11,46]],["icutlink.com",12],["android-apk.org",12],["zegtrends.com",13],["simsdom.com",14],["fansonlinehub.com",14],["hotmediahub.com",14],["terabox.fun",14],["teralink.me",14],["terashare.me",14],["teraearn.com",14],["fautsy.com",15],["multifaucet.org",15],["coinlyhub.com",15],["i-bits.io",15],["claimbits.io",15],["mundotec.pro",15],["legionjuegos.org",16],["legionpeliculas.org",16],["legionprogramas.org",16],["so1.asia",16],["lewdzone.com",18],["direct-link.net",[19,20,21]],["direkt-wissen.com",[19,20,21]],["ipalibrary.me",19],["hieunguyenphoto.com",19],["gamearter.com",22],["ayobelajarbareng.com",24],["semawur.com",24],["techmody.io",24],["doofree88.com",25],["acdriftingpro.com",26],["pixsera.net",27],["imgair.net",27],["imgblaze.net",27],["imgfrost.net",27],["vestimage.site",27],["imgwia.buzz",27],["imgbaex.store",27],["imgbah.online",27],["imgbaie.online",27],["imgbango.store",27],["imgbier.store",27],["imgbimn.store",27],["imgbqw.store",27],["imgbuba.online",27],["imgbwe.store",27],["imgbxs.online",27],["imgcao.store",27],["imgnwe.online",27],["imgqge.store",27],["imgqxb.online",27],["imgteq.online",27],["imgtex.online",27],["imgtuta.online",27],["imgwqr.online",27],["imgwww.store",27],["imgxza.store",27],["imgezx.sbs",27],["imgbcxsb.store",27],["imgbcxs.store",27],["imgbake.cfd",27],["imgmffg.sbs",27],["imgmffgtr.sbs",27],["imgnbg.sbs",27],["imgngc.sbs",27],["imgnmh.cfd",27],["imgqte.sbs",27],["imguthes.sbs",27],["imgwag.cfd",27],["imgwang.cfd",27],["imgwety.sbs",27],["imgxuh.cfd",27],["imgxytw.cfd",27],["imgycgey.sbs",27],["imgyruy.cfd",27],["imgyusa.cfd",27],["imgyyqey.sbs",27],["imgyer.store",27],["imgxhs.store",27],["imgwekr.online",27],["imgwbfh.online",27],["imgwak.online",27],["imgutry.online",27],["imgutiyu.online",27],["imgutbbn.online",27],["imgubfd.online",27],["imgrei.online",27],["imgqec.online",27],["imgpaiou.online",27],["imgpaiki.online",27],["imgmjj.store",27],["imgfa.store",27],["imgbutrt.store",27],["imgbty.store",27],["imgbdl.store",27],["imgngh.sbs",27],["imgbbfg.pics",27],["imgjhrjjr.pics",27],["imgleko.pics",27],["imgluki.pics",27],["imgnffe.pics",27],["imgnnnf.pics",27],["imgrwqz.pics",27],["imgtweqz.pics",27],["imgxzgf.pics",27],["imgyyeryt.pics",27],["picbbc.one",27],["picbbdr.one",27],["picbest.one",27],["picbhrt.one",27],["picnrrt.one",27],["picqqw.one",27],["picqr.one",27],["picqtwe.one",27],["picsjre.one",27],["piczzaq.one",27],["imgqazx.sbs",27],["imgiruyw.online",27],["picnerr.cfd",27],["pichfer.cfd",27],["picbbeq.cfd",27],["picqaxs.cfd",27],["picxxdd.cfd",27],["picqweff.cfd",27],["pickjsn.cfd",27],["piczzxsw.cfd",27],["picbbbde.cfd",27],["picbdd.cfd",27],["imgbahxg.sbs",27],["imgxune.sbs",27],["imgqklw.shop",27],["pixqkhgrt.shop",27],["pixqbngg.shop",27],["pixqwet.shop",27],["pixmos.shop",27],["imgtgd.shop",27],["imgcsxx.shop",27],["imgcssd.shop",27],["imguwjsd.sbs",27],["pictbbf.shop",27],["pixbryexa.sbs",27],["picbqqa.sbs",27],["pixbkghxa.sbs",27],["imgmgf.sbs",27],["picbcxvxa.sbs",27],["imguee.sbs",27],["imgmffmv.sbs",27],["imgbqb.sbs",27],["imgbyrev.sbs",27],["imgbncvnv.sbs",27],["pixtryab.shop",27],["imggune.shop",27],["pictryhab.shop",27],["pixbnab.shop",27],["imgbnwe.shop",27],["imgbbnhi.shop",27],["imgnbii.shop",27],["imghqqbg.shop",27],["imgyhq.shop",27],["pixnbrqwg.sbs",27],["pixnbrqw.sbs",27],["picmsh.sbs",27],["imgpke.sbs",27],["picuenr.sbs",27],["imgolemn.sbs",27],["imgoebn.sbs",27],["picnwqez.sbs",27],["imgjajhe.sbs",27],["pixjnwe.sbs",27],["pixkfjtrkf.shop",27],["pixkfkf.shop",27],["pixdfdjkkr.shop",27],["pixdfdj.shop",27],["picnft.shop",27],["pixrqqz.shop",27],["picngt.shop",27],["picjgfjet.shop",27],["picjbet.shop",27],["imgkkabm.shop",27],["imgxabm.shop",27],["imgthbm.shop",27],["imgmyqbm.shop",27],["imgwwqbm.shop",27],["imgjvmbbm.shop",27],["imgjbxzjv.shop",27],["imgjmgfgm.shop",27],["picxnkjkhdf.sbs",27],["imgxxbdf.sbs",27],["imgnngr.sbs",27],["imgjjtr.sbs",27],["imgqbbds.sbs",27],["imgbvdf.sbs",27],["imgqnnnebrf.sbs",27],["imgnnnvbrf.sbs",27],["takez.co",27],["nightfallnews.com",27],["cararegistrasi.com",27],["ipa-apps.me",27],["imslp.org",27],["michaelemad.com",27],["chooyomi.com",27],["libertycity.net",27],["apps2app.com",28],["tech24us.com",29],["freethemesy.com",29],["tech5s.co",30],["ez4mods.com",30],["yalifin.xyz",30],["lrncook.xyz",30],["gadgetsreview27.com",30],["newsbawa.com",30],["acetack.com",30],["androidquest.com",30],["apklox.com",30],["chhaprawap.in",30],["gujarativyakaran.com",30],["kashmirstudentsinformation.in",30],["kisantime.com",30],["shetkaritoday.in",30],["pastescript.com",30],["trimorspacks.com",30],["updrop.link",30],["fx-gd.net",30],["healthy4pepole.com",30],["hightrip.net",30],["to-travel.net",30],["cmphost.com",30],["drinkspartner.com",30],["uploadsoon.com",30],["wp.uploadfiles.in",30],["viralxns.com",30],["posterify.net",30],["headlinerpost.com",30],["veganab.co",31],["camdigest.com",31],["nichapk.com",32],["easyworldbusiness.com",32],["riveh.com",32],["naukrilelo.in",33],["hipsonyc.com",34],["bookszone.in",35],["uptechnologys.com",36],["sevenjournals.com",36],["overgal.com",37],["mamahawa.com",38],["lollty.pro",38],["postazap.com",38],["financeyogi.net",38],["finclub.in",38],["easywithcode.tech",38],["letest25.co",38],["truevpnlover.com",38],["financebolo.com",38],["rphost.in",38],["vedamdigi.tech",38],["cancelguider.online",38],["bigdata.rawlazy.si",39],["codesnse.com",39],["filmypoints.in",40],["flightsim.to",40],["freethailottery.live",41],["progfu.com",41],["currentrecruitment.com",42],["investorveda.com",42],["computerpedia.in",42],["edukaroo.com",42],["advicefunda.com",42],["bestloanoffer.net",42],["techconnection.in",42],["itscybertech.com",43],["forexeen.us",43],["health-and.me",43],["filessrc.com",43],["srcimdb.com",43],["droidmirror.com",43],["infokik.com",43],["arealgamer.org",43],["gamingbeasts.com",43],["uploadbeast.com",43],["travel.vebma.com",44],["cloud.majalahhewan.com",44],["crm.cekresi.me",44],["ai.tempatwisata.pro",44],["cinedesi.in",45],["thevouz.in",45],["tejtime24.com",45],["techishant.in",45],["mooonten.com",46],["msic.site",46],["apkmb.com",47],["apkhihe.com",47],["aemenstore.com",48],["byboe.com",48],["cazzette.com",48],["dreamcheeky.com",48],["fidlarmusic.com",48],["hookeaudio.com",48],["jncojeans.com",48],["kiemlua.com",48],["kingsleynyc.com",48],["lucidcam.com",48],["nguyenvanbao.com",48],["nousdecor.com",48],["pennbookcenter.com",48],["publicananker.com",48],["restorbio.com",48],["staaker.com",48],["uebnews.online",48],["thegoneapp.com",48],["samapkstore.com",49],["5ggyan.com",49],["announcedcatchix1t.shop",49],["brotherfox91.shop",49],["currentcolorq2dv.shop",49],["customsfencei3.shop",49],["fencethoughgdrt.shop",49],["fencethroughout642.shop",49],["foxwent6ot.shop",49],["havingmovementu8x.shop",49],["homebasis4d.shop",49],["includingbreath5ku.shop",49],["ironwinter6m.shop",49],["leadmorning4ivn.shop",49],["linelocatemfsn.shop",49],["littlesound6c.shop",49],["mindmotion93y8.shop",49],["mightbadly4f.shop",49],["monkeynecktj4w.shop",49],["neighbormajorkex.shop",49],["nervousdoctor9bx.shop",49],["pantogether6jpi.shop",49],["quietlywheat23.shop",49],["saddletopg3tk.shop",49],["soldrubber5xrp.shop",49],["somehowrockyng.shop",49],["strangernervousql.shop",49],["superabbit.shop",49],["supportrightufd.shop",49],["studyinghuman6js.shop",49],["wholecommonrrvp.shop",49],["wintertold7nq.shop",49],["shortenbuddy.com",50],["jpopsingles.eu",50],["vanillatweaks.net",50],["emulatorgames.net",51],["menjelajahi.com",52],["luckydice.net",53],["unityassetcollection.com",54],["rethmic.com",55],["romhustler.org",56],["filmyhitlink.xyz",57],["allwpworld.com",59],["trzpro.com",60],["techhelpbd.com",60],["zedge.net",61],["send-anywhere.com",62],["upstore.net",63],["rincondelsazon.com",64],["tattoosbeauty.com",64],["disheye.com",65],["yifysub.net",66],["mp3juices.icu",67],["watchdoge.xyz",68],["bingotingo.com",69],["thizissam.in",69],["techyreviewx.com",70],["redirect.dafontvn.com",71],["cue-vana.com",72],["crdroid.net",72],["rlxtech.tech",72],["sonixgvn.net",72],["descargatepelis.com",73],["edufileshare.com",74],["kuncomic.com",75],["wowroms.com",76],["mhma12.tech",77],["play.aidungeon.io",79],["whatsappmods.net",80],["adshnk.com",81],["blogmado.com",82],["pinloker.com",83],["sekilastekno.com",83],["web1s.asia",83],["fikper.com",84],["tralhasvarias.blogspot.com",85],["busuu.com",86],["newscon.org",87],["recipahi.com",88],["thestar.com",89],["obaianinho.com",90],["punkrust.net",91],["apkprime.org",92],["arcade.buzzrtv.com",93],["arcade.lemonde.fr",93],["arena.gamesforthebrain.com",93],["bestpuzzlesandgames.com",93],["cointiply.arkadiumarena.com",93],["gamelab.com",93],["games.abqjournal.com",93],["games.amny.com",93],["games.bellinghamherald.com",93],["games.besthealthmag.ca",93],["games.bnd.com",93],["games.boston.com",93],["games.bostonglobe.com",93],["games.bradenton.com",93],["games.centredaily.com",93],["games.charlotteobserver.com",93],["games.cnhinews.com",93],["games.crosswordgiant.com",93],["games.dallasnews.com",93],["games.daytondailynews.com",93],["games.denverpost.com",93],["games.everythingzoomer.com",93],["games.fresnobee.com",93],["games.gameshownetwork.com",93],["games.get.tv",93],["games.greatergood.com",93],["games.heraldonline.com",93],["games.heraldsun.com",93],["games.idahostatesman.com",93],["games.insp.com",93],["games.islandpacket.com",93],["games.journal-news.com",93],["games.kansas.com",93],["games.kansascity.com",93],["games.kentucky.com",93],["games.lancasteronline.com",93],["games.ledger-enquirer.com",93],["games.macon.com",93],["games.mashable.com",93],["games.mercedsunstar.com",93],["games.miamiherald.com",93],["games.modbee.com",93],["games.moviestvnetwork.com",93],["games.myrtlebeachonline.com",93],["games.nationalreview.com",93],["games.newsobserver.com",93],["games.parade.com",93],["games.pressdemocrat.com",93],["games.puzzlebaron.com",93],["games.puzzler.com",93],["games.puzzles.ca",93],["games.qns.com",93],["games.readersdigest.ca",93],["games.sacbee.com",93],["games.sanluisobispo.com",93],["games.sixtyandme.com",93],["games.sltrib.com",93],["games.springfieldnewssun.com",93],["games.star-telegram.com",93],["games.startribune.com",93],["games.sunherald.com",93],["games.theadvocate.com",93],["games.thenewstribune.com",93],["games.theolympian.com",93],["games.theportugalnews.com",93],["games.thestar.com",93],["games.thestate.com",93],["games.tri-cityherald.com",93],["games.triviatoday.com",93],["games.usnews.com",93],["games.word.tips",93],["games.wordgenius.com",93],["games.wtop.com",93],["jeux.meteocity.com",93],["juegos.as.com",93],["juegos.elnuevoherald.com",93],["juegos.elpais.com",93],["philly.arkadiumarena.com",93],["play.dictionary.com",93],["puzzles.bestforpuzzles.com",93],["puzzles.centralmaine.com",93],["puzzles.crosswordsolver.org",93],["puzzles.independent.co.uk",93],["puzzles.nola.com",93],["puzzles.pressherald.com",93],["puzzles.standard.co.uk",93],["puzzles.sunjournal.com",93],["restegourmet.de",94],["getmodsapk.com",95],["visionpapers.org",97],["tech.unblockedgames.world",98],["novelgames.com",99],["3bmeteo.com",100]]);
-
-const entitiesMap = new Map([["123link",1],["platinmods",1],["eg4link",1],["idlelivelink",1],["igram",1],["lin-ks",1],["xberuang",1],["topflix",1],["leechall",1],["bde4",1],["lootlinks",1],["filmizletv",1],["ouo",2],["acortalo",8],["acortar",8],["filemoon",15],["dutchycorp",17],["bluemediafiles",23],["pixlev",27],["10short",38],["cinemakottaga",58],["privatemoviez",72],["5play",96]]);
-
-const exceptionsMap = new Map([["go.skiplink.me",[1]],["encurtador.postazap.com",[38]]]);
+(function uBOL_adjustSetInterval() {
 
 /******************************************************************************/
 
@@ -96,10 +77,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -177,7 +160,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -255,7 +238,7 @@ function safeSelf() {
             }
         };
         bc.postMessage('areyouready?');
-    } catch(_) {
+    } catch {
         safe.sendToLogger = (type, ...args) => {
             const text = safe.toLogText(type, ...args);
             if ( text === undefined ) { return; }
@@ -267,95 +250,83 @@ function safeSelf() {
 
 /******************************************************************************/
 
-const hnParts = [];
-try {
-    let origin = document.location.origin;
-    if ( origin === 'null' ) {
-        const origins = document.location.ancestorOrigins;
-        for ( let i = 0; i < origins.length; i++ ) {
-            origin = origins[i];
-            if ( origin !== 'null' ) { break; }
-        }
-    }
-    const pos = origin.lastIndexOf('://');
-    if ( pos === -1 ) { return; }
-    hnParts.push(...origin.slice(pos+3).split('.'));
-}
-catch(ex) { }
-const hnpartslen = hnParts.length;
-if ( hnpartslen === 0 ) { return; }
+const scriptletGlobals = {}; // eslint-disable-line
+const argsList = [["","1200","0"],[],["stop()"],["clearInterval"],["myTimer","1500"],["countdown","2000"],["counter","2000"],["","1800"],["","","0"],["yuidea-","*"],["timeLeft"],["","","0.001"],["time"],["time","2500"],["clearInterval","*"],["seconds"],["","","0.02"],["time.html","1000"],["/SplashScreen|BannerAd/"],["i--"],["","*","0"],["js-btn-skip","1000"],["countdown","*","0.001"],["timer"],["gotolink"],["/.?/","*","0.002"],["/.?/","*","0.02"],["counter","*","0.02"],["/wpsafe|wait/","*","0.001"],["timer","*","0.02"],["timer","*"],["/.?/","*","0.001"],["tid","*","0.02"],["timeLeft","*","0.001"],["timer","*","0.001"],["counter","*","0.001"],["timer","1000","0.001"],["timer","1600","0.001"],["count","*","0.001"],["counter"],["/counter|wait/","*","0.001"],["interval","*"],["sec--","*","0.001"],["","*","0.02"],["countdown"],["show_download_links"],["counter","*"],["countDown"],["downloadTimer"],["","","0.3"],["time","","0"],["sec--"],["secs"],["_0x"],["timer.remove"],["downloadButton"],["timePassed"],["timeleft"],["counter--"],["(i-1)"],["skipOptions"],["countDown","1150","0.5"],["timercounter"],["count","*"],["#timer"],["temp"],["counter","","0.02"],["timer","1800"],["distance"],["count"],["contador"],["display"],["second"],["timer","1500"],["updatePercentage","100","0.02"],["current()"],["l","","0"],["countdown","*","0.02"],["time","","0.02"],["wait"],["downloadToken"],["updateProgress","*"],["current-=1","*","0.001"],["_0x","*","0.001"],["counter","1000","0.001"],["scrollIncrement","*"],["","*","0.001"],["saniye"],["","1000","0.001"],["generalTimeLeft","*","0.001"],["invoke","1000"],["download","*","0.02"],["countdown","*"],["/count|verify|isCompleted/","","0.001"],["circle_animation"],["skipAdSeconds","","0.02"],["adv","*"]];
+const hostnamesMap = new Map([["deportealdia.live",0],["noticiasesports.live",0],["123link.*",1],["platinmods.*",1],["al.ly",1],["bbf.lt",1],["cpmlink.net",1],["cut-urls.com",1],["eg4link.*",1],["idlelivelink.*",1],["igram.*",1],["iiv.pl",1],["ur.ly",1],["url.gem-flash.com",1],["zeiz.me",1],["1ink.cc",1],["lin-ks.*",1],["xberuang.*",1],["soft112.com",1],["short-url.link",1],["4download.net",1],["s.sseluxx.com",1],["onifile.com",1],["topflix.*",1],["coolmathgames.com",1],["link-to.net",1],["telepisodes.org",1],["onle.co",1],["fstore.biz",1],["deltabit.co",1],["puzzles.msn.com",1],["leechall.*",1],["sfile.mobi",1],["upfile.us",1],["game-kentang.blogspot.com",1],["shortgoo.blogspot.com",1],["bde4.*",1],["indavideo.hu",1],["sfirmware.com",1],["mobilelegends.shop",1],["ockles.com",1],["urlpay.net",1],["underhentai.net",1],["suanoticia.online",1],["linkconfig.com",1],["lg-firmwares.com",1],["aylink.co",1],["gitizle.vip",1],["shtms.co",1],["cryptokinews.com",1],["cpmlink.pro",1],["policiesreview.com",1],["speedynews.xyz",[1,74]],["infokeeda.xyz",1],["webzeni.com",1],["tutwuri.id",1],["khaddavi.net",1],["lokerwfh.net",1],["mysflink.blogspot.com",1],["runmods.com",1],["anomize.xyz",1],["bondibeachau.com",1],["konstantinova.net",1],["kangkimin.com",1],["iklandb.com",1],["thingiverse.com",1],["ufreegames.com",1],["bdlink.pw",1],["fairyanime.com",1],["lootlinks.*",1],["7misr4day.com",1],["sama-pro.com",1],["otomi-games.com",1],["curseforge.com",1],["mobitaak.com",1],["arhplyrics.in",1],["telenord.it",1],["raky.in",1],["desiflixindia.com",1],["diglink.blogspot.com",1],["vkprime.com",1],["i-polls.com",1],["freecoursesonline.me",1],["yesdownloader.com",1],["games.metv.com",1],["arkadium.com",1],["tonanmedia.my.id",1],["skiplink.me",1],["yurasu.xyz",1],["isekaipalace.com",1],["mitedrive.com",1],["miteblog.com",1],["games.dailymail.co.uk",1],["fullhd4k.com",1],["juegos.eleconomista.es",1],["filmizlehdfilm.com",1],["filmizletv.*",1],["fullfilmizle.cc",1],["gofilmizle.net",1],["easybib.com",1],["modcombo.com",1],["wallpaperaccess.com",1],["ouo.*",2],["indi-share.com",3],["premid.app",3],["cheatcloud.cc",3],["cheater.ninja",3],["cheatermad.com",3],["cheatsquad.gg",3],["freepdf-books.com",4],["themeslide.com",5],["thememypc.net",6],["rezence.com",[6,46]],["mikl4forex.com",6],["gawbne.com",6],["forex-trnd.com",6],["link.tl",7],["lnk.news",8],["lnk.parts",8],["fssquad.com",8],["easylinkref.com",8],["acortalo.*",8],["acortar.*",8],["megadescarga.net",8],["megadescargas.net",8],["gamelopte.com",9],["goto.com.np",10],["vrcmods.com",10],["consoleroms.com",10],["romspedia.com",10],["forexlap.com",11],["forexmab.com",11],["forexwaw.club",11],["forex-articles.com",11],["fx4vip.com",11],["forexrw7.com",[11,42]],["3rabsports.com",11],["fx-22.com",[11,42]],["gold-24.net",[11,42]],["icutlink.com",12],["android-apk.org",12],["zegtrends.com",13],["simsdom.com",14],["fansonlinehub.com",14],["hotmediahub.com",14],["terabox.fun",14],["teralink.me",14],["terashare.me",14],["teraearn.com",14],["fautsy.com",15],["multifaucet.org",15],["coinlyhub.com",15],["i-bits.io",15],["claimbits.io",15],["mundotec.pro",15],["filemoon.*",15],["legionjuegos.org",16],["legionpeliculas.org",16],["legionprogramas.org",16],["so1.asia",16],["dutchycorp.*",17],["gamearter.com",18],["bluemediafiles.*",19],["ayobelajarbareng.com",20],["semawur.com",20],["doofree88.com",21],["acdriftingpro.com",22],["pixsera.net",23],["imgair.net",23],["imgblaze.net",23],["imgfrost.net",23],["vestimage.site",23],["pixlev.*",23],["imgyer.store",23],["pixqbngg.shop",23],["pixqwet.shop",23],["pixmos.shop",23],["imgtgd.shop",23],["imgcsxx.shop",23],["imgqklw.shop",23],["pixqkhgrt.shop",23],["imgcssd.shop",23],["imguwjsd.sbs",23],["pictbbf.shop",23],["pixbryexa.sbs",23],["picbqqa.sbs",23],["pixbkghxa.sbs",23],["imgmgf.sbs",23],["picbcxvxa.sbs",23],["imguee.sbs",23],["imgmffmv.sbs",23],["imgbqb.sbs",23],["imgbyrev.sbs",23],["imgbncvnv.sbs",23],["pixtryab.shop",23],["imggune.shop",23],["pictryhab.shop",23],["pixbnab.shop",23],["imgbnwe.shop",23],["imgbbnhi.shop",23],["imgnbii.shop",23],["imghqqbg.shop",23],["imgyhq.shop",23],["pixnbrqwg.sbs",23],["pixnbrqw.sbs",23],["picmsh.sbs",23],["imgpke.sbs",23],["picuenr.sbs",23],["imgolemn.sbs",23],["imgoebn.sbs",23],["picnwqez.sbs",23],["imgjajhe.sbs",23],["pixjnwe.sbs",23],["pixkfjtrkf.shop",23],["pixkfkf.shop",23],["pixdfdjkkr.shop",23],["pixdfdj.shop",23],["picnft.shop",23],["pixrqqz.shop",23],["picngt.shop",23],["picjgfjet.shop",23],["picjbet.shop",23],["imgkkabm.shop",23],["imgxabm.shop",23],["imgthbm.shop",23],["imgmyqbm.shop",23],["imgwwqbm.shop",23],["imgjvmbbm.shop",23],["imgjbxzjv.shop",23],["imgjmgfgm.shop",23],["picxnkjkhdf.sbs",23],["imgxxbdf.sbs",23],["imgnngr.sbs",23],["imgjjtr.sbs",23],["imgqbbds.sbs",23],["imgbvdf.sbs",23],["imgqnnnebrf.sbs",23],["imgnnnvbrf.sbs",23],["takez.co",23],["cararegistrasi.com",23],["ipa-apps.me",23],["imslp.org",23],["michaelemad.com",23],["chooyomi.com",23],["libertycity.net",23],["apps2app.com",24],["call-bomber.info",25],["kajernews.com",25],["vyaapaarguru.in",25],["tech5s.co",26],["game5s.com",26],["yalifin.xyz",26],["lrncook.xyz",26],["gadgetsreview27.com",26],["newsbawa.com",26],["acetack.com",26],["androidquest.com",26],["apklox.com",26],["chhaprawap.in",26],["gujarativyakaran.com",26],["kashmirstudentsinformation.in",26],["kisantime.com",26],["shetkaritoday.in",26],["pastescript.com",26],["trimorspacks.com",26],["updrop.link",26],["fx-gd.net",26],["healthy4pepole.com",26],["hightrip.net",26],["to-travel.net",26],["tech24us.com",27],["freethemesy.com",27],["veganab.co",28],["camdigest.com",28],["nichapk.com",29],["easyworldbusiness.com",29],["riveh.com",29],["bookszone.in",30],["uptechnologys.com",31],["sevenjournals.com",31],["labgame.io",32],["overgal.com",33],["10short.*",34],["mamahawa.com",34],["lollty.pro",34],["postazap.com",34],["financeyogi.net",34],["finclub.in",34],["easywithcode.tech",34],["letest25.co",34],["truevpnlover.com",34],["financebolo.com",34],["rphost.in",34],["vedamdigi.tech",34],["cancelguider.online",34],["bigdata.rawlazy.si",35],["codesnse.com",35],["filmypoints.in",36],["flightsim.to",36],["freethailottery.live",37],["progfu.com",37],["currentrecruitment.com",38],["investorveda.com",38],["computerpedia.in",38],["edukaroo.com",38],["advicefunda.com",38],["bestloanoffer.net",38],["techconnection.in",38],["itscybertech.com",39],["filessrc.com",39],["srcimdb.com",39],["droidmirror.com",39],["infokik.com",39],["arealgamer.org",39],["gamingbeasts.com",39],["uploadbeast.com",39],["travel.vebma.com",40],["cloud.majalahhewan.com",40],["crm.cekresi.me",40],["ai.tempatwisata.pro",40],["cinedesi.in",41],["thevouz.in",41],["tejtime24.com",41],["techishant.in",41],["whatgame.xyz",42],["mooonten.com",42],["msic.site",42],["rfiql.com",43],["gujjukhabar.in",43],["smartfeecalculator.com",43],["djxmaza.in",43],["thecubexguide.com",43],["jytechs.in",43],["aman-dn.blogspot.com",44],["ipalibrary.me",44],["hieunguyenphoto.com",44],["apkmb.com",45],["apkhihe.com",45],["aemenstore.com",46],["byboe.com",46],["cazzette.com",46],["dreamcheeky.com",46],["fidlarmusic.com",46],["hookeaudio.com",46],["jncojeans.com",46],["kiemlua.com",46],["kingsleynyc.com",46],["lucidcam.com",46],["nguyenvanbao.com",46],["nousdecor.com",46],["pennbookcenter.com",46],["publicananker.com",46],["restorbio.com",46],["staaker.com",46],["samapkstore.com",47],["5ggyan.com",47],["brotherfox91.shop",47],["currentcolorq2dv.shop",47],["customsfencei3.shop",47],["fencethoughgdrt.shop",47],["fencethroughout642.shop",47],["foxwent6ot.shop",47],["havingmovementu8x.shop",47],["homebasis4d.shop",47],["includingbreath5ku.shop",47],["ironwinter6m.shop",47],["leadmorning4ivn.shop",47],["linelocatemfsn.shop",47],["littlesound6c.shop",47],["mindmotion93y8.shop",47],["mightbadly4f.shop",47],["monkeynecktj4w.shop",47],["neighbormajorkex.shop",47],["nervousdoctor9bx.shop",47],["pantogether6jpi.shop",47],["quietlywheat23.shop",47],["saddletopg3tk.shop",47],["soldrubber5xrp.shop",47],["somehowrockyng.shop",47],["strangernervousql.shop",47],["superabbit.shop",47],["supportrightufd.shop",47],["studyinghuman6js.shop",47],["wholecommonrrvp.shop",47],["wintertold7nq.shop",47],["shortenbuddy.com",48],["jpopsingles.eu",48],["vanillatweaks.net",48],["emulatorgames.net",49],["menjelajahi.com",50],["luckydice.net",51],["unityassetcollection.com",52],["rethmic.com",53],["romhustler.org",54],["filmyhitlink.xyz",55],["cinemakottaga.*",56],["allwpworld.com",57],["trzpro.com",58],["techhelpbd.com",58],["zedge.net",59],["send-anywhere.com",60],["upstore.net",61],["rincondelsazon.com",62],["tattoosbeauty.com",62],["disheye.com",63],["yifysub.net",64],["mp3juices.icu",65],["bingotingo.com",66],["thizissam.in",66],["techyreviewx.com",67],["redirect.dafontvn.com",68],["cue-vana.com",69],["crdroid.net",69],["rlxtech.tech",69],["privatemoviez.*",69],["sonixgvn.net",69],["descargatepelis.com",70],["edufileshare.com",71],["wowroms.com",72],["mhma12.tech",73],["play.aidungeon.io",75],["whatsappmods.net",76],["adshnk.com",77],["blogmado.com",78],["pinloker.com",79],["sekilastekno.com",79],["web1s.asia",79],["fikper.com",80],["tralhasvarias.blogspot.com",81],["busuu.com",82],["newscon.org",83],["recipahi.com",84],["thestar.com",85],["obaianinho.com",86],["punkrust.net",87],["apkprime.org",88],["arcade.buzzrtv.com",89],["arcade.lemonde.fr",89],["arena.gamesforthebrain.com",89],["bestpuzzlesandgames.com",89],["cointiply.arkadiumarena.com",89],["gamelab.com",89],["games.abqjournal.com",89],["games.amny.com",89],["games.bellinghamherald.com",89],["games.besthealthmag.ca",89],["games.bnd.com",89],["games.boston.com",89],["games.bostonglobe.com",89],["games.bradenton.com",89],["games.centredaily.com",89],["games.charlotteobserver.com",89],["games.cnhinews.com",89],["games.crosswordgiant.com",89],["games.dallasnews.com",89],["games.daytondailynews.com",89],["games.denverpost.com",89],["games.everythingzoomer.com",89],["games.fresnobee.com",89],["games.gameshownetwork.com",89],["games.get.tv",89],["games.greatergood.com",89],["games.heraldonline.com",89],["games.heraldsun.com",89],["games.idahostatesman.com",89],["games.insp.com",89],["games.islandpacket.com",89],["games.journal-news.com",89],["games.kansas.com",89],["games.kansascity.com",89],["games.kentucky.com",89],["games.lancasteronline.com",89],["games.ledger-enquirer.com",89],["games.macon.com",89],["games.mashable.com",89],["games.mercedsunstar.com",89],["games.miamiherald.com",89],["games.modbee.com",89],["games.moviestvnetwork.com",89],["games.myrtlebeachonline.com",89],["games.nationalreview.com",89],["games.newsobserver.com",89],["games.parade.com",89],["games.pressdemocrat.com",89],["games.puzzlebaron.com",89],["games.puzzler.com",89],["games.puzzles.ca",89],["games.qns.com",89],["games.readersdigest.ca",89],["games.sacbee.com",89],["games.sanluisobispo.com",89],["games.sixtyandme.com",89],["games.sltrib.com",89],["games.springfieldnewssun.com",89],["games.star-telegram.com",89],["games.startribune.com",89],["games.sunherald.com",89],["games.theadvocate.com",89],["games.thenewstribune.com",89],["games.theolympian.com",89],["games.theportugalnews.com",89],["games.thestar.com",89],["games.thestate.com",89],["games.tri-cityherald.com",89],["games.triviatoday.com",89],["games.usnews.com",89],["games.word.tips",89],["games.wordgenius.com",89],["games.wtop.com",89],["jeux.meteocity.com",89],["juegos.as.com",89],["juegos.elnuevoherald.com",89],["juegos.elpais.com",89],["philly.arkadiumarena.com",89],["play.dictionary.com",89],["puzzles.bestforpuzzles.com",89],["puzzles.centralmaine.com",89],["puzzles.crosswordsolver.org",89],["puzzles.independent.co.uk",89],["puzzles.nola.com",89],["puzzles.pressherald.com",89],["puzzles.standard.co.uk",89],["puzzles.sunjournal.com",89],["restegourmet.de",90],["getmodsapk.com",91],["5play.*",92],["tech.unblockedgames.world",93],["lewdzone.com",94],["novelgames.com",95],["3bmeteo.com",96]]);
+const exceptionsMap = new Map([["go.skiplink.me",[1]],["encurtador.postazap.com",[34]]]);
+const hasEntities = true;
+const hasAncestors = false;
 
-const todoIndices = new Set();
-const tonotdoIndices = [];
-
-// Exceptions
-if ( exceptionsMap.size !== 0 ) {
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        const excepted = exceptionsMap.get(hn);
-        if ( excepted ) { tonotdoIndices.push(...excepted); }
-    }
-    exceptionsMap.clear();
-}
-
-// Hostname-based
-if ( hostnamesMap.size !== 0 ) {
-    const collectArgIndices = hn => {
-        let argsIndices = hostnamesMap.get(hn);
-        if ( argsIndices === undefined ) { return; }
-        if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
+const collectArgIndices = (hn, map, out) => {
+    let argsIndices = map.get(hn);
+    if ( argsIndices === undefined ) { return; }
+    if ( typeof argsIndices !== 'number' ) {
         for ( const argsIndex of argsIndices ) {
-            if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-            todoIndices.add(argsIndex);
+            out.add(argsIndex);
         }
-    };
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        collectArgIndices(hn);
+    } else {
+        out.add(argsIndices);
     }
-    collectArgIndices('*');
-    hostnamesMap.clear();
-}
+};
 
-// Entity-based
-if ( entitiesMap.size !== 0 ) {
-    const n = hnpartslen - 1;
-    for ( let i = 0; i < n; i++ ) {
-        for ( let j = n; j > i; j-- ) {
-            const en = hnParts.slice(i,j).join('.');
-            let argsIndices = entitiesMap.get(en);
-            if ( argsIndices === undefined ) { continue; }
-            if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
-            for ( const argsIndex of argsIndices ) {
-                if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-                todoIndices.add(argsIndex);
+const indicesFromHostname = (hostname, suffix = '') => {
+    const hnParts = hostname.split('.');
+    const hnpartslen = hnParts.length;
+    if ( hnpartslen === 0 ) { return; }
+    for ( let i = 0; i < hnpartslen; i++ ) {
+        const hn = `${hnParts.slice(i).join('.')}${suffix}`;
+        collectArgIndices(hn, hostnamesMap, todoIndices);
+        collectArgIndices(hn, exceptionsMap, tonotdoIndices);
+    }
+    if ( hasEntities ) {
+        const n = hnpartslen - 1;
+        for ( let i = 0; i < n; i++ ) {
+            for ( let j = n; j > i; j-- ) {
+                const en = `${hnParts.slice(i,j).join('.')}.*${suffix}`;
+                collectArgIndices(en, hostnamesMap, todoIndices);
+                collectArgIndices(en, exceptionsMap, tonotdoIndices);
             }
         }
     }
-    entitiesMap.clear();
+};
+
+const entries = (( ) => {
+    const docloc = document.location;
+    const origins = [ docloc.origin ];
+    if ( docloc.ancestorOrigins ) {
+        origins.push(...docloc.ancestorOrigins);
+    }
+    return origins.map((origin, i) => {
+        const beg = origin.lastIndexOf('://');
+        if ( beg === -1 ) { return; }
+        const hn = origin.slice(beg+3)
+        const end = hn.indexOf(':');
+        return { hn: end === -1 ? hn : hn.slice(0, end), i };
+    }).filter(a => a !== undefined);
+})();
+if ( entries.length === 0 ) { return; }
+
+const todoIndices = new Set();
+const tonotdoIndices = new Set();
+
+indicesFromHostname(entries[0].hn);
+if ( hasAncestors ) {
+    for ( const entry of entries ) {
+        if ( entry.i === 0 ) { continue; }
+        indicesFromHostname(entry.hn, '>>');
+    }
 }
 
 // Apply scriplets
 for ( const i of todoIndices ) {
+    if ( tonotdoIndices.has(i) ) { continue; }
     try { adjustSetInterval(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
-argsList.length = 0;
-
-/******************************************************************************/
-
-};
-// End of code to inject
-
-/******************************************************************************/
-
-uBOL_adjustSetInterval();
 
 /******************************************************************************/
 
 // End of local scope
 })();
-
-/******************************************************************************/
 
 void 0;

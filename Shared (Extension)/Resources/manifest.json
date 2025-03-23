@@ -85,6 +85,11 @@
         "path": "/rulesets/main/stevenblack-hosts.json"
       },
       {
+        "id": "ubol-tests",
+        "enabled": false,
+        "path": "/rulesets/main/ubol-tests.json"
+      },
+      {
         "id": "alb-0",
         "enabled": false,
         "path": "/rulesets/main/alb-0.json"
@@ -287,7 +292,7 @@
     "storage"
   ],
   "short_name": "uBO Lite",
-  "version": "2024.12.30.1320",
+  "version": "2025.3.23.1241",
   "web_accessible_resources": [
     {
       "resources": [

@@ -20,32 +20,13 @@
 
 */
 
-/* eslint-disable indent */
-
 // ruleset: vie-1
-
-/******************************************************************************/
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(( ) => {
-
-/******************************************************************************/
-
-// Start of code to inject
-const uBOL_abortCurrentScript = function() {
-
-const scriptletGlobals = {}; // eslint-disable-line
-
-const argsList = [["Promise","detectedAdblock"],["$","popup"],["Number",";break;case"],["document.addEventListener","window.open"],["Object.defineProperty","ADMStorageFileCDN"],["document.addEventListener","opened_window_shoppe"],["document.addEventListener","popunder"],["document.getElementById","openPop"],["jQuery","popup"],["WebAssembly","globalThis"],["navigator","devtoolsDetector"],["Object.defineProperty","fromCharCode"],["Symbol","break;case $"],["document.createElement",";break;case"],["window.addEventListener","window.open"],["setTimeout","Aff"],["setTimeout","ad_block"],["setInterval","offsetHeight"],["document.createElement","optad"],["JSON.parse","break;case $."],["$","PopUnder"],["document.createElement","script"],["jQuery","popurl"],["document.addEventListener","linksToOpen"],["addEvent","popu"],["jQuery","click_time"],["$","p0pUpRandom"],["document.documentElement","break;case $."],["document.querySelectorAll","popMagic"],["document.getElementById","myModal"],["$","open"],["document.addEventListener","open"],["document.addEventListener","shopee"],["$","window.open"],["eval"],["jQuery","click_ads"],["Promise","break;case"],["WebAssembly","localStorage"],["document.addEventListener","popup"],["$","btpop"],["document.body.addEventListener","window.open"],["jQuery","window.open"],["jQuery","open"],["WebAssembly","instantiate"],["document.write","snow"],["setTimeout","open"],["setTimeout","window.location"]];
-
-const hostnamesMap = new Map([["10gb.vn",0],["abtruyenmoi.com",1],["animehay.name",[2,3]],["anivn.club",3],["cafef.vn",4],["gamek.vn",4],["genk.vn",4],["kenh14.vn",4],["soha.vn",4],["tuoitre.vn",4],["afamily.vn",4],["thanhnien.vn",4],["cunghocvui.com",5],["dualeotruyenalpha.com",[6,43]],["m.blogtruyenmoi.com",6],["freeplayervideo.com",7],["abysscdn.com",7],["player-cdn.com",7],["geoip.redirect-ads.com",7],["playhydrax.com",7],["gocmod.com",8],["goctruyentranhvui6.com",9],["nettruyenrr.com",9],["sextop1.top",9],["hhvsub.com",9],["sayhentai.art",9],["xem.sexviet88.xyz",[9,43]],["gotphim.com",10],["haychillz.com",11],["hh3dhay.life",[12,13]],["hh3dhay.in",13],["holyfilm.org",14],["imail.edu.vn",[15,16]],["ios.codevn.net",17],["linkneverdie.net",18],["linkneverdie.top",18],["linkneverdie2.com",18],["lrepacks.net",19],["lxmanga.live",20],["p.thoctv.com",21],["phimgichill.net",22],["phimhdc.wiki",23],["phimmoi.club",24],["motphimww.net",24],["phimmoinay.top",25],["phimtho.net",26],["phimtuoitho.site",27],["rphang.online",28],["misskon.com",28],["saigon24.net",29],["sexchichnhau.net",30],["sexhd88.club",31],["sieutamphim.com",32],["tinsoikeo.live",33],["truyen247.pro",34],["truyen35.shop",35],["truyenqqti.com",36],["viet69.cat",36],["truyenqqto.com",37],["truyensextv.com",38],["truyentuan.xyz",39],["ungtycomicsvip.org",[40,43]],["vailonxx.co",41],["www.phimchaua.com",41],["phimlongtieng.org",41],["viet69.fit",42],["viet69.hn",43],["ungtycomicsvip.com",43],["vlxx.tech",43],["yurineko.my",43],["vlxyz.tube",43],["hd.javhay.site",43],["phimsexhay669.pro",43],["cliphot69.cfd",43],["doctruyen3q3.net",43],["ihentai.fan",43],["jav.vc",43],["sex.tuoi69.store",43],["top1sex.me",43],["sexmup18.com",43],["hentaivn.today",43],["www.buomtv.io",43],["truyenvn.la",43],["cdnstream.sbs",43],["javtiful.com",43],["truyengihotdo.net",43],["truyengihotzay.net",43],["truyengihotnha.com",43],["truyengihotnha.net",43],["truyengihotnay.com",43],["quatvn.fit",43],["tenmientruyengi.net",43],["topviet69.video",43],["phim18hd.in",43],["nungdam.pro",43],["demo.14412882.com",43],["cliphot69.pics",43],["hhtq5.vip",43],["sexdiary.club",43],["vn2.xvideos69.xxx",43],["umetruyenhay.com",43],["damconuong.club",43],["vungoctuan.vn",44],["www.toptruyen28.net",45],["xnxx-sex-videos.com",46]]);
-
-const entitiesMap = new Map([]);
-
-const exceptionsMap = new Map([]);
+(function uBOL_abortCurrentScript() {
 
 /******************************************************************************/
 
@@ -88,7 +69,7 @@ function abortCurrentScriptCore(
         desc = undefined;
     }
     const debug = shouldDebug(extraArgs);
-    const exceptionToken = getExceptionToken();
+    const exceptionToken = getExceptionTokenFn();
     const scriptTexts = new WeakMap();
     const getScriptText = elem => {
         let text = elem.textContent;
@@ -106,7 +87,7 @@ function abortCurrentScriptCore(
                 text = self.decodeURIComponent(content);
                 break;
             }
-        } catch(ex) {
+        } catch {
         }
         scriptTexts.set(elem, text);
         return text;
@@ -173,8 +154,8 @@ function runAtHtmlElementFn(fn) {
     observer.observe(document, { childList: true });
 }
 
-function getExceptionToken() {
-    const token = getRandomToken();
+function getExceptionTokenFn() {
+    const token = getRandomTokenFn();
     const oe = self.onerror;
     self.onerror = function(msg, ...args) {
         if ( typeof msg === 'string' && msg.includes(token) ) { return true; }
@@ -204,10 +185,12 @@ function safeSelf() {
         'Object_defineProperties': Object.defineProperties.bind(Object),
         'Object_fromEntries': Object.fromEntries.bind(Object),
         'Object_getOwnPropertyDescriptor': Object.getOwnPropertyDescriptor.bind(Object),
+        'Object_hasOwn': Object.hasOwn.bind(Object),
         'RegExp': self.RegExp,
         'RegExp_test': self.RegExp.prototype.test,
         'RegExp_exec': self.RegExp.prototype.exec,
         'Request_clone': self.Request.prototype.clone,
+        'String': self.String,
         'String_fromCharCode': String.fromCharCode,
         'String_split': String.prototype.split,
         'XMLHttpRequest': self.XMLHttpRequest,
@@ -285,7 +268,7 @@ function safeSelf() {
             try {
                 return new RegExp(match[1], match[2] || undefined);
             }
-            catch(ex) {
+            catch {
             }
             return /^/;
         },
@@ -363,7 +346,7 @@ function safeSelf() {
             }
         };
         bc.postMessage('areyouready?');
-    } catch(_) {
+    } catch {
         safe.sendToLogger = (type, ...args) => {
             const text = safe.toLogText(type, ...args);
             if ( text === undefined ) { return; }
@@ -378,7 +361,7 @@ function shouldDebug(details) {
     return scriptletGlobals.canDebug && details.debug;
 }
 
-function getRandomToken() {
+function getRandomTokenFn() {
     const safe = safeSelf();
     return safe.String_fromCharCode(Date.now() % 26 + 97) +
         safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
@@ -386,95 +369,83 @@ function getRandomToken() {
 
 /******************************************************************************/
 
-const hnParts = [];
-try {
-    let origin = document.location.origin;
-    if ( origin === 'null' ) {
-        const origins = document.location.ancestorOrigins;
-        for ( let i = 0; i < origins.length; i++ ) {
-            origin = origins[i];
-            if ( origin !== 'null' ) { break; }
-        }
-    }
-    const pos = origin.lastIndexOf('://');
-    if ( pos === -1 ) { return; }
-    hnParts.push(...origin.slice(pos+3).split('.'));
-}
-catch(ex) { }
-const hnpartslen = hnParts.length;
-if ( hnpartslen === 0 ) { return; }
+const scriptletGlobals = {}; // eslint-disable-line
+const argsList = [["Promise","detectedAdblock"],["Object.defineProperty","ADMStorageFileCDN"],["$","aff"],["document.addEventListener","opened_window_shoppe"],["document.addEventListener","popunder"],["$","arrDirectLink"],["document.getElementById","openPop"],["document.addEventListener","open"],["jQuery","popup"],["WebAssembly","globalThis"],["navigator","devtoolsDetector"],["Symbol","break;case $"],["document.createElement",";break;case"],["eval","$._Eu"],["window.addEventListener","window.open"],["setTimeout","Aff"],["setTimeout","ad_block"],["jQuery","Popup"],["setInterval","offsetHeight"],["document.addEventListener","Click"],["document.createElement","optad"],["JSON.parse","break;case $."],["$","PopUnder"],["document.createElement","script"],["addEvent","popu"],["jQuery","click_time"],["$","open"],["$","p0pUpRandom"],["document.documentElement","break;case $."],["document.querySelectorAll","popMagic"],["document.getElementById","myModal"],["document.addEventListener","shopee"],["$","window.open"],["eval"],["jQuery","click_ads"],["document.addEventListener","window.open"],["Promise","break;case"],["WebAssembly","localStorage"],["document.addEventListener","popup"],["document.body.addEventListener","window.open"],["jQuery","window.open"],["WebAssembly","instantiate"],["jQuery","open"],["document.write","snow"],["setTimeout","open"],["setTimeout","window.location"]];
+const hostnamesMap = new Map([["10gb.vn",0],["cafef.vn",1],["gamek.vn",1],["genk.vn",1],["kenh14.vn",1],["soha.vn",1],["tuoitre.vn",1],["afamily.vn",1],["thanhnien.vn",1],["cdn2.insure885.fun",2],["cunghocvui.com",3],["dualeotruyenbotz.com",[4,41]],["m.blogtruyenmoi.com",4],["economic45882.shop",5],["freeplayervideo.com",6],["abysscdn.com",6],["player-cdn.com",6],["playhydrax.com",6],["game8.vn",7],["sexhd88.club",7],["gocmod.com",8],["goctruyentranhvuiaa.com",9],["nettruyenrr.com",9],["sextop1.show",9],["hhvsub1.com",9],["sayhentai.ink",9],["jav.sexviet88.xyz",[9,41]],["gotphim.com",10],["hh3dhay.life",[11,12,13]],["tram3d.com",12],["tram3d.me",13],["animevietsub.lol",13],["holyfilm.org",14],["imail.edu.vn",[15,16]],["ios.codevn.net",[17,18]],["javhd.shop",19],["linkneverdie.net",20],["linkneverdie.top",20],["linkneverdie2.com",20],["lrepacks.net",21],["lxmanga.wiki",22],["p.thoctv.com",23],["phimmoi.sale",24],["phimmoinay.top",25],["phimsexvietnam.co",26],["phimtho.net",27],["phimtuoitho.site",28],["rphang.online",29],["misskon.com",29],["saigon24.net",30],["sieutamphim.com",31],["tinsoikeo.live",32],["truyen247.pro",33],["truyen35.shop",34],["truyengg.com",35],["truyenqqtet.com",36],["viet69.xin",36],["truyenqqto.com",37],["truyensextv.com",38],["ungtycomicsvip.org",[39,41]],["vailonxx.co",40],["motchill66.com",40],["viet69.gd",41],["vlxx.xxx",41],["yurineko.my",41],["xemsex.me",41],["cliphot69.pw",41],["doctruyen3qui5.pro",41],["ihentai.men",41],["hentaivc.com",41],["www.buomtv.io",41],["truyenvn.nl",41],["javtiful.com",41],["quatvn.love",41],["top1phimsex.com",41],["phim18hd.cam",41],["phim.gaisexvl.pro",41],["demo.14412882.com",41],["cliphot69.pics",41],["hhtq5.vip",41],["sexdiary.club",41],["vn2.xvideos69.xxx",41],["umetruyenhay.com",41],["damconuong.love",41],["viet69.soy",42],["vungoctuan.vn",43],["www.toptruyentv2.pro",44],["xnxx-sex-videos.com",45]]);
+const exceptionsMap = new Map([]);
+const hasEntities = false;
+const hasAncestors = false;
 
-const todoIndices = new Set();
-const tonotdoIndices = [];
-
-// Exceptions
-if ( exceptionsMap.size !== 0 ) {
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        const excepted = exceptionsMap.get(hn);
-        if ( excepted ) { tonotdoIndices.push(...excepted); }
-    }
-    exceptionsMap.clear();
-}
-
-// Hostname-based
-if ( hostnamesMap.size !== 0 ) {
-    const collectArgIndices = hn => {
-        let argsIndices = hostnamesMap.get(hn);
-        if ( argsIndices === undefined ) { return; }
-        if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
+const collectArgIndices = (hn, map, out) => {
+    let argsIndices = map.get(hn);
+    if ( argsIndices === undefined ) { return; }
+    if ( typeof argsIndices !== 'number' ) {
         for ( const argsIndex of argsIndices ) {
-            if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-            todoIndices.add(argsIndex);
+            out.add(argsIndex);
         }
-    };
-    for ( let i = 0; i < hnpartslen; i++ ) {
-        const hn = hnParts.slice(i).join('.');
-        collectArgIndices(hn);
+    } else {
+        out.add(argsIndices);
     }
-    collectArgIndices('*');
-    hostnamesMap.clear();
-}
+};
 
-// Entity-based
-if ( entitiesMap.size !== 0 ) {
-    const n = hnpartslen - 1;
-    for ( let i = 0; i < n; i++ ) {
-        for ( let j = n; j > i; j-- ) {
-            const en = hnParts.slice(i,j).join('.');
-            let argsIndices = entitiesMap.get(en);
-            if ( argsIndices === undefined ) { continue; }
-            if ( typeof argsIndices === 'number' ) { argsIndices = [ argsIndices ]; }
-            for ( const argsIndex of argsIndices ) {
-                if ( tonotdoIndices.includes(argsIndex) ) { continue; }
-                todoIndices.add(argsIndex);
+const indicesFromHostname = (hostname, suffix = '') => {
+    const hnParts = hostname.split('.');
+    const hnpartslen = hnParts.length;
+    if ( hnpartslen === 0 ) { return; }
+    for ( let i = 0; i < hnpartslen; i++ ) {
+        const hn = `${hnParts.slice(i).join('.')}${suffix}`;
+        collectArgIndices(hn, hostnamesMap, todoIndices);
+        collectArgIndices(hn, exceptionsMap, tonotdoIndices);
+    }
+    if ( hasEntities ) {
+        const n = hnpartslen - 1;
+        for ( let i = 0; i < n; i++ ) {
+            for ( let j = n; j > i; j-- ) {
+                const en = `${hnParts.slice(i,j).join('.')}.*${suffix}`;
+                collectArgIndices(en, hostnamesMap, todoIndices);
+                collectArgIndices(en, exceptionsMap, tonotdoIndices);
             }
         }
     }
-    entitiesMap.clear();
+};
+
+const entries = (( ) => {
+    const docloc = document.location;
+    const origins = [ docloc.origin ];
+    if ( docloc.ancestorOrigins ) {
+        origins.push(...docloc.ancestorOrigins);
+    }
+    return origins.map((origin, i) => {
+        const beg = origin.lastIndexOf('://');
+        if ( beg === -1 ) { return; }
+        const hn = origin.slice(beg+3)
+        const end = hn.indexOf(':');
+        return { hn: end === -1 ? hn : hn.slice(0, end), i };
+    }).filter(a => a !== undefined);
+})();
+if ( entries.length === 0 ) { return; }
+
+const todoIndices = new Set();
+const tonotdoIndices = new Set();
+
+indicesFromHostname(entries[0].hn);
+if ( hasAncestors ) {
+    for ( const entry of entries ) {
+        if ( entry.i === 0 ) { continue; }
+        indicesFromHostname(entry.hn, '>>');
+    }
 }
 
 // Apply scriplets
 for ( const i of todoIndices ) {
+    if ( tonotdoIndices.has(i) ) { continue; }
     try { abortCurrentScript(...argsList[i]); }
-    catch(ex) {}
+    catch { }
 }
-argsList.length = 0;
-
-/******************************************************************************/
-
-};
-// End of code to inject
-
-/******************************************************************************/
-
-uBOL_abortCurrentScript();
 
 /******************************************************************************/
 
 // End of local scope
 })();
-
-/******************************************************************************/
 
 void 0;

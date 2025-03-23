@@ -71,6 +71,7 @@
    "pi.hole",
    "repeater.asus.com",
    "router.asus.com",
+   "router.synology.com",
    "routerlogin.com",
    "routerlogin.net",
    "samsung.router",
@@ -83,6 +84,8 @@
    "tplinkplclogin.net",
    "tplinkrepeater.net",
    "tplinkwifi.net",
+   "unifi",
+   "unifi.localdomain",
    "web.setup",
    "web.setup.home"
   ]
@@ -141,6 +144,8 @@
    "bund.de",
    "client.foldingathome.org",
    "deutsche-rentenversicherung.de",
+   "driverhub.asus.com",
+   "filecrypt.co",
    "governikus.de",
    "intel.cn",
    "intel.co.id",
@@ -155,7 +160,8 @@
    "intel.vn",
    "mega.nz",
    "mv-serviceportal.de",
-   "organspende-register.de"
+   "organspende-register.de",
+   "pcsupport.lenovo.com"
   ],
   "requestDomains": [
    "127.0.0.1"
@@ -170,6 +176,7 @@
  },
  "condition": {
   "initiatorDomains": [
+   "apollographql.com",
    "deutsche-rentenversicherung.de"
   ],
   "requestDomains": [
