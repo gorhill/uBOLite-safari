@@ -20,153 +20,159 @@
 
 */
 
-// ruleset: ubol-tests
+// ruleset: annoyances-overlays
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(function uBOL_jsonlPruneFetchResponse() {
+(function uBOL_hrefSanitizer() {
 
 /******************************************************************************/
 
-function jsonlPruneFetchResponse(...args) {
-    jsonlPruneFetchResponseFn(...args);
-}
-
-function jsonlPruneFetchResponseFn(
-    rawPrunePaths = '',
-    rawNeedlePaths = ''
+function hrefSanitizer(
+    selector = '',
+    source = ''
 ) {
+    if ( typeof selector !== 'string' ) { return; }
+    if ( selector === '' ) { return; }
     const safe = safeSelf();
-    const logPrefix = safe.makeLogPrefix('jsonl-prune-fetch-response', rawPrunePaths, rawNeedlePaths);
-    const extraArgs = safe.getExtraArgs(Array.from(arguments), 2);
-    const propNeedles = parsePropertiesToMatchFn(extraArgs.propsToMatch, 'url');
-    const logall = rawPrunePaths === '';
-    const applyHandler = function(target, thisArg, args) {
-        const fetchPromise = Reflect.apply(target, thisArg, args);
-        if ( propNeedles.size !== 0 ) {
-            const objs = [ args[0] instanceof Object ? args[0] : { url: args[0] } ];
-            if ( objs[0] instanceof Request ) {
-                try {
-                    objs[0] = safe.Request_clone.call(objs[0]);
-                } catch(ex) {
-                    safe.uboErr(logPrefix, 'Error:', ex);
-                }
-            }
-            if ( args[1] instanceof Object ) {
-                objs.push(args[1]);
-            }
-            const matched = matchObjectPropertiesFn(propNeedles, ...objs);
-            if ( matched === undefined ) { return fetchPromise; }
-            if ( safe.logLevel > 1 ) {
-                safe.uboLog(logPrefix, `Matched "propsToMatch":\n\t${matched.join('\n\t')}`);
-            }
-        }
-        return fetchPromise.then(responseBefore => {
-            const response = responseBefore.clone();
-            return response.text().then(textBefore => {
-                if ( typeof textBefore !== 'string' ) { return textBefore; }
-                if ( logall ) {
-                    safe.uboLog(logPrefix, textBefore);
-                    return responseBefore;
-                }
-                const textAfter = jsonlPruneFn(textBefore, rawPrunePaths, rawNeedlePaths);
-                if ( textAfter === textBefore ) { return responseBefore; }
-                safe.uboLog(logPrefix, 'Pruned');
-                const responseAfter = new Response(textAfter, {
-                    status: responseBefore.status,
-                    statusText: responseBefore.statusText,
-                    headers: responseBefore.headers,
-                });
-                Object.defineProperties(responseAfter, {
-                    ok: { value: responseBefore.ok },
-                    redirected: { value: responseBefore.redirected },
-                    type: { value: responseBefore.type },
-                    url: { value: responseBefore.url },
-                });
-                return responseAfter;
-            }).catch(reason => {
-                safe.uboErr(logPrefix, 'Error:', reason);
-                return responseBefore;
-            });
-        }).catch(reason => {
-            safe.uboErr(logPrefix, 'Error:', reason);
-            return fetchPromise;
-        });
-    };
-    self.fetch = new Proxy(self.fetch, {
-        apply: applyHandler
-    });
-}
-
-function jsonlPruneFn(
-    text = '',
-    rawPrunePaths = '',
-    rawNeedlePaths = ''
-) {
-    const safe = safeSelf();
-    const linesBefore = text.split(/\n+/);
-    const linesAfter = [];
-    for ( const lineBefore of linesBefore ) {
-        let objBefore;
+    const logPrefix = safe.makeLogPrefix('href-sanitizer', selector, source);
+    if ( source === '' ) { source = 'text'; }
+    const sanitizeCopycats = (href, text) => {
+        let elems = [];
         try {
-            objBefore = safe.JSON_parse(lineBefore);
+            elems = document.querySelectorAll(`a[href="${href}"`);
+        }
+        catch {
+        }
+        for ( const elem of elems ) {
+            elem.setAttribute('href', text);
+        }
+        return elems.length;
+    };
+    const validateURL = text => {
+        if ( typeof text !== 'string' ) { return ''; }
+        if ( text === '' ) { return ''; }
+        if ( /[\x00-\x20\x7f]/.test(text) ) { return ''; }
+        try {
+            const url = new URL(text, document.location);
+            return url.href;
         } catch {
         }
-        if ( typeof objBefore !== 'object' ) {
-            linesAfter.push(lineBefore);
-            continue;
+        return '';
+    };
+    const extractParam = (href, source) => {
+        if ( Boolean(source) === false ) { return href; }
+        const recursive = source.includes('?', 1);
+        const end = recursive ? source.indexOf('?', 1) : source.length;
+        try {
+            const url = new URL(href, document.location);
+            let value = url.searchParams.get(source.slice(1, end));
+            if ( value === null ) { return href }
+            if ( recursive ) { return extractParam(value, source.slice(end)); }
+            return value;
+        } catch {
         }
-        const objAfter = objectPruneFn(objBefore, rawPrunePaths, rawNeedlePaths);
-        if ( typeof objAfter !== 'object' ) {
-            linesAfter.push(lineBefore);
-            continue;
+        return href;
+    };
+    const extractURL = (elem, source) => {
+        if ( /^\[.*\]$/.test(source) ) {
+            return elem.getAttribute(source.slice(1,-1).trim()) || '';
         }
-        linesAfter.push(safe.JSON_stringifyFn(objAfter));
-    }
-    return linesAfter.join('\n');
-}
-
-function matchObjectPropertiesFn(propNeedles, ...objs) {
-    const safe = safeSelf();
-    const matched = [];
-    for ( const obj of objs ) {
-        if ( obj instanceof Object === false ) { continue; }
-        for ( const [ prop, details ] of propNeedles ) {
-            let value = obj[prop];
-            if ( value === undefined ) { continue; }
-            if ( typeof value !== 'string' ) {
-                try { value = safe.JSON_stringify(value); }
-                catch { }
-                if ( typeof value !== 'string' ) { continue; }
+        if ( source === 'text' ) {
+            return elem.textContent
+                .replace(/^[^\x21-\x7e]+/, '') // remove leading invalid characters
+                .replace(/[^\x21-\x7e]+$/, '') // remove trailing invalid characters
+            ;
+        }
+        if ( source.startsWith('?') === false ) { return ''; }
+        const steps = source.replace(/(\S)\?/g, '\\1?').split(/\s+/);
+        const url = steps.length === 1
+            ? extractParam(elem.href, source)
+            : urlSkip(elem.href, false, steps);
+        if ( url === undefined ) { return; }
+        return url.replace(/ /g, '%20');
+    };
+    const sanitize = ( ) => {
+        let elems = [];
+        try {
+            elems = document.querySelectorAll(selector);
+        }
+        catch {
+            return false;
+        }
+        for ( const elem of elems ) {
+            if ( elem.localName !== 'a' ) { continue; }
+            if ( elem.hasAttribute('href') === false ) { continue; }
+            const href = elem.getAttribute('href');
+            const text = extractURL(elem, source);
+            const hrefAfter = validateURL(text);
+            if ( hrefAfter === '' ) { continue; }
+            if ( hrefAfter === href ) { continue; }
+            elem.setAttribute('href', hrefAfter);
+            const count = sanitizeCopycats(href, hrefAfter);
+            safe.uboLog(logPrefix, `Sanitized ${count+1} links to\n${hrefAfter}`);
+        }
+        return true;
+    };
+    let observer, timer;
+    const onDomChanged = mutations => {
+        if ( timer !== undefined ) { return; }
+        let shouldSanitize = false;
+        for ( const mutation of mutations ) {
+            if ( mutation.addedNodes.length === 0 ) { continue; }
+            for ( const node of mutation.addedNodes ) {
+                if ( node.nodeType !== 1 ) { continue; }
+                shouldSanitize = true;
+                break;
             }
-            if ( safe.testPattern(details, value) === false ) { return; }
-            matched.push(`${prop}: ${value}`);
+            if ( shouldSanitize ) { break; }
         }
-    }
-    return matched;
+        if ( shouldSanitize === false ) { return; }
+        timer = safe.onIdle(( ) => {
+            timer = undefined;
+            sanitize();
+        });
+    };
+    const start = ( ) => {
+        if ( sanitize() === false ) { return; }
+        observer = new MutationObserver(onDomChanged);
+        observer.observe(document.body, {
+            subtree: true,
+            childList: true,
+        });
+    };
+    runAt(( ) => { start(); }, 'interactive');
 }
 
-function parsePropertiesToMatchFn(propsToMatch, implicit = '') {
-    const safe = safeSelf();
-    const needles = new Map();
-    if ( propsToMatch === undefined || propsToMatch === '' ) { return needles; }
-    const options = { canNegate: true };
-    for ( const needle of safe.String_split.call(propsToMatch, /\s+/) ) {
-        let [ prop, pattern ] = safe.String_split.call(needle, ':');
-        if ( prop === '' ) { continue; }
-        if ( pattern !== undefined && /[^$\w -]/.test(prop) ) {
-            prop = `${prop}:${pattern}`;
-            pattern = undefined;
+function runAt(fn, when) {
+    const intFromReadyState = state => {
+        const targets = {
+            'loading': 1, 'asap': 1,
+            'interactive': 2, 'end': 2, '2': 2,
+            'complete': 3, 'idle': 3, '3': 3,
+        };
+        const tokens = Array.isArray(state) ? state : [ state ];
+        for ( const token of tokens ) {
+            const prop = `${token}`;
+            if ( Object.hasOwn(targets, prop) === false ) { continue; }
+            return targets[prop];
         }
-        if ( pattern !== undefined ) {
-            needles.set(prop, safe.initPattern(pattern, options));
-        } else if ( implicit !== '' ) {
-            needles.set(implicit, safe.initPattern(prop, options));
-        }
+        return 0;
+    };
+    const runAt = intFromReadyState(when);
+    if ( intFromReadyState(document.readyState) >= runAt ) {
+        fn(); return;
     }
-    return needles;
+    const onStateChange = ( ) => {
+        if ( intFromReadyState(document.readyState) < runAt ) { return; }
+        fn();
+        safe.removeEventListener.apply(document, args);
+    };
+    const safe = safeSelf();
+    const args = [ 'readystatechange', onStateChange, { capture: true } ];
+    safe.addEventListener.apply(document, args);
 }
 
 function safeSelf() {
@@ -359,181 +365,103 @@ function safeSelf() {
     return safe;
 }
 
-function objectPruneFn(
-    obj,
-    rawPrunePaths,
-    rawNeedlePaths,
-    stackNeedleDetails = { matchAll: true },
-    extraArgs = {}
-) {
-    if ( typeof rawPrunePaths !== 'string' ) { return; }
-    const safe = safeSelf();
-    const prunePaths = rawPrunePaths !== ''
-        ? safe.String_split.call(rawPrunePaths, / +/)
-        : [];
-    const needlePaths = prunePaths.length !== 0 && rawNeedlePaths !== ''
-        ? safe.String_split.call(rawNeedlePaths, / +/)
-        : [];
-    if ( stackNeedleDetails.matchAll !== true ) {
-        if ( matchesStackTraceFn(stackNeedleDetails, extraArgs.logstack) === false ) {
+function urlSkip(url, blocked, steps, directive = {}) {
+    try {
+        let redirectBlocked = false;
+        let urlout = url;
+        for ( const step of steps ) {
+            const urlin = urlout;
+            const c0 = step.charCodeAt(0);
+            // Extract from hash
+            if ( c0 === 0x23 && step === '#' ) { // #
+                const pos = urlin.indexOf('#');
+                urlout = pos !== -1 ? urlin.slice(pos+1) : '';
+                continue;
+            }
+            // Extract from URL parameter name at position i
+            if ( c0 === 0x26 ) { // &
+                const i = (parseInt(step.slice(1)) || 0) - 1;
+                if ( i < 0 ) { return; }
+                const url = new URL(urlin);
+                if ( i >= url.searchParams.size ) { return; }
+                const params = Array.from(url.searchParams.keys());
+                urlout = decodeURIComponent(params[i]);
+                continue;
+            }
+            // Enforce https
+            if ( c0 === 0x2B && step === '+https' ) { // +
+                const s = urlin.replace(/^https?:\/\//, '');
+                if ( /^[\w-]:\/\//.test(s) ) { return; }
+                urlout = `https://${s}`;
+                continue;
+            }
+            // Decode
+            if ( c0 === 0x2D ) { // -
+                // Base64
+                if ( step === '-base64' ) {
+                    urlout = self.atob(urlin);
+                    continue;
+                }
+                // Safe Base64
+                if ( step === '-safebase64' ) {
+                    if ( urlSkip.safeBase64Replacer === undefined ) {
+                        urlSkip.safeBase64Map = { '-': '+', '_': '/' };
+                        urlSkip.safeBase64Replacer = s => urlSkip.safeBase64Map[s];
+                    }
+                    urlout = urlin.replace(/[-_]/g, urlSkip.safeBase64Replacer);
+                    urlout = self.atob(urlout);
+                    continue;
+                }
+                // URI component
+                if ( step === '-uricomponent' ) {
+                    urlout = decodeURIComponent(urlin);
+                    continue;
+                }
+                // Enable skip of blocked requests
+                if ( step === '-blocked' ) {
+                    redirectBlocked = true;
+                    continue;
+                }
+            }
+            // Regex extraction from first capture group
+            if ( c0 === 0x2F ) { // /
+                const re = directive.cache ?? new RegExp(step.slice(1, -1));
+                if ( directive.cache === null ) {
+                    directive.cache = re;
+                }
+                const match = re.exec(urlin);
+                if ( match === null ) { return; }
+                if ( match.length <= 1 ) { return; }
+                urlout = match[1];
+                continue;
+            }
+            // Extract from URL parameter
+            if ( c0 === 0x3F ) { // ?
+                urlout = (new URL(urlin)).searchParams.get(step.slice(1));
+                if ( urlout === null ) { return; }
+                if ( urlout.includes(' ') ) {
+                    urlout = urlout.replace(/ /g, '%20');
+                }
+                continue;
+            }
+            // Unknown directive
             return;
         }
+        const urlfinal = new URL(urlout);
+        if ( urlfinal.protocol !== 'https:' ) {
+            if ( urlfinal.protocol !== 'http:' ) { return; }
+        }
+        if ( blocked && redirectBlocked !== true ) { return; }
+        return urlout;
+    } catch {
     }
-    if ( objectPruneFn.mustProcess === undefined ) {
-        objectPruneFn.mustProcess = (root, needlePaths) => {
-            for ( const needlePath of needlePaths ) {
-                if ( objectFindOwnerFn(root, needlePath) === false ) {
-                    return false;
-                }
-            }
-            return true;
-        };
-    }
-    if ( prunePaths.length === 0 ) { return; }
-    let outcome = 'nomatch';
-    if ( objectPruneFn.mustProcess(obj, needlePaths) ) {
-        for ( const path of prunePaths ) {
-            if ( objectFindOwnerFn(obj, path, true) ) {
-                outcome = 'match';
-            }
-        }
-    }
-    if ( outcome === 'match' ) { return obj; }
-}
-
-function matchesStackTraceFn(
-    needleDetails,
-    logLevel = ''
-) {
-    const safe = safeSelf();
-    const exceptionToken = getExceptionTokenFn();
-    const error = new safe.Error(exceptionToken);
-    const docURL = new URL(self.location.href);
-    docURL.hash = '';
-    // Normalize stack trace
-    const reLine = /(.*?@)?(\S+)(:\d+):\d+\)?$/;
-    const lines = [];
-    for ( let line of safe.String_split.call(error.stack, /[\n\r]+/) ) {
-        if ( line.includes(exceptionToken) ) { continue; }
-        line = line.trim();
-        const match = safe.RegExp_exec.call(reLine, line);
-        if ( match === null ) { continue; }
-        let url = match[2];
-        if ( url.startsWith('(') ) { url = url.slice(1); }
-        if ( url === docURL.href ) {
-            url = 'inlineScript';
-        } else if ( url.startsWith('<anonymous>') ) {
-            url = 'injectedScript';
-        }
-        let fn = match[1] !== undefined
-            ? match[1].slice(0, -1)
-            : line.slice(0, match.index).trim();
-        if ( fn.startsWith('at') ) { fn = fn.slice(2).trim(); }
-        let rowcol = match[3];
-        lines.push(' ' + `${fn} ${url}${rowcol}:1`.trim());
-    }
-    lines[0] = `stackDepth:${lines.length-1}`;
-    const stack = lines.join('\t');
-    const r = needleDetails.matchAll !== true &&
-        safe.testPattern(needleDetails, stack);
-    if (
-        logLevel === 'all' ||
-        logLevel === 'match' && r ||
-        logLevel === 'nomatch' && !r
-    ) {
-        safe.uboLog(stack.replace(/\t/g, '\n'));
-    }
-    return r;
-}
-
-function objectFindOwnerFn(
-    root,
-    path,
-    prune = false
-) {
-    const safe = safeSelf();
-    let owner = root;
-    let chain = path;
-    for (;;) {
-        if ( typeof owner !== 'object' || owner === null  ) { return false; }
-        const pos = chain.indexOf('.');
-        if ( pos === -1 ) {
-            if ( prune === false ) {
-                return safe.Object_hasOwn(owner, chain);
-            }
-            let modified = false;
-            if ( chain === '*' ) {
-                for ( const key in owner ) {
-                    if ( safe.Object_hasOwn(owner, key) === false ) { continue; }
-                    delete owner[key];
-                    modified = true;
-                }
-            } else if ( safe.Object_hasOwn(owner, chain) ) {
-                delete owner[chain];
-                modified = true;
-            }
-            return modified;
-        }
-        const prop = chain.slice(0, pos);
-        const next = chain.slice(pos + 1);
-        let found = false;
-        if ( prop === '[-]' && Array.isArray(owner) ) {
-            let i = owner.length;
-            while ( i-- ) {
-                if ( objectFindOwnerFn(owner[i], next) === false ) { continue; }
-                owner.splice(i, 1);
-                found = true;
-            }
-            return found;
-        }
-        if ( prop === '{-}' && owner instanceof Object ) {
-            for ( const key of Object.keys(owner) ) {
-                if ( objectFindOwnerFn(owner[key], next) === false ) { continue; }
-                delete owner[key];
-                found = true;
-            }
-            return found;
-        }
-        if (
-            prop === '[]' && Array.isArray(owner) ||
-            prop === '{}' && owner instanceof Object ||
-            prop === '*' && owner instanceof Object
-        ) {
-            for ( const key of Object.keys(owner) ) {
-                if (objectFindOwnerFn(owner[key], next, prune) === false ) { continue; }
-                found = true;
-            }
-            return found;
-        }
-        if ( safe.Object_hasOwn(owner, prop) === false ) { return false; }
-        owner = owner[prop];
-        chain = chain.slice(pos + 1);
-    }
-}
-
-function getExceptionTokenFn() {
-    const token = getRandomTokenFn();
-    const oe = self.onerror;
-    self.onerror = function(msg, ...args) {
-        if ( typeof msg === 'string' && msg.includes(token) ) { return true; }
-        if ( oe instanceof Function ) {
-            return oe.call(this, msg, ...args);
-        }
-    }.bind();
-    return token;
-}
-
-function getRandomTokenFn() {
-    const safe = safeSelf();
-    return safe.String_fromCharCode(Date.now() % 26 + 97) +
-        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
 }
 
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["b"]];
-const hostnamesMap = new Map([["ublockorigin.github.io",0],["localhost",0]]);
+const argsList = [["a[href^=\"https://steamcommunity.com/linkfilter/?u=http\"]","?u"]];
+const hostnamesMap = new Map([["store.steampowered.com",0]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;
@@ -601,7 +529,7 @@ if ( hasAncestors ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     if ( tonotdoIndices.has(i) ) { continue; }
-    try { jsonlPruneFetchResponse(...argsList[i]); }
+    try { hrefSanitizer(...argsList[i]); }
     catch { }
 }
 

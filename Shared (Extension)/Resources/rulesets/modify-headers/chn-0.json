@@ -105,6 +105,36 @@
    {
     "header": "content-security-policy",
     "operation": "append",
+    "value": "script-src 'self' * 'unsafe-inline'"
+   }
+  ],
+  "type": "modifyHeaders"
+ },
+ "condition": {
+  "initiatorDomains": [
+   "1kans.net",
+   "aidu123.com",
+   "biquluo.info",
+   "bqgh.com",
+   "jmshuwu.net",
+   "maxshuku.com",
+   "shukuge.com",
+   "sthuojia.net",
+   "zk01.net"
+  ],
+  "resourceTypes": [
+   "main_frame",
+   "sub_frame"
+  ]
+ },
+ "id": 6
+},
+{
+ "action": {
+  "responseHeaders": [
+   {
+    "header": "content-security-policy",
+    "operation": "append",
     "value": "script-src 'self' * 'unsafe-eval'"
    }
   ],

@@ -112,7 +112,7 @@ function runAt(fn, when) {
         const tokens = Array.isArray(state) ? state : [ state ];
         for ( const token of tokens ) {
             const prop = `${token}`;
-            if ( targets.hasOwnProperty(prop) === false ) { continue; }
+            if ( Object.hasOwn(targets, prop) === false ) { continue; }
             return targets[prop];
         }
         return 0;
@@ -326,7 +326,7 @@ function safeSelf() {
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["data-track"],["class",".dfp-loaded"]];
 const hostnamesMap = new Map([["sonderborgnyt.dk",0],["no",1]]);
-const exceptionsMap = new Map([]);
+const exceptionsMap = new Map([["bankid.com",[1]],["3dsecure.no",[1]]]);
 const hasEntities = false;
 const hasAncestors = false;
 

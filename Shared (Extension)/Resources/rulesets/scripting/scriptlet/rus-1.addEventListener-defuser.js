@@ -200,7 +200,7 @@ function runAt(fn, when) {
         const tokens = Array.isArray(state) ? state : [ state ];
         for ( const token of tokens ) {
             const prop = `${token}`;
-            if ( targets.hasOwnProperty(prop) === false ) { continue; }
+            if ( Object.hasOwn(targets, prop) === false ) { continue; }
             return targets[prop];
         }
         return 0;
@@ -417,8 +417,8 @@ function shouldDebug(details) {
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["click","externalLink"]];
-const hostnamesMap = new Map([["otvet.mail.ru",0]]);
+const argsList = [["click","externalLink"],["/beforeunload|pagehide/","/0x|_setCookies/"]];
+const hostnamesMap = new Map([["otvet.mail.ru",0],["dzen.ru",1]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;
