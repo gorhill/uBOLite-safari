@@ -7,7 +7,7 @@
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "myonlineradio.hu"
   ],
   "resourceTypes": [
@@ -15,7 +15,7 @@
   ],
   "urlFilter": "||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js^"
  },
- "id": 1,
+ "id": 197,
  "priority": 11
 },
 {
@@ -26,7 +26,7 @@
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "cinemo.hu"
   ],
   "resourceTypes": [
@@ -34,7 +34,7 @@
   ],
   "urlFilter": "||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
  },
- "id": 2,
+ "id": 198,
  "priority": 11
 },
 {
@@ -45,7 +45,7 @@
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "cinemo.hu"
   ],
   "requestDomains": [
@@ -55,7 +55,7 @@
    "xmlhttprequest"
   ]
  },
- "id": 3,
+ "id": 199,
  "priority": 11
 }
 ]

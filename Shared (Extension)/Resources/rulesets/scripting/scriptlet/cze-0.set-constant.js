@@ -461,7 +461,7 @@ function validateConstantFn(trusted, raw, extraArgs = {}) {
 
 const scriptletGlobals = {}; // eslint-disable-line
 const argsList = [["checkAdsBlocked","noopFunc"],["canRunAds","true"],["first","false"],["settings.ads","false"],["Rmp.params.genderSelectionUrl","undefined"],["App.pos.init","noopFunc"],["App.ft.detected","false"],["sssp.config","noopFunc"],["sssp","{}"],["Gallery.prototype.setAdsForGallery","noopFunc"],["xmxalr",""],["useSeznamAds","false"],["hasUserActiveSubscription","true"]];
-const hostnamesMap = new Map([["ewrc.cz",0],["hokej.cz",1],["impuls.cz",2],["media.joj.sk",[3,4]],["media.cms.markiza.sk",3],["mobilenet.cz",[5,6]],["fzone.cz",[5,6]],["fdrive.cz",[5,6]],["podcasty.seznam.cz",[7,8]],["root.cz",9],["titulky.com",10],["tn.nova.cz",11],["zdopravy.cz",12]]);
+const hostnamesMap = new Map([["ewrc.cz",0],["hokej.cz",1],["impuls.cz",2],["media.joj.sk",[3,4]],["media.cms.markiza.sk",3],["mobilenet.cz",[5,6]],["fzone.cz",[5,6]],["fdrive.cz",[5,6]],["podcasty.seznam.cz",[7,8]],["titulky.com",[8,10]],["root.cz",9],["tn.nova.cz",11],["zdopravy.cz",12]]);
 const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;

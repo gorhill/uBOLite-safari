@@ -4,7 +4,7 @@
   "type": "block"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "no"
   ],
   "regexFilter": "^.*:\\/\\/w{3}\\.(tu|d\\ig\\i)\\.n\\o\\/(\\d|[a-zA-Z_-]){130,}$",
@@ -12,7 +12,7 @@
    "xmlhttprequest"
   ]
  },
- "id": 1,
+ "id": 431,
  "priority": 10
 },
 {
@@ -25,7 +25,7 @@
    "main_frame"
   ]
  },
- "id": 2,
+ "id": 517,
  "priority": 10
 },
 {
@@ -36,7 +36,7 @@
   "domainType": "thirdParty",
   "regexFilter": "^.*:\\/\\/f\\.nordiskemedier\\.dk\\/2[a-z0-9]{12,}\\.(jpe?g|png)((\\?|&).*)?$"
  },
- "id": 3,
+ "id": 538,
  "priority": 10
 },
 {
@@ -44,7 +44,7 @@
   "type": "allow"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "billetlugen.dk",
    "eventim.no"
   ],
@@ -53,7 +53,7 @@
    "script"
   ]
  },
- "id": 4,
+ "id": 618,
  "priority": 30
 },
 {
@@ -67,7 +67,7 @@
    "script"
   ]
  },
- "id": 5,
+ "id": 626,
  "priority": 30
 }
 ]

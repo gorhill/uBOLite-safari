@@ -1,6 +1,6 @@
 [
 {"action":{"type":"block"},"condition":{"urlFilter":"||joq.al//banners^"},"id":1,"priority":10},
-{"action":{"type":"block"},"condition":{"initiatorDomains":["albvid.com"],"urlFilter":"||gameselect.net/*.php"},"id":2,"priority":10},
+{"action":{"type":"block"},"condition":{"domains":["albvid.com"],"urlFilter":"||gameselect.net/*.php"},"id":2,"priority":10},
 {"action":{"type":"block"},"condition":{"urlFilter":"||teksteshqip.com/imgz/ads/336.gif"},"id":3,"priority":10},
 {"action":{"type":"block"},"condition":{"urlFilter":"||gjstatic.blob.core.windows.net/fix/bisko.js"},"id":4,"priority":10},
 {"action":{"type":"block"},"condition":{"urlFilter":"||bisko.gjirafa.tech"},"id":5,"priority":10},
@@ -22,7 +22,7 @@
 {"action":{"type":"block"},"condition":{"resourceTypes":["image"],"urlFilter":"||img.bulevardionline.com//2020/07/blue_background_color-scaled.jpg"},"id":21,"priority":10},
 {"action":{"type":"block"},"condition":{"resourceTypes":["image"],"urlFilter":"||img.bulevardionline.com//2020/02/albcanon.gif"},"id":22,"priority":10},
 {"action":{"type":"block"},"condition":{"resourceTypes":["image"],"urlFilter":"||acp.al/images/banners/selmani-desktop-new-banner-v4-02-2021-2.jpg"},"id":23,"priority":10},
-{"action":{"type":"block"},"condition":{"initiatorDomains":["kohajone.com","vizionplus.tv"],"resourceTypes":["sub_frame"],"urlFilter":"html"},"id":24,"priority":10},
+{"action":{"type":"block"},"condition":{"domains":["kohajone.com","vizionplus.tv"],"resourceTypes":["sub_frame"],"urlFilter":"html"},"id":24,"priority":10},
 {"action":{"type":"block"},"condition":{"resourceTypes":["sub_frame"],"urlFilter":"||classlifestyle.com/rek/megabanner.php^"},"id":25,"priority":10},
 {"action":{"type":"block"},"condition":{"resourceTypes":["sub_frame"],"urlFilter":"||classlifestyle.com/rek/reklama-poshte-dok.php^"},"id":26,"priority":10},
 {"action":{"type":"block"},"condition":{"domainType":"thirdParty","requestDomains":["gjc.gjirafa.com"]},"id":27,"priority":10},

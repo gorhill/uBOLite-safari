@@ -9,7 +9,7 @@
  "condition": {
   "urlFilter": "||yastatic.net/yandex-video-player-iframe-api-bundles-stable/*?adsdk-try="
  },
- "id": 594,
+ "id": 601,
  "priority": 11
 },
 {
@@ -20,7 +20,7 @@
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "yandex.by",
    "yandex.kz",
    "yandex.ru",
@@ -31,7 +31,7 @@
    "image"
   ]
  },
- "id": 595,
+ "id": 602,
  "priority": 11
 },
 {
@@ -47,7 +47,7 @@
   ],
   "urlFilter": "||yastatic.net/naydex/autoru/"
  },
- "id": 596,
+ "id": 603,
  "priority": 11
 },
 {
@@ -63,7 +63,7 @@
   ],
   "urlFilter": "||yandex-sport.naydex.net/"
  },
- "id": 597,
+ "id": 604,
  "priority": 11
 },
 {
@@ -79,7 +79,7 @@
   ],
   "urlFilter": "||storage.mds.yandex.net/get-canvas-html5/*.html?link1="
  },
- "id": 598,
+ "id": 605,
  "priority": 11
 },
 {
@@ -96,7 +96,7 @@
    "script"
   ]
  },
- "id": 599,
+ "id": 606,
  "priority": 11
 }
 ]

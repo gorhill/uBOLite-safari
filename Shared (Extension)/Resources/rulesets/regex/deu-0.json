@@ -4,7 +4,7 @@
   "type": "block"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "beeg-pornos.com",
    "besterpornos.com",
    "deinesexfilme.com",
@@ -43,7 +43,7 @@
    "sub_frame"
   ]
  },
- "id": 1,
+ "id": 1532,
  "priority": 10
 },
 {
@@ -51,7 +51,7 @@
   "type": "block"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "hammerporno.xxx"
   ],
   "regexFilter": "^https?:\\/\\/.*\\/.*(sw[0-9a-z._-]|\\.notify\\.).*",
@@ -59,7 +59,7 @@
    "script"
   ]
  },
- "id": 2,
+ "id": 1546,
  "priority": 10
 },
 {
@@ -68,12 +68,7 @@
  },
  "condition": {
   "domainType": "thirdParty",
-  "excludedResourceTypes": [
-   "main_frame",
-   "media",
-   "sub_frame"
-  ],
-  "initiatorDomains": [
+  "domains": [
    "190.115.18.20",
    "aniworld.to",
    "bs.to",
@@ -92,9 +87,14 @@
    "streamcloud.movie",
    "topstreamfilm.live"
   ],
+  "excludedResourceTypes": [
+   "main_frame",
+   "media",
+   "sub_frame"
+  ],
   "regexFilter": "^https?:\\/\\/[0-9a-z]{8,}\\.com\\/.*"
  },
- "id": 3,
+ "id": 1688,
  "priority": 10
 },
 {
@@ -103,11 +103,7 @@
  },
  "condition": {
   "domainType": "thirdParty",
-  "excludedResourceTypes": [
-   "main_frame",
-   "media"
-  ],
-  "initiatorDomains": [
+  "domains": [
    "kinoger.com",
    "kinoger.pw",
    "kinokiste.live",
@@ -115,9 +111,13 @@
    "streamcloud.movie",
    "topstreamfilm.live"
   ],
+  "excludedResourceTypes": [
+   "main_frame",
+   "media"
+  ],
   "regexFilter": "^https?:\\/\\/[0-9a-z]{8,}\\.xyz\\/.*"
  },
- "id": 4,
+ "id": 1689,
  "priority": 10
 }
 ]

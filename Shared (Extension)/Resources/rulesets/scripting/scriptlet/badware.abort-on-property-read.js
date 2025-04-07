@@ -20,67 +20,73 @@
 
 */
 
-// ruleset: annoyances-cookies
+// ruleset: badware
 
 // Important!
 // Isolate from global scope
 
 // Start of local scope
-(function uBOL_trustedSetCookieReload() {
+(function uBOL_abortOnPropertyRead() {
 
 /******************************************************************************/
 
-function trustedSetCookieReload(name, value, offsetExpiresSec, path, ...args) {
-    trustedSetCookie(name, value, offsetExpiresSec, path, 'reload', '1', ...args);
+function abortOnPropertyRead(
+    chain = ''
+) {
+    if ( typeof chain !== 'string' ) { return; }
+    if ( chain === '' ) { return; }
+    const safe = safeSelf();
+    const logPrefix = safe.makeLogPrefix('abort-on-property-read', chain);
+    const exceptionToken = getExceptionTokenFn();
+    const abort = function() {
+        safe.uboLog(logPrefix, 'Aborted');
+        throw new ReferenceError(exceptionToken);
+    };
+    const makeProxy = function(owner, chain) {
+        const pos = chain.indexOf('.');
+        if ( pos === -1 ) {
+            const desc = Object.getOwnPropertyDescriptor(owner, chain);
+            if ( !desc || desc.get !== abort ) {
+                Object.defineProperty(owner, chain, {
+                    get: abort,
+                    set: function(){}
+                });
+            }
+            return;
+        }
+        const prop = chain.slice(0, pos);
+        let v = owner[prop];
+        chain = chain.slice(pos + 1);
+        if ( v ) {
+            makeProxy(v, chain);
+            return;
+        }
+        const desc = Object.getOwnPropertyDescriptor(owner, prop);
+        if ( desc && desc.set !== undefined ) { return; }
+        Object.defineProperty(owner, prop, {
+            get: function() { return v; },
+            set: function(a) {
+                v = a;
+                if ( a instanceof Object ) {
+                    makeProxy(a, chain);
+                }
+            }
+        });
+    };
+    const owner = window;
+    makeProxy(owner, chain);
 }
 
-function trustedSetCookie(
-    name = '',
-    value = '',
-    offsetExpiresSec = '',
-    path = ''
-) {
-    if ( name === '' ) { return; }
-
-    const safe = safeSelf();
-    const logPrefix = safe.makeLogPrefix('set-cookie', name, value, path);
-    const time = new Date();
-
-    if ( value.includes('$now$') ) {
-        value = value.replaceAll('$now$', time.getTime());
-    }
-    if ( value.includes('$currentDate$') ) {
-        value = value.replaceAll('$currentDate$', time.toUTCString());
-    }
-    if ( value.includes('$currentISODate$') ) {
-        value = value.replaceAll('$currentISODate$', time.toISOString());
-    }
-
-    let expires = '';
-    if ( offsetExpiresSec !== '' ) {
-        if ( offsetExpiresSec === '1day' ) {
-            time.setDate(time.getDate() + 1);
-        } else if ( offsetExpiresSec === '1year' ) {
-            time.setFullYear(time.getFullYear() + 1);
-        } else {
-            if ( /^\d+$/.test(offsetExpiresSec) === false ) { return; }
-            time.setSeconds(time.getSeconds() + parseInt(offsetExpiresSec, 10));
+function getExceptionTokenFn() {
+    const token = getRandomTokenFn();
+    const oe = self.onerror;
+    self.onerror = function(msg, ...args) {
+        if ( typeof msg === 'string' && msg.includes(token) ) { return true; }
+        if ( oe instanceof Function ) {
+            return oe.call(this, msg, ...args);
         }
-        expires = time.toUTCString();
-    }
-
-    const done = setCookieFn(
-        true,
-        name,
-        value,
-        expires,
-        path,
-        safeSelf().getExtraArgs(Array.from(arguments), 4)
-    );
-
-    if ( done ) {
-        safe.uboLog(logPrefix, 'Done');
-    }
+    }.bind();
+    return token;
 }
 
 function safeSelf() {
@@ -273,82 +279,18 @@ function safeSelf() {
     return safe;
 }
 
-function setCookieFn(
-    trusted = false,
-    name = '',
-    value = '',
-    expires = '',
-    path = '',
-    options = {},
-) {
-    // https://datatracker.ietf.org/doc/html/rfc2616#section-2.2
-    // https://github.com/uBlockOrigin/uBlock-issues/issues/2777
-    if ( trusted === false && /[^!#$%&'*+\-.0-9A-Z[\]^_`a-z|~]/.test(name) ) {
-        name = encodeURIComponent(name);
-    }
-    // https://datatracker.ietf.org/doc/html/rfc6265#section-4.1.1
-    // The characters [",] are given a pass from the RFC requirements because
-    // apparently browsers do not follow the RFC to the letter.
-    if ( /[^ -:<-[\]-~]/.test(value) ) {
-        value = encodeURIComponent(value);
-    }
-
-    const cookieBefore = getCookieFn(name);
-    if ( cookieBefore !== undefined && options.dontOverwrite ) { return; }
-    if ( cookieBefore === value && options.reload ) { return; }
-
-    const cookieParts = [ name, '=', value ];
-    if ( expires !== '' ) {
-        cookieParts.push('; expires=', expires);
-    }
-
-    if ( path === '' ) { path = '/'; }
-    else if ( path === 'none' ) { path = ''; }
-    if ( path !== '' && path !== '/' ) { return; }
-    if ( path === '/' ) {
-        cookieParts.push('; path=/');
-    }
-
-    if ( trusted ) {
-        if ( options.domain ) {
-            cookieParts.push(`; domain=${options.domain}`);
-        }
-        cookieParts.push('; Secure');
-    } else if ( /^__(Host|Secure)-/.test(name) ) {
-        cookieParts.push('; Secure');
-    }
-
-    try {
-        document.cookie = cookieParts.join('');
-    } catch {
-    }
-
-    const done = getCookieFn(name) === value;
-    if ( done && options.reload ) {
-        window.location.reload();
-    }
-
-    return done;
-}
-
-function getCookieFn(
-    name = ''
-) {
+function getRandomTokenFn() {
     const safe = safeSelf();
-    for ( const s of safe.String_split.call(document.cookie, /\s*;\s*/) ) {
-        const pos = s.indexOf('=');
-        if ( pos === -1 ) { continue; }
-        if ( s.slice(0, pos) !== name ) { continue; }
-        return s.slice(pos+1).trim();
-    }
+    return safe.String_fromCharCode(Date.now() % 26 + 97) +
+        safe.Math_floor(safe.Math_random() * 982451653 + 982451653).toString(36);
 }
 
 /******************************************************************************/
 
 const scriptletGlobals = {}; // eslint-disable-line
-const argsList = [["cookieConsent","onlyNeeded"],["cookies_confirm","true"]];
-const hostnamesMap = new Map([["filen.io",0],["cockta.eu",1]]);
-const exceptionsMap = new Map([["app.filen.io",[0]]]);
+const argsList = [["Notification"]];
+const hostnamesMap = new Map([["tech4yougadgets.com",0]]);
+const exceptionsMap = new Map([]);
 const hasEntities = false;
 const hasAncestors = false;
 
@@ -415,7 +357,7 @@ if ( hasAncestors ) {
 // Apply scriplets
 for ( const i of todoIndices ) {
     if ( tonotdoIndices.has(i) ) { continue; }
-    try { trustedSetCookieReload(...argsList[i]); }
+    try { abortOnPropertyRead(...argsList[i]); }
     catch { }
 }
 

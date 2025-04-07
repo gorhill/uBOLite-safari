@@ -12,7 +12,7 @@
    "khabarchin.basalam.com"
   ]
  },
- "id": 1,
+ "id": 635,
  "priority": 11
 },
 {
@@ -29,7 +29,7 @@
   ],
   "urlFilter": "||safarmarket.com/api/v1/trace/traceflight^"
  },
- "id": 2,
+ "id": 636,
  "priority": 11
 },
 {
@@ -41,7 +41,7 @@
  },
  "condition": {
   "domainType": "thirdParty",
-  "initiatorDomains": [
+  "domains": [
    "melodify.app"
   ],
   "resourceTypes": [
@@ -49,7 +49,7 @@
   ],
   "urlFilter": "||melodify.pw/serve/v1/limitation/*.mp3^"
  },
- "id": 3,
+ "id": 637,
  "priority": 11
 },
 {
@@ -61,7 +61,7 @@
  },
  "condition": {
   "domainType": "thirdParty",
-  "initiatorDomains": [
+  "domains": [
    "tmk.ir"
   ],
   "resourceTypes": [
@@ -69,7 +69,7 @@
   ],
   "urlFilter": "||tamashakhoneh.ir/src/video/intro.mp4^"
  },
- "id": 4,
+ "id": 638,
  "priority": 11
 }
 ]

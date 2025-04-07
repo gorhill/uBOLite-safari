@@ -5,7 +5,7 @@
  },
  "condition": {
   "domainType": "thirdParty",
-  "excludedInitiatorDomains": [
+  "excludedDomains": [
    "0.0.0.0",
    "127.0.0.1",
    "[::1]",
@@ -15,7 +15,7 @@
   ],
   "urlFilter": "[::1]^"
  },
- "id": 1,
+ "id": 8,
  "priority": 10
 },
 {
@@ -24,7 +24,7 @@
  },
  "condition": {
   "domainType": "thirdParty",
-  "excludedInitiatorDomains": [
+  "excludedDomains": [
    "0.0.0.0",
    "127.0.0.1",
    "[::1]",
@@ -63,7 +63,6 @@
    "localbattle.net",
    "localhost",
    "mobile.hotspot",
-   "mwlogin.net",
    "my.keenetic.net",
    "my.router",
    "myfritz.box",
@@ -91,7 +90,7 @@
    "web.setup.home"
   ]
  },
- "id": 2,
+ "id": 9,
  "priority": 10
 },
 {
@@ -100,7 +99,7 @@
  },
  "condition": {
   "domainType": "thirdParty",
-  "excludedInitiatorDomains": [
+  "excludedDomains": [
    "0.0.0.0",
    "127.0.0.1",
    "[::1]",
@@ -110,7 +109,7 @@
   ],
   "urlFilter": "[::]^"
  },
- "id": 3,
+ "id": 10,
  "priority": 10
 },
 {
@@ -119,7 +118,7 @@
  },
  "condition": {
   "domainType": "thirdParty",
-  "excludedInitiatorDomains": [
+  "excludedDomains": [
    "0.0.0.0",
    "127.0.0.1",
    "[::1]",
@@ -132,7 +131,7 @@
    "plex.direct"
   ]
  },
- "id": 4,
+ "id": 11,
  "priority": 10
 },
 {
@@ -140,7 +139,7 @@
   "type": "allow"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "bayernportal.de",
    "bund.de",
    "client.foldingathome.org",
@@ -168,7 +167,7 @@
    "127.0.0.1"
   ]
  },
- "id": 5,
+ "id": 12,
  "priority": 30
 },
 {
@@ -176,7 +175,7 @@
   "type": "allow"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "apollographql.com",
    "deutsche-rentenversicherung.de"
   ],
@@ -184,7 +183,7 @@
    "localhost"
   ]
  },
- "id": 6,
+ "id": 13,
  "priority": 30
 },
 {
@@ -192,7 +191,7 @@
   "type": "allow"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "battlelog.battlefield.com",
    "figma.com"
   ],
@@ -203,7 +202,7 @@
    "xmlhttprequest"
   ]
  },
- "id": 7,
+ "id": 14,
  "priority": 30
 },
 {
@@ -211,7 +210,7 @@
   "type": "allow"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "www.faceit.com"
   ],
   "requestDomains": [
@@ -221,7 +220,7 @@
    "websocket"
   ]
  },
- "id": 8,
+ "id": 15,
  "priority": 30
 },
 {
@@ -230,14 +229,14 @@
  },
  "condition": {
   "domainType": "thirdParty",
-  "initiatorDomains": [
+  "domains": [
    "musicbrainz.org"
   ],
   "requestDomains": [
    "127.0.0.1"
   ]
  },
- "id": 9,
+ "id": 16,
  "priority": 30
 }
 ]

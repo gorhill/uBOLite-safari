@@ -7,7 +7,7 @@
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "shopee.co.th"
   ],
   "resourceTypes": [
@@ -15,7 +15,7 @@
   ],
   "urlFilter": "||shopee.co.th/__t__"
  },
- "id": 1,
+ "id": 754,
  "priority": 11
 },
 {
@@ -26,7 +26,7 @@
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "shopee.co.th"
   ],
   "requestDomains": [
@@ -36,7 +36,7 @@
    "xmlhttprequest"
   ]
  },
- "id": 2,
+ "id": 755,
  "priority": 11
 },
 {
@@ -47,7 +47,7 @@
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "thmovieshd.com"
   ],
   "resourceTypes": [
@@ -55,7 +55,7 @@
   ],
   "urlFilter": "||b-cdn.net/ssd1/ads/*.mp4"
  },
- "id": 3,
+ "id": 756,
  "priority": 11
 },
 {
@@ -67,14 +67,14 @@
  },
  "condition": {
   "domainType": "thirdParty",
-  "initiatorDomains": [
+  "domains": [
    "hdd.moviefun24.com"
   ],
   "resourceTypes": [
    "media"
   ]
  },
- "id": 4,
+ "id": 757,
  "priority": 11
 }
 ]

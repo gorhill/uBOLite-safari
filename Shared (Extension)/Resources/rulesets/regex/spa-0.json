@@ -4,7 +4,7 @@
   "type": "block"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "alcalorpolitico.com"
   ],
   "regexFilter": "imagenespublicidad",
@@ -12,7 +12,7 @@
    "image"
   ]
  },
- "id": 1,
+ "id": 485,
  "priority": 10
 },
 {
@@ -20,7 +20,7 @@
   "type": "block"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "elmundoporno.com",
    "pasionchicas.com",
    "pornoculazos.com",
@@ -37,7 +37,7 @@
    "sub_frame"
   ]
  },
- "id": 2,
+ "id": 487,
  "priority": 10
 },
 {
@@ -45,7 +45,7 @@
   "type": "block"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "animefenix.com",
    "hispasexy.org",
    "manga-mx.com",
@@ -57,7 +57,7 @@
    "script"
   ]
  },
- "id": 3,
+ "id": 490,
  "priority": 10
 },
 {
@@ -65,7 +65,7 @@
   "type": "block"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "diariotextual.com"
   ],
   "regexFilter": "popup-maker",
@@ -73,7 +73,7 @@
    "script"
   ]
  },
- "id": 4,
+ "id": 491,
  "priority": 10
 },
 {
@@ -82,11 +82,7 @@
  },
  "condition": {
   "domainType": "thirdParty",
-  "excludedResourceTypes": [
-   "main_frame",
-   "media"
-  ],
-  "initiatorDomains": [
+  "domains": [
    "animeonline.ninja",
    "animeyt.es",
    "compupaste.com",
@@ -118,9 +114,13 @@
    "verboruto.online",
    "xn--solopeliculasespaol-c4b.com"
   ],
+  "excludedResourceTypes": [
+   "main_frame",
+   "media"
+  ],
   "regexFilter": "^https?:\\/\\/[0-9a-z]{8,}\\.com\\/.*"
  },
- "id": 5,
+ "id": 508,
  "priority": 10
 },
 {
@@ -129,11 +129,7 @@
  },
  "condition": {
   "domainType": "thirdParty",
-  "excludedResourceTypes": [
-   "main_frame",
-   "media"
-  ],
-  "initiatorDomains": [
+  "domains": [
    "abismalonshort.blogspot.com",
    "animeonline.ninja",
    "cinehax.com",
@@ -146,9 +142,13 @@
    "verificandoarch2.blogspot.com",
    "verificarhuman.blogspot.com"
   ],
+  "excludedResourceTypes": [
+   "main_frame",
+   "media"
+  ],
   "regexFilter": "^https?:\\/\\/[0-9a-z]{8,}\\.xyz\\/.*"
  },
- "id": 6,
+ "id": 509,
  "priority": 10
 },
 {
@@ -162,7 +162,7 @@
    "script"
   ]
  },
- "id": 7,
+ "id": 513,
  "priority": 10
 },
 {
@@ -176,7 +176,7 @@
    "script"
   ]
  },
- "id": 8,
+ "id": 514,
  "priority": 10
 }
 ]

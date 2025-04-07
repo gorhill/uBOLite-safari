@@ -7,7 +7,7 @@
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "nova.cz"
   ],
   "resourceTypes": [
@@ -15,7 +15,7 @@
   ],
   "urlFilter": "||trackad.cz/adtrack.php"
  },
- "id": 1,
+ "id": 135,
  "priority": 11
 },
 {
@@ -26,7 +26,7 @@
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "youradio.cz"
   ],
   "resourceTypes": [
@@ -34,7 +34,7 @@
   ],
   "urlFilter": "||media.actve.net/sads/"
  },
- "id": 2,
+ "id": 136,
  "priority": 11
 },
 {
@@ -45,7 +45,7 @@
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "youradio.cz"
   ],
   "resourceTypes": [
@@ -53,7 +53,7 @@
   ],
   "urlFilter": "||redirector.gvt1.com/videoplayback/id/"
  },
- "id": 3,
+ "id": 137,
  "priority": 11
 },
 {
@@ -72,7 +72,7 @@
    "image"
   ]
  },
- "id": 4,
+ "id": 138,
  "priority": 11
 }
 ]

@@ -19,7 +19,7 @@
   ],
   "urlFilter": "||mesh.if.iqiyi.com/portal/*/recommend?"
  },
- "id": 1,
+ "id": 6473,
  "priority": 2
 },
 {
@@ -42,7 +42,7 @@
   ],
   "urlFilter": "||mesh.if.iqiyi.com/portal/lw/search/"
  },
- "id": 2,
+ "id": 6474,
  "priority": 2
 }
 ]

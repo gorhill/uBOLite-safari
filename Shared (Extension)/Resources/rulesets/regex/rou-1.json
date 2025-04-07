@@ -4,7 +4,7 @@
   "type": "block"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "trafictube.ro"
   ],
   "regexFilter": "trafictube\\.ro\\/[a-zA-Z0-9=,.?&]+$",
@@ -13,7 +13,7 @@
    "script"
   ]
  },
- "id": 1,
+ "id": 128,
  "priority": 10
 },
 {
@@ -21,7 +21,7 @@
   "type": "block"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "razvanbb.ro"
   ],
   "regexFilter": "razvanbb\\.ro\\/[a-zA-Z0-9=,.?&-]+$",
@@ -30,7 +30,7 @@
    "script"
   ]
  },
- "id": 2,
+ "id": 129,
  "priority": 10
 },
 {
@@ -38,7 +38,7 @@
   "type": "block"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "luju.ro"
   ],
   "regexFilter": "luju\\.ro\\/static\\/images\\/[a-zA-Z0-9=,.?&]+$",
@@ -46,7 +46,7 @@
    "image"
   ]
  },
- "id": 3,
+ "id": 139,
  "priority": 10
 },
 {
@@ -55,12 +55,12 @@
  },
  "condition": {
   "domainType": "firstParty",
-  "initiatorDomains": [
+  "domains": [
    "ro"
   ],
   "regexFilter": "wp-content\\/plugins\\/custom-banner-plugin"
  },
- "id": 4,
+ "id": 325,
  "priority": 10
 }
 ]

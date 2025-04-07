@@ -4,12 +4,12 @@
   "type": "block"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "loskatchorros.com.br"
   ],
   "regexFilter": "loskatchorros\\.com\\.br\\/forum\\/uploads\\/set_resources_\\d+\\/[a-z0-9]+_[a-zA-Z0-9]+\\.js"
  },
- "id": 1,
+ "id": 34,
  "priority": 10
 },
 {
@@ -17,12 +17,12 @@
   "type": "block"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "tvcanales.cf"
   ],
   "regexFilter": "qvncc.tvcanales.cf\\/js\\/[_-a-zA-Z0-9]{5,}.js"
  },
- "id": 2,
+ "id": 363,
  "priority": 10
 },
 {
@@ -30,55 +30,7 @@
   "type": "block"
  },
  "condition": {
-  "initiatorDomains": [
-   "zubby.com"
-  ],
-  "regexFilter": "zubby.com\\/[a-z-]+-\\d+\\/\\?_=",
-  "resourceTypes": [
-   "script"
-  ]
- },
- "id": 3,
- "priority": 10
-},
-{
- "action": {
-  "type": "block"
- },
- "condition": {
-  "initiatorDomains": [
-   "ddmix.net"
-  ],
-  "regexFilter": "^https:\\/\\/(ddmix.net)\\/[a-z0-9_]*\\.js",
-  "resourceTypes": [
-   "script"
-  ]
- },
- "id": 4,
- "priority": 10
-},
-{
- "action": {
-  "type": "block"
- },
- "condition": {
-  "initiatorDomains": [
-   "ddmix.net"
-  ],
-  "regexFilter": "^https:\\/\\/(ddmix.net)\\/js\\/[a-z0-9_]*\\.js",
-  "resourceTypes": [
-   "script"
-  ]
- },
- "id": 5,
- "priority": 10
-},
-{
- "action": {
-  "type": "block"
- },
- "condition": {
-  "initiatorDomains": [
+  "domains": [
    "hunterscomics.com"
   ],
   "regexFilter": "^https:\\/\\/hunterscomics\\.com\\/wp-content\\/themes(\\/[a-f]{6}){2}\\.js\\?ver=",
@@ -86,7 +38,55 @@
    "script"
   ]
  },
- "id": 6,
+ "id": 599,
+ "priority": 10
+},
+{
+ "action": {
+  "type": "block"
+ },
+ "condition": {
+  "domains": [
+   "zubby.com"
+  ],
+  "regexFilter": "zubby.com\\/[a-z-]+-\\d+\\/\\?_=",
+  "resourceTypes": [
+   "script"
+  ]
+ },
+ "id": 604,
+ "priority": 10
+},
+{
+ "action": {
+  "type": "block"
+ },
+ "condition": {
+  "domains": [
+   "ddmix.net"
+  ],
+  "regexFilter": "^https:\\/\\/(ddmix.net)\\/[a-z0-9_]*\\.js",
+  "resourceTypes": [
+   "script"
+  ]
+ },
+ "id": 605,
+ "priority": 10
+},
+{
+ "action": {
+  "type": "block"
+ },
+ "condition": {
+  "domains": [
+   "ddmix.net"
+  ],
+  "regexFilter": "^https:\\/\\/(ddmix.net)\\/js\\/[a-z0-9_]*\\.js",
+  "resourceTypes": [
+   "script"
+  ]
+ },
+ "id": 606,
  "priority": 10
 }
 ]

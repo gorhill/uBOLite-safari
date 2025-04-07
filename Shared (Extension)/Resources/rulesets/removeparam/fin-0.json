@@ -20,7 +20,7 @@
   ],
   "urlFilter": "||v.fwmrm.net/ad/g/1"
  },
- "id": 1,
+ "id": 178,
  "priority": 2
 },
 {
@@ -37,7 +37,7 @@
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "mtv.fi",
    "mtvuutiset.fi"
   ],
@@ -46,7 +46,7 @@
   ],
   "urlFilter": "&browser=mozillafirefox"
  },
- "id": 2,
+ "id": 179,
  "priority": 3
 }
 ]

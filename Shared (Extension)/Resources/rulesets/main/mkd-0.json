@@ -1,6 +1,6 @@
 [
-{"action":{"type":"block"},"condition":{"initiatorDomains":["press24.mk"],"urlFilter":"about:blank"},"id":1,"priority":10},
-{"action":{"type":"block"},"condition":{"initiatorDomains":["mkd-news.com"],"urlFilter":"javascript:"},"id":2,"priority":10},
+{"action":{"type":"block"},"condition":{"domains":["press24.mk"],"urlFilter":"about:blank"},"id":1,"priority":10},
+{"action":{"type":"block"},"condition":{"domains":["mkd-news.com"],"urlFilter":"javascript:"},"id":2,"priority":10},
 {"action":{"type":"block"},"condition":{"urlFilter":"||10bez10.com/ads/"},"id":3,"priority":10},
 {"action":{"type":"block"},"condition":{"urlFilter":"||10bez10.com/images/banners/"},"id":4,"priority":10},
 {"action":{"type":"block"},"condition":{"urlFilter":"||a.kajgana.mk/"},"id":5,"priority":10},
@@ -150,7 +150,7 @@
 {"action":{"type":"block"},"condition":{"resourceTypes":["image"],"urlFilter":"||a.kajgana.com/*."},"id":149,"priority":10},
 {"action":{"type":"block"},"condition":{"resourceTypes":["image"],"urlFilter":"||tera.mk/wp-content/uploads/2023/06/baner_300-x-250-1.gif"},"id":150,"priority":10},
 {"action":{"type":"block"},"condition":{"resourceTypes":["image"],"urlFilter":"||kapital.mk/wp-content/uploads/2024/02/baner-res-fevruari-2024.gif"},"id":151,"priority":10},
-{"action":{"type":"block"},"condition":{"initiatorDomains":["reporter.mk"],"resourceTypes":["sub_frame"],"urlFilter":"about:blank"},"id":152,"priority":10},
+{"action":{"type":"block"},"condition":{"domains":["reporter.mk"],"resourceTypes":["sub_frame"],"urlFilter":"about:blank"},"id":152,"priority":10},
 {"action":{"type":"block"},"condition":{"resourceTypes":["sub_frame"],"urlFilter":"||cdn.grouper.mk/files/widgets/"},"id":153,"priority":10},
 {"action":{"type":"block"},"condition":{"resourceTypes":["sub_frame"],"urlFilter":"||grid.mk/adsgrid"},"id":154,"priority":10},
 {"action":{"type":"block"},"condition":{"resourceTypes":["sub_frame"],"urlFilter":"||reporter.mk/wp-content/uploads/2016/04/308-2008-300x250px_april-2016.html"},"id":155,"priority":10},

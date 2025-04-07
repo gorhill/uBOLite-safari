@@ -7,7 +7,7 @@
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "a1.ro",
    "antena3.ro",
    "antenastars.ro",
@@ -28,7 +28,7 @@
   ],
   "urlFilter": "||imasdk.googleapis.com/js/sdkloader/ima3.js"
  },
- "id": 1,
+ "id": 379,
  "priority": 11
 }
 ]

@@ -5,7 +5,7 @@
  },
  "condition": {
   "domainType": "thirdParty",
-  "initiatorDomains": [
+  "domains": [
    "6days.walla.co.il",
    "animals.walla.co.il",
    "astrology.walla.co.il",
@@ -58,7 +58,7 @@
    "sub_frame"
   ]
  },
- "id": 1,
+ "id": 108,
  "priority": 10
 },
 {
@@ -75,7 +75,7 @@
    "xmlhttprequest"
   ]
  },
- "id": 2,
+ "id": 110,
  "priority": 10
 },
 {
@@ -83,7 +83,7 @@
   "type": "allow"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "13news.co.il",
    "13tv.co.il"
   ],
@@ -92,7 +92,7 @@
    "image"
   ]
  },
- "id": 3,
+ "id": 156,
  "priority": 30
 },
 {
@@ -100,7 +100,7 @@
   "type": "allow"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "13news.co.il",
    "13tv.co.il",
    "hamal.co.il",
@@ -113,7 +113,7 @@
    "script"
   ]
  },
- "id": 4,
+ "id": 168,
  "priority": 30
 }
 ]

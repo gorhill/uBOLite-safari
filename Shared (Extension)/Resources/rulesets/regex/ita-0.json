@@ -4,7 +4,7 @@
   "type": "block"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "amoreporno.com",
    "clipdisesso.com",
    "culonudo.com",
@@ -22,7 +22,7 @@
    "sub_frame"
   ]
  },
- "id": 1,
+ "id": 926,
  "priority": 10
 },
 {
@@ -30,7 +30,7 @@
   "type": "block"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "mrpornogratis.it",
    "pornototale.com"
   ],
@@ -39,7 +39,7 @@
    "script"
   ]
  },
- "id": 2,
+ "id": 929,
  "priority": 10
 },
 {
@@ -48,7 +48,7 @@
  },
  "condition": {
   "domainType": "thirdParty",
-  "initiatorDomains": [
+  "domains": [
    "onepiecepower.com",
    "pepperlive.info"
   ],
@@ -58,7 +58,7 @@
    "xmlhttprequest"
   ]
  },
- "id": 3,
+ "id": 958,
  "priority": 10
 }
 ]

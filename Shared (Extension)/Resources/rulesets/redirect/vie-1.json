@@ -2,33 +2,49 @@
 {
  "action": {
   "redirect": {
+   "extensionPath": "/web_accessible_resources/noop-0.1s.mp3"
+  },
+  "type": "redirect"
+ },
+ "condition": {
+  "domains": [
+   "motchill77.com"
+  ],
+  "urlFilter": "||motchill77.com/3s.m3u8"
+ },
+ "id": 312,
+ "priority": 11
+},
+{
+ "action": {
+  "redirect": {
    "extensionPath": "/web_accessible_resources/noop-1s.mp4"
   },
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "phimreview.org"
   ],
   "urlFilter": "||phimreview.org/playergk/phimreview.mp4"
  },
- "id": 1,
+ "id": 313,
  "priority": 11
 },
 {
  "action": {
   "redirect": {
-   "extensionPath": "/web_accessible_resources/noop-0.1s.mp3"
+   "extensionPath": "/web_accessible_resources/noop-1s.mp4"
   },
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
-   "www.motchill72.com"
+  "domains": [
+   "thichxemphim1.net"
   ],
-  "urlFilter": "||www.motchill72.com/3s.m3u8"
+  "urlFilter": "||thichxemphim1.net/fb88-28012023.mp4"
  },
- "id": 2,
+ "id": 314,
  "priority": 11
 },
 {
@@ -39,13 +55,13 @@
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "phevkl.vin",
-   "viet69.meme"
+   "viet69.soy"
   ],
   "urlFilter": "||i2.vlstorage.com/da88_1080p.mp4"
  },
- "id": 3,
+ "id": 315,
  "priority": 11
 },
 {
@@ -56,7 +72,7 @@
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "vtvcab.vn"
   ],
   "resourceTypes": [
@@ -64,7 +80,7 @@
   ],
   "urlFilter": "||on-web-cdn.gviet.vn/public/js/player/ads/ima3.js"
  },
- "id": 6,
+ "id": 316,
  "priority": 11
 }
 ]

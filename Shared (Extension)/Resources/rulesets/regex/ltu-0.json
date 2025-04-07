@@ -4,7 +4,7 @@
   "type": "block"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "delfi.lt"
   ],
   "regexFilter": "\\.dcdn\\.lt\\/images\\/[a-z]{4}\\/",
@@ -12,7 +12,7 @@
    "image"
   ]
  },
- "id": 1,
+ "id": 444,
  "priority": 10
 },
 {
@@ -20,7 +20,7 @@
   "type": "block"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "muge.eu"
   ],
   "regexFilter": "muge\\.eu\\/wp-content\\/uploads\\/20\\d{2}\\/\\d{2}\\/thumbnail.*",
@@ -28,7 +28,7 @@
    "image"
   ]
  },
- "id": 2,
+ "id": 445,
  "priority": 10
 }
 ]

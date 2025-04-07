@@ -4,13 +4,13 @@
   "type": "block"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "compgamer.com",
    "tgpl.in.th"
   ],
   "regexFilter": "plugins\\/add-to-any"
  },
- "id": 1,
+ "id": 681,
  "priority": 10
 },
 {
@@ -18,7 +18,7 @@
   "type": "block"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "coregamerth.com",
    "fmone1035.com",
    "get1025.com",
@@ -32,7 +32,7 @@
    "stylesheet"
   ]
  },
- "id": 2,
+ "id": 718,
  "priority": 10
 }
 ]

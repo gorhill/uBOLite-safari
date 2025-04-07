@@ -7,7 +7,7 @@
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "localhost",
    "ublockorigin.github.io"
   ],

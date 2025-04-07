@@ -4,7 +4,7 @@
   "type": "block"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "gamepod.hu",
    "hardverapro.hu",
    "itcafe.hu",
@@ -17,7 +17,7 @@
    "image"
   ]
  },
- "id": 1,
+ "id": 86,
  "priority": 10
 }
 ]

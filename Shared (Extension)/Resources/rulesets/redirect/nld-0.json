@@ -7,7 +7,7 @@
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "goplay.be",
    "nieuwsblad.be"
   ],
@@ -16,7 +16,7 @@
   ],
   "urlFilter": "||securepubads.g.doubleclick.net/tag/js/gpt.js"
  },
- "id": 1,
+ "id": 475,
  "priority": 11
 },
 {
@@ -27,7 +27,7 @@
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "goplay.be"
   ],
   "resourceTypes": [
@@ -35,7 +35,7 @@
   ],
   "urlFilter": "||imasdk.googleapis.com/js/sdkloader/ima3.js"
  },
- "id": 2,
+ "id": 476,
  "priority": 11
 },
 {
@@ -46,7 +46,7 @@
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "nos.nl"
   ],
   "resourceTypes": [
@@ -54,7 +54,7 @@
   ],
   "urlFilter": "||cdn-ster-nl.akamaized.net/sterad_p_*.mp4^"
  },
- "id": 3,
+ "id": 477,
  "priority": 11
 }
 ]

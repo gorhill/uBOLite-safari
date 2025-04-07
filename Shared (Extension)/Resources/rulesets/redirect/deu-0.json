@@ -7,7 +7,7 @@
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "beeg-pornos.com",
    "deinesexfilme.com",
    "deutscherporno.biz",
@@ -57,7 +57,7 @@
   ],
   "urlFilter": "||twincdn.com/video/suslive/"
  },
- "id": 1,
+ "id": 1822,
  "priority": 11
 },
 {
@@ -68,12 +68,12 @@
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "toggo.de"
   ],
   "urlFilter": "||ccstatic.toggo.de/cc-static-files/bumper-video/"
  },
- "id": 2,
+ "id": 1823,
  "priority": 11
 },
 {
@@ -84,12 +84,12 @@
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "toggo.de"
   ],
   "urlFilter": "||flashtalking.com^*.mp4"
  },
- "id": 3,
+ "id": 1824,
  "priority": 11
 },
 {
@@ -100,12 +100,12 @@
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "toggo.de"
   ],
   "urlFilter": "||smartclip.net/creatives/uploads/*.mp4"
  },
- "id": 4,
+ "id": 1825,
  "priority": 11
 }
 ]

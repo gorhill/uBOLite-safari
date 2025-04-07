@@ -7,7 +7,7 @@
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "vgtv.no"
   ],
   "resourceTypes": [
@@ -15,7 +15,7 @@
   ],
   "urlFilter": "||acdn.adnxs.com/ast/ast.js"
  },
- "id": 1,
+ "id": 632,
  "priority": 11
 },
 {
@@ -26,7 +26,7 @@
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "vg.no"
   ],
   "resourceTypes": [
@@ -34,7 +34,7 @@
   ],
   "urlFilter": "||damoh.vgtv.no/hic_qos"
  },
- "id": 2,
+ "id": 633,
  "priority": 11
 },
 {
@@ -45,7 +45,7 @@
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "vegetarbloggen.no"
   ],
   "resourceTypes": [
@@ -53,7 +53,7 @@
   ],
   "urlFilter": "||googletagservices.com/tag/js/gpt.js"
  },
- "id": 3,
+ "id": 634,
  "priority": 11
 },
 {
@@ -69,7 +69,7 @@
   ],
   "urlFilter": "||vgc.no/cdn/js/libs/homad-config.json"
  },
- "id": 4,
+ "id": 635,
  "priority": 11
 },
 {
@@ -80,7 +80,7 @@
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "embed.viaplay.com"
   ],
   "requestDomains": [
@@ -90,7 +90,7 @@
    "media"
   ]
  },
- "id": 5,
+ "id": 636,
  "priority": 11
 },
 {
@@ -101,7 +101,7 @@
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "bold.dk"
   ],
   "resourceTypes": [
@@ -109,7 +109,7 @@
   ],
   "urlFilter": "||freewheel-mtgx-tv.akamaized.net/*.mp4"
  },
- "id": 6,
+ "id": 637,
  "priority": 11
 }
 ]

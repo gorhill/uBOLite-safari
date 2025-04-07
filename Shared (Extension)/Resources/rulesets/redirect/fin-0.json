@@ -7,7 +7,7 @@
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "telsu.fi"
   ],
   "resourceTypes": [
@@ -15,7 +15,7 @@
   ],
   "urlFilter": "||adservice.google.com/adsid/integrator.js"
  },
- "id": 1,
+ "id": 173,
  "priority": 11
 },
 {
@@ -26,7 +26,7 @@
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "puhekupla.com"
   ],
   "requestDomains": [
@@ -36,7 +36,7 @@
    "xmlhttprequest"
   ]
  },
- "id": 2,
+ "id": 174,
  "priority": 11
 },
 {
@@ -47,7 +47,7 @@
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "mtv.fi",
    "mtvuutiset.fi"
   ],
@@ -56,7 +56,7 @@
   ],
   "urlFilter": "||cloudfront.net/creatives/assets/*.mp4"
  },
- "id": 3,
+ "id": 175,
  "priority": 11
 },
 {
@@ -67,7 +67,7 @@
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "ruutu.fi"
   ],
   "requestDomains": [
@@ -78,7 +78,7 @@
    "media"
   ]
  },
- "id": 4,
+ "id": 176,
  "priority": 11
 },
 {
@@ -89,7 +89,7 @@
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "ruutu.fi",
    "supla.fi"
   ],
@@ -98,7 +98,7 @@
   ],
   "urlFilter": "||nelonenmedia-pmd-ads-*.nm-stream.nelonenmedia.fi^"
  },
- "id": 5,
+ "id": 177,
  "priority": 11
 }
 ]

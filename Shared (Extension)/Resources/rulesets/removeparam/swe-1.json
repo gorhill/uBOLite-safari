@@ -13,7 +13,7 @@
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "di.se",
    "expressen.se"
   ],
@@ -22,7 +22,7 @@
   ],
   "urlFilter": "&autoplay"
  },
- "id": 1,
+ "id": 1323,
  "priority": 3
 },
 {
@@ -39,7 +39,7 @@
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "expressen.se"
   ],
   "resourceTypes": [
@@ -47,7 +47,7 @@
   ],
   "urlFilter": "?autoplay"
  },
- "id": 2,
+ "id": 1324,
  "priority": 3
 },
 {
@@ -69,7 +69,7 @@
   ],
   "urlFilter": "||embed.viaplay.com/*autoplay=true"
  },
- "id": 4,
+ "id": 1325,
  "priority": 2
 },
 {
@@ -86,7 +86,7 @@
   "type": "redirect"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "kritiker.se"
   ],
   "resourceTypes": [
@@ -94,7 +94,7 @@
   ],
   "urlFilter": "||youtube.com/embed/*autoplay"
  },
- "id": 5,
+ "id": 1326,
  "priority": 3
 }
 ]

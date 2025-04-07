@@ -4,7 +4,7 @@
   "type": "block"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "io-tech.fi"
   ],
   "regexFilter": "io-tech\\.fi\\/.*\\/[0-9a-f]{32}\\.",
@@ -12,7 +12,7 @@
    "image"
   ]
  },
- "id": 1,
+ "id": 51,
  "priority": 10
 },
 {
@@ -26,7 +26,7 @@
    "xmlhttprequest"
   ]
  },
- "id": 2,
+ "id": 136,
  "priority": 10
 },
 {
@@ -40,7 +40,7 @@
    "xmlhttprequest"
   ]
  },
- "id": 3,
+ "id": 137,
  "priority": 10
 }
 ]

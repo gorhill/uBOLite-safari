@@ -4,8 +4,9 @@
   "type": "block"
  },
  "condition": {
-  "initiatorDomains": [
+  "domains": [
    "alekuriren.se",
+   "automation.se",
    "branschaktuellt.se",
    "dackavisen.se",
    "densistavilan.se",
@@ -18,7 +19,7 @@
    "script"
   ]
  },
- "id": 1,
+ "id": 1156,
  "priority": 10
 }
 ]
